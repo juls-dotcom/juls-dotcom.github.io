@@ -1,8 +1,8 @@
-Title: Contact
+Title: contact
 Date: 2020-03-30 12:00
 Category: Information
 Tags: contact
-Slug: Contact
+Slug: contact
 Authors: Julien Hernandez Lallement
 Summary: Contact
 
