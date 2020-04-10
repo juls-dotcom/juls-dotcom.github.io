@@ -4,3 +4,6 @@
 [submodule "plugins/ipynb"]
 	path = plugins/ipynb
 	url = git://github.com/danielfrg/pelican-ipynb.git
+[submodule "juls-dotcom.github.io"]
+	path = juls-dotcom.github.io
+	url = https://github.com/juls-dotcom/juls-dotcom.github.io
