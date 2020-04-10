@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pelican-mockingbird" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugins/pelican-ipynb" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugins/pelican-plugins" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugins/plugins/ipynb" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/theme/pelican-mockingbird" vcs="Git" />
+  </component>
+</project>
