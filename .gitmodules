@@ -1,6 +1,0 @@
-[submodule "pelican-plugins"]
-	path = pelican-plugins
-	url = https://github.com/getpelican/pelican-plugins
-[submodule "juls-dotcom.github.io"]
-	path = juls-dotcom.github.io
-	url = https://github.com/juls-dotcom/juls-dotcom.github.io
