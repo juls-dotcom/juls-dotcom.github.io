@@ -6,25 +6,25 @@ Slug: whois
 Authors: Julien Hernandez Lallement
 Summary: Contact
 
-My name is Julien. I am a data scientist currently working in Germany. I learned to program on my own during my PhD, 
-mostly with MatLab at first but rapidly turned towards Python & R. I have been working on data projects for more than 10
-years now, both as team member & leader.  
+My name is Julien. I am a data scientist based in Germany at the moment. I started programing during my Masters,
+which turned out to be quite useful for Work&Travel projects, as well as for getting my PhD in Neuroscience.
+I have been working on data projects for more than 10 years now, both as team member & leader.  
 
-Currently, I work at a retail company, where I improve data-driven processes in general, and develop new tools to increase our
-understanding of customer dynamics, using Machine Learning approaches, while trying to keep the hype of data science away
-from projects, as long as not necessary. 
-I am also a PMP certified project manager, and a SCRUM master. I am really interested in the topics of data management,
-and in general techniques on how to better use and explain data work in companies.
+Currently, I work at Orsay, a retail company where I implement data-driven marketing processes, and develop new tools to 
+increase our understanding of customer dynamics. I use Machine Learning approaches when necessary, while trying to find 
+a good balance between interpretability and accuracy, keeping the "hype" in data science as much as bay as possible.
+ 
+I am also a PMP certified project manager, and a SCRUM master. I am really interested in topics of data management, and
+focus strongly on articulating my projects in ways that are explainable and meaningful for non-tech stakeholders.
 
 In the past, I spent 10 years doing research in neuroscience, in particular in the field of social neuroscience, 
 trying to understand human social behavior. As an academic data scientist, my worked involved heavy data management, 
 from experiment planing, data collection, extraction, munging and modelling. 
-
 In 2019, tired of long hours in experimental rooms, I decided to turn the page of academia. Life is too long to have one
 single career ;)
 
-Hit me if you want to talk. I gave quite some talks in the past, in countries as far as Japan and Canada, so I am very 
-happy to come and share my views on things, at a conference, or around a nice cold beer.
+Hit me if you want to talk. Presenting my data to all types of audience is something I am used to, at a conference, 
+or around a nice cold beer. And I enjoy that really much, so don't hesitate to get in touch!
 
 Feel free to contact me at julien.hernandez.lallement@posteo.net
 
