@@ -1,7 +1,0 @@
-Title:  projects
-Date: 2020-03-30 12:00
-Category: Information
-Tags: intro, whois
-Slug: projects
-Authors: Julien Hernandez Lallement
-Summary: Whois

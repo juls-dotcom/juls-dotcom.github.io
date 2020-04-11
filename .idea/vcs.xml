@@ -6,6 +6,10 @@
     <mapping directory="$PROJECT_DIR$/plugins/pelican-ipynb" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/plugins/pelican-plugins" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/plugins/plugins/ipynb" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/theme/attila" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/theme/nest" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/theme/pelican-chunk" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/theme/pelican-clean-blog" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/theme/pelican-mockingbird" vcs="Git" />
   </component>
 </project>
