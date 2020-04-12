@@ -213,7 +213,7 @@ h4:after {
     text-decoration: none;
 }
 
-/* Header */
+/* Header  */
 
 .header-container {
     background: #f5f5f5;
@@ -261,6 +261,7 @@ h4:after {
 .header-subtitle-homepage {
     text-align: center;
     font-style: italic;
+    color: #fff;
 }
 .header-tags {
     font-size: 11px;
