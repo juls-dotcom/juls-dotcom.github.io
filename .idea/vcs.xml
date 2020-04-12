@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/pelican-mockingbird" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugins/ipynb" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/plugins/pelican-ipynb" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/plugins/pelican-plugins" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/plugins/plugins/ipynb" vcs="Git" />

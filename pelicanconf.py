@@ -20,14 +20,15 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+LINKS = (('GitHub', 'https://github.com/juls-dotcom'),
+         ('Google Scholar', 'https://scholar.google.com/citations?user=ppDsLgIAAAAJ&hl=en&oi=ao')
+         )
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('LinkedIn', 'https://www.linkedin.com/in/julien-hernandez-lallement-b47347b7/'),
+          ('Xing', 'https://www.xing.com/profile/Julien_HernandezLallement/cv'),
+          ('ResearchGate', 'https://www.researchgate.net/profile/Julen_Hernandez_Lallement')
+          )
 
 DEFAULT_PAGINATION = 10
 
@@ -35,19 +36,12 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 
 MARKUP = ('md', 'ipynb')
-PLUGIN_PATHS = ['./plugins/plugins']
+PLUGIN_PATHS = ['./plugins']
 PLUGINS = ['ipynb.markup']
 IGNORE_FILES = ['.ipynb_checkpoints']
 IPYNB_USE_METACELL = True
 
 THEME = 'theme/nest'
-
-# CONFIG FOR CLEAN BLOG THEME
-#HEADER_COVER = './static/Logo_neuro.png'
-
-#SOCIAL = (('github', 'https://github.com/juls-dotcom'))
-
-#COLOR_SCHEME_CSS = 'monokai.css'
 
 # CONFIG FOR NEST THEME
 
@@ -61,7 +55,7 @@ NEST_REL_CANONICAL_LINK = True
 MENUITEMS = [('Home', '/')]
 # Add header background image from content/images : 'background.jpg'
 NEST_HEADER_IMAGES = 'logo_website.jpg'
-#NEST_HEADER_LOGO = '/images/article-background.png'
+#NEST_HEADER_LOGO = 'logo_website.png'
 # Footer
 NEST_SITEMAP_COLUMN_TITLE = u'Shortcuts'
 NEST_SITEMAP_MENU = [('Archives', '/archives.html'),('Tags','/tags.html'), ('Authors','/authors.html')]
@@ -73,10 +67,10 @@ NEST_COPYRIGHT = u'&copy; juls-dotcom 2020'
 # Footer optional
 #NEST_FOOTER_HTML = ''
 # index.html
-#NEST_INDEX_HEAD_TITLE = u'Homepage'
-#NEST_INDEX_HEADER_TITLE = u'A Tale of Two...or more..Stories'
-#NEST_INDEX_HEADER_SUBTITLE = u'A blog about data science, neurpscience, and probably some random stuff.'
-#NEST_INDEX_CONTENT_TITLE = u'Last Posts'
+NEST_INDEX_HEAD_TITLE = u'Homepage'
+NEST_INDEX_HEADER_TITLE = u'A Tale of Two...or more..Stories'
+NEST_INDEX_HEADER_SUBTITLE = u'A blog about data science, neurpscience, and probably some random stuff.'
+NEST_INDEX_CONTENT_TITLE = u'Last Posts'
 # archives.html
 #NEST_ARCHIVES_HEAD_TITLE = u'Archives'
 #NEST_ARCHIVES_HEAD_DESCRIPTION = u'Posts Archives'
