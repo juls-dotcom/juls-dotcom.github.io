@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7932ba2c-96d1-41e1-8cf2-ec3b3a0f2f4e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/.ipynb_checkpoints/predicted_purchase_I-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/.ipynb_checkpoints/predicted_purchase_I-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/images/article-background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/images/logo_neuro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/images/logo_website.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/pages/publications.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/pages/publications.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/pages/whois.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/pages/whois.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/predicted_purchase_I.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/predicted_purchase_I.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/predicted_purchase_II.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/predicted_purchase_II.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/predicted_purchase_III.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/predicted_purchase_III.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/archives.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/author/julien-hernandez-lallement.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/author/julien-hernandez-lallement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/authors.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/authors.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/categories.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/category/tutorial.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/category/tutorial.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/images/article-background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/images/logo_neuro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/pages/publications.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/pages/publications.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/pages/talks.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/pages/talks.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/pages/whois.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/pages/whois.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/predict_sales_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/predict_sales_1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/predict_sales_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/predict_sales_2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/predict_sales_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/predict_sales_3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tag/marketing.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/marketing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tag/python.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/python.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tag/sales.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/sales.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tags.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tags.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pelicanconf.py" beforeDir="false" afterPath="$PROJECT_DIR$/pelicanconf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theme/nest/static/css/nest.css" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/static/css/nest.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theme/nest/templates/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/templates/archives.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theme/nest/templates/article.html" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/templates/article.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theme/nest/templates/author.html" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/templates/author.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theme/nest/templates/authors.html" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/templates/authors.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theme/nest/templates/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/theme/nest/templates/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/templates/categories.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theme/nest/templates/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/templates/category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theme/nest/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theme/nest/templates/page.html" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/templates/page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theme/nest/templates/period_archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/templates/period_archives.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theme/nest/templates/tag.html" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/templates/tag.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theme/nest/templates/tags.html" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/templates/tags.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/theme/nest" />
+  </component>
+  <component name="ProjectId" id="1aP7ClVJGHA5sE4e6NwzqhiHbef" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7932ba2c-96d1-41e1-8cf2-ec3b3a0f2f4e" name="Default Changelist" comment="" />
+      <created>1586625249818</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586625249818</updated>
+    </task>
+    <servers />
+  </component>
+</project>
