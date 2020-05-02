@@ -1,0 +1,2430 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Meta-Analysis: Quick Introduction and Python Pipeline¶ Brief background¶In research, we typically publish our results in the form of articles, where findings are reported together with statistical...">
+        <meta name="keywords" content="meta-analysis, neuroscience, python">
+        <link rel="icon" href="/favicon.ico">
+        <!-- Canonical -->
+        <link rel="canonical" href="/meta_analysis.html">
+        <!-- /Canonical -->
+
+        <title>Meta-Analysis: Quick Introduction and Python Pipeline - Juls-dotcom</title>
+
+        <!-- Stylesheets -->
+        <link href="/theme/css/all.min.css" rel="stylesheet">
+        <!-- /Stylesheets -->
+
+        <!-- RSS Feeds -->
+        <!-- /RSS Feeds -->
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+    </head>
+
+    <body>
+
+        <!-- Header -->
+    <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/meta_analysis_header.jpg'); background-position: center; background-size: cover;">
+
+            <!-- Static navbar -->
+            <div class="container">
+                <div class="header-nav">
+                    <div class="header-logo">
+                      <!--  <a class="pull-left" href="/"><img class="mr20" src="logo.png" alt="logo">Juls-dotcom</a> -->
+                        <a class="pull-left" href="/"><img class="mr20" src="logo.png">Juls-dotcom</a>
+                    </div>
+                    <div class="nav pull-right">
+                                <a href="/">Home</a>
+                            <a  href="/pages/publications.html">Publications</a>
+                            <a  href="/pages/talks.html">Talks</a>
+                            <a  href="/pages/whois.html">Whois</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /Static navbar -->
+
+            <!-- Header -->
+    <!-- Header -->
+    <div class="container header-wrapper">
+        <div class="row">
+              <div class="col-lg-12">
+                  <div class="header-content">
+                      <h1 class="header-title">Meta-Analysis: Quick Introduction and Python Pipeline</h1>
+                      <p class="header-date">By <a href="/author/julien-hernandez-lallement.html">Julien Hernandez Lallement</a>, lun. 20 avril 2020, in category <a href="/category/neuroscience.html">Neuroscience</a></p>
+                      <div class="header-underline"></div>
+                      <div class="clearfix"></div>
+                      <p class="pull-right header-tags">
+                          <span class="glyphicon glyphicon-tags mr5" aria-hidden="true"></span>
+<a href="/tag/meta-analysis.html">meta-analysis</a>, <a href="/tag/neuroscience.html">neuroscience</a>, <a href="/tag/python.html">python</a>                      </p>
+                  </div>
+              </div>
+        </div>
+    </div>
+    <!-- /Header -->
+            <!-- /Header -->
+
+        </div>
+        <!-- /Header -->
+
+
+        <!-- Content -->
+    <div class="container content">
+        <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Meta-Analysis:-Quick-Introduction-and-Python-Pipeline">Meta-Analysis: Quick Introduction and Python Pipeline<a class="anchor-link" href="#Meta-Analysis:-Quick-Introduction-and-Python-Pipeline">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Brief-background">Brief background<a class="anchor-link" href="#Brief-background">&#182;</a></h4><p>In research, we typically publish our results in the form of articles, where findings are reported together with statistical analysis, that provide a way to assess the strength and plausibility of observed effects. <br></p>
+<p>While statistical analysis is critical to any research paper, concluding on one single study might not be the best approach. <br><br>
+For instance, one might have a too small sample, while still drawing conclusions on results. Small samples limit your ability (in statistical terms, you are lacking power) to have meaningful conclusions about the effects you are observing. Normally (unfortunately, not typically), one should run a priori power analysis using pre collected data. That is: "from what we know about the process we want to investigate, what effect size would we expect?". Using historical data helps you making an informed guess about the expected outcome, which in turns allows you to calcule the required sample size. The math behing this is not too complicated, but I won't be going in detail here. Some open source software like <a href="https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitspsychologie/gpower.html">G-Power</a> allow you to make that kind of computation. <br><br> Alternatively, you might be looking at a very particular set of data, mostly created by outliers (normally, that would be ruled you with large enough statistical power), so your observed truth would not be the truth of the overall population from which you believe your sample to be taken. <br><br>
+Of course, you might as well be doing something wrong with your statistics. I myself remember running ANOVAs, non parametric tests and correlations that required some set of assumptions to be fullfiled, without having checked these assumptions before hand. This is, I think, a problem of how researchers are (or at least how <strong>I</strong> was) taught to use statistics... but that's for another post! <br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Meta-analytical-approach">Meta-analytical approach<a class="anchor-link" href="#Meta-analytical-approach">&#182;</a></h4><p>Now, when multiple papers investigating a similar process are published, one useful thing to do is to review them together, and see whether trends are emerging in the data collected independently in each paper. These so-called <code>systematic reviews</code> can be quite useful to outline unexplored areas of a process, which in turn would guide researchers to collect the necessary data to populate that missing part of the distribution. <br></p>
+<p>Another approach, maybe one step further, would be to perform a <code>meta-analysis</code>. This differs from a systematic review in that a meta-analysis does not simply <em>reviews</em> the current knowledge of a given process, but also <strong>quantifies</strong> the strength of statistical effects, and provides an overall estimation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Having worked in the field of Neuroscience for quite a bit, together with a colleague of mine, we collected data on animal empathy, to quantify the strength of effects reported across the literature.</p>
+<p>Here, I intend to report a small part of that paper to share some code that might be useful to people currently working on meta-analytic approaches.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Methods">Methods<a class="anchor-link" href="#Methods">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Data typically takes the shape of distributions, which have some parameters, like a mean and a standard deviation. You can do all of stuff on these distributions, like comparing them to some value (one sample testing, t-test or Wilcoxon, if parametric assumptions are met ;) ) or compare them to some other distribution (paired testing, t-test or Mann-Whitney), among other things. <br><br>
+That's very useful, because you can tell whether these distributions are <strong>significantly</strong> different from one another (although this frequentists approach as some downsides as well, but that's for another post on Bayesian statistics).</p>
+<p>Statistical significance is the probability that the observed difference between two distributions is due to chance. If the <em>p</em>-value is larger than a threshold arbitrarily chosen (i.e., alpha level, typically equal to 0.05), it is assumed that observed differences can be explained by random noise in the data. <br><br>
+Problem is, with a sufficiently large sample, statistical tests will very often find a significant difference, sometimes for even lower alpha levels. These small differences that emerge as significant are often useless for research results, and no meaningful conclusion can be drawned from them. The fact that <em>p</em>-values are dependent not onlyz on effect sizes, but also on <em>sample</em> size makes it crutial to report other measures. This is why authors working with statistical comparisons should not only report <em>p</em>-values, but also differences in magnitude between the distributions. In the words of <a href="https://www.semanticscholar.org/paper/Things-I-have-learned-(so-far">Jacob Cohen</a>.-Cohen/64b9025b84a6a257f3bbc1161868884589d9ca14), "<em>Statistical significance is the least interesting thing about the results. You should describe the results in terms of measures of magnitude –not just, does a treatment affect people, but how much does it affect them.</em>".</p>
+<p>A commonly cited example illustrating this problem is a Physicians Health Study, that investigated whether aspirin could help preventing myocardial infarction (MI). The researchers tested around 22.000 subjects, and found that aspirin was associated with a reduction in myocardial infarction, with a significance level &lt; .00001. In other words, very very significant (the kind of value that makes PhD students' head drool...). The study was terminated early than scheduled due to the conclusive findings, resulting in a recommendation of aspirin to treat this problem. Problem was, the effect size was very small (r2 = 0.001), suggesting that actual between group differences were very small and negligeable. The recommendation to use aspirin has since been changed, but for quite some time, this study fueled a treatment that was not very suited to the problem. All due to a focus on <em>p</em>-value...</p>
+<p>Conclusion "<em>The primary product of a research inquiry is one or more measures of effect size, not P values.</em>". <a href="https://scholar.google.com/scholar_lookup?title=Beyond+Significance+Testing:+Reforming+Data+Analysis+Methods+in+Behavioral+Research&amp;author=RB+Kline&amp;publication_year=2004&amp;">Gene V. Glass</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Effect-sizes:-what-are-they?">Effect sizes: what are they?<a class="anchor-link" href="#Effect-sizes:-what-are-they?">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Extraction-of-effect-sizes">Extraction of effect sizes<a class="anchor-link" href="#Extraction-of-effect-sizes">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Effect sizes (<code>ES</code>) are a way to boil down the strenght of an observed effect. Typicall, you data will take the shape of distributions, that have parameters such as the mean and the standard deviation (I assume the readers know about these concepts). Since the data I use in this post was based on these parameters, I describe below the analysis pipeline for data preparation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Assume your first study used two different independent groups, each one with a mean (<code>M</code>) and a standard deviation (<code>SD</code>). It is easy to convert that data in a so-called standardized effect size, given by the simple equation below:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (ES \right) = \left( \ \frac{M1 - M2}{\sqrt{\frac{(SD1^2*n1)+(SD2^2*n2)}{(n1+n2)}}} \right)      (1)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>where M, SD and n are the mean, standard deviation and sample size of each distribution 1 &amp; 2, respectively.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that very often, standard error of the mean (<code>SEM</code>) is provided in the graphical representation of data. You can then convert to the <code>SD</code> by using the following formula:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (SD \right) = \left(SEM * \sqrt{n}\right)      (2)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Assume that the second study you screened used the same group at two different time points (e.g., before and after treatment). Here, you are be dealing with a within-subject design instead of a between-subject one. In this case, you could compute the <code>ES</code> using the following equation:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (ES \right) = \left( \ \frac{M1_{t+i} - M_t}{\sqrt{SD^2_{t+i}+SD2^2_t}} \right)      (3)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>where <code>Mt</code> is the mean initial measurement (usually baseline), <code>M(t+i)</code> is the measurement at a second time point, <code>SDt</code> is the standard deviation of the distribution during the initial measurement, <code>SD(t+i)</code> is the standard deviation of the distribution at the second measurement point, and <code>N</code> represents the sample size of the group</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Standardization-of-effect-sizes">Standardization of effect sizes<a class="anchor-link" href="#Standardization-of-effect-sizes">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In order to bring all measures to the same metric and to ease interpretation, the effect sizes can be transformed to correlation coefficient, called <code>r</code>, following this equation:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (r \right) = \left( \ \frac{ES}{\sqrt{ES^2+4}} \right)      (4)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In some cases, the relevant statistics are actually provided in the paper, in which case, the following equations can be used:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (t-statistics; r \right) = \left( \frac{t^2}{\sqrt{t^2+df}} \right)      (5)
+\end{equation*}\begin{equation*}
+\left (F-statistics; r \right) = \left( \sqrt{\frac{F}{F+df}} \right)      (6)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In some cases (typically in old publications), no statistical information is available nor graphical representation of data, and only <em>p</em>-values are reported. In this case, you could use z-scores if you have p-values reported, using the following equation:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (r \right) = \left( \frac{z}{\sqrt{N}} \right)  (7)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>where <code>z</code> is the z-score value and <code>N</code> is the sample size. You can extract <code>z-scores</code> from z-scpre tables like <a href="http://www.z-table.com/">this one</a>. Remember though, <em>p</em>-values are dependent on group size and should be evaluated cautiously.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Combining-effect-sizes-and-comparisons">Combining effect sizes and comparisons<a class="anchor-link" href="#Combining-effect-sizes-and-comparisons">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>At some point, we get in troubles because the value of <code>r</code> becomes increasingly skewed as it gets further from 0. To compensate that effect, we can normalize the effect sizes using Fisher transformation described <a href="https://books.google.de/books?hl=en&amp;lr=&amp;id=7GviBQAAQBAJ&amp;oi=fnd&amp;pg=PP1&amp;dq=Statistical+Methods+for+Meta-Analysis.+Statistical+Methods+for+Meta-Analysis,&amp;ots=Dw__nKb48y&amp;sig=iTxsYslhkobz_pCAt8u4ep-LsZg#v=onepage&amp;q=Statistical%20Methods%20for%20Meta-Analysis.%20Statistical%20Methods%20for%20Meta-Analysis%2C&amp;f=false">here</a>, following this equation:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (Z_r \right) = \left (0.5 * Ln (\frac{1+r}{1-r}\right) (8)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>where <code>r</code> is the effect size computed through the methods described above. By convention, $Z_r$ can be <a href="http://rogeriofvieira.com/wp-content/uploads/2016/05/Wilson.pdf">converted back to r</a> for ease of interpretation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you are dealing with low sample sizes, which can create some bias in your analysis (&lt; 20 or 10 in each group, see <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1469-185X.2007.00027.x">Nakagawa &amp; Cuthill, 2007</a>, we computed the unbiased $Z_r$  (zru) value using the equation proposed by <a href="https://www.sciencedirect.com/book/9780080570655/statistical-methods-for-meta-analysis">Hedges &amp; Olkin, 1985</a>:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (Z_{ru}  \right) = \left (Z_r * (1-\frac{3}{4*(n1+n2)}-9)\right) (9)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Random-and-Fix-Effect-Models">Random and Fix Effect Models<a class="anchor-link" href="#Random-and-Fix-Effect-Models">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When conducting meta-analytic approaches, it is necessary to use either a fixed effect or a random effects statistical model. A fixed effect model assumes that all effect sizes are measuring the same effect, whereas a random effects model takes into account potential variance in the between-studies effect. Since the chosen model affects the interpretation of the summary estimates, one can test which model to use by conducting a heterogeneity test, that generates the <code>Q-statistic</code> described in eq. 14. The <code>Q</code> value is a measure of the dispersion of the effect sizes. This measure follows the chi square distribution with <code>k-1</code> degrees of freedom, where k is the total number of effect sizes. This model assumes that the variance of each effect size ($v_i$, eq. 10) is composed of variance due to intrinsic sampling errors ($v_0$, eq. 11 &amp; 12), plus other sources of randomly distributed variability ($v_r$, eq 12). To estimate these values, you can use the formulas 10 through 15 thoroughly described by (<a href="https://idostatistics.com/lipsey-wilson-2001-practical-meta-analysis-2001/">Lipsey &amp; Wilson, 2001</a>; <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1469-185X.2007.00027.x">Nakagawa &amp; Cuthill, 2007</a>):</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (v_i \right) = \left (v_0 + v_r \right)    (10)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (v_0 \right) = \left (SE^2 \right)   (11)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (SE \right) = \left (\frac{1}{\sqrt{n-3}}\right)    (12)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (v_r \right) = \left (\frac{Q-(k-1)}{(\sum w_i - (\sum w_i^2/\sum w_i)} \right) (13)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (Q \right) = \left (\sum w_i * Z_{ru_i}^2 - \frac{(\sum w_i * Z_{ru_i})^2}{\sum w_i} \right) (14)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (w_i \right) = \left (\frac{1}{SE^2} \right)   (15)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To complement the <code>Q statistic</code>, one can provide a I^2 statistic using eq. 16, which measures the percent of variance between studies, which is due to true heterogeneity rather than chance.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (I^2 \right) = \left (\frac{Q-df}{Q}\right) (16)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>where Q is calculated using eq. 14 and df is the number of effect sizes minus one, with higher percent values indicating higher heterogeneity. Typically, the I^2 will be expressed in percent, and can have a <em>p</em>-value associated to it, which, if significant, would indicate a substantial amount of heterogeneity and giving further support for a random model effects.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Calculating-confidence-intervals-for-effect-sizes">Calculating confidence intervals for effect sizes<a class="anchor-link" href="#Calculating-confidence-intervals-for-effect-sizes">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For each variable and its different levels, one can calculated the mean effect size, 95% confidence intervals (CI) and zscore value using eqs. 16, 17, 18 and 19. See <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1469-185X.2007.00027.x">Nakagawa &amp; Cuthill, 2007</a> for more information on this topic, and note that there are other proposed methods to compare these values.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (\overline{Z_ru}  \right) = \left (\frac{(\sum w_i * Z_{ru_i})}{(\sum w_i}\right) (17)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (\ 95 \%CI\right) = \left (\overline{Z_ru} \pm 1.96*(SE_{Z_{ru}})\right) (18)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (\ SE_{\overline{Z_{ru}}}\right) = \left (\sqrt{\frac{\overline{Z_ru}}{\overline{SE_Zru}}}\right) (19)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (\overline{SE}_Zru\right) = \left (\sqrt{\frac{1}{\sum w_i}}\right) (20)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Additional-side-computation-for-meta-analysis">Additional side computation for meta-analysis<a class="anchor-link" href="#Additional-side-computation-for-meta-analysis">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are other analysis that one might want to do when running a meta-analysis. In particular, file drawer analysis (that allows to estimate how many more effect size one might require to abolish any overall meta-analytic effect found) and funnel plots (that allow to assess publication bias) could be of interest. I won't be talking about these, but you could look at <a href="https://jasp-stats.org/">JASP</a> if you think of running some of these on your data.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Dataset">Dataset<a class="anchor-link" href="#Dataset">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>On our project, we were interested to find which brain regions showed activation when individuals witnessed emotions in others (so-called emotional contagion, i.e.,  first building block of empathy, see <a href="https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/empathy-its-ultimate-and-proximate-bases/953E0D092176FEE351ED81E933FE646D">here</a>. I did this work together with Dr. Maria Carrillo, check out some of her work <a href="https://www.sciencedirect.com/science/article/pii/S0960982219303227">here</a>.<br>
+The data was collected manually in most of the cases, because researchers are not always good at reporting all the necessary statistics to extract effect sizes. That mean that we had to go to the papers, with a ruler and a pencil, and measure the actual distribution's means and standard deviations.  Fun at first, very fast very annoying... There are some good softwares that help you collect the data from pdf formats though, like <a href="https://automeris.io/WebPlotDigitizer/">WebPlotDigitizer</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Within a year of regular meetings and data compilation, we managed to screen and extract brain activation data (among other data, not discussed here) in approximately 150 research papers (of a total of 3000 papers screened).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Set path</span>
+<span class="c1"># Ubuntu</span>
+<span class="n">work_dir</span> <span class="o">=</span> <span class="s2">&quot;/home/julien/Documents/Projects/datasets/meta_analysis&quot;</span>
+<span class="c1"># Windows</span>
+<span class="c1">#work_dir = &quot;C:\\Users\hernandez\Dropbox (Personal)\Python\meta_analysis&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">work_dir</span><span class="p">)</span>
+<span class="c1"># Verify the path</span>
+<span class="n">cwd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> 
+<span class="c1"># Print the current directory </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current working directory is:&quot;</span><span class="p">,</span> <span class="n">cwd</span><span class="p">)</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Current working directory is: /home/julien/Documents/Projects/datasets/meta_analysis
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">files</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">cwd</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">io</span> <span class="o">=</span> <span class="n">files</span><span class="p">[</span><span class="n">files</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;Effect_size_pooled_c-fos_v2.xlsx&quot;</span><span class="p">)],</span> 
+                   <span class="n">sheet_name</span> <span class="o">=</span><span class="s1">&#39;c-fos_only&#39;</span><span class="p">,</span>
+                   <span class="n">header</span>     <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+                   <span class="n">index_col</span>  <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="c1"># lower case to avoid later conflicts</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+<span class="c1"># display columns</span>
+<span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(144, 66)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What we have is a series of data features for each independent experimental group that we screened in the literature. <br>
+I will hard code the specie from which the data was collected, which will be our main spliting variable in this analysis. Indeed, we ended up with a relatively small dataset, which is not enough to look at how the other variables might have influenced brain activity.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create dictionnary of the species encoded</span>
+<span class="n">specie_dict</span> <span class="o">=</span><span class="p">{</span><span class="mi">0</span> <span class="p">:</span> <span class="s1">&#39;rat&#39;</span><span class="p">,</span> <span class="mi">1</span> <span class="p">:</span> <span class="s1">&#39;mouse&#39;</span><span class="p">}</span>
+<span class="c1"># Map the binary coding onto the dictionnary</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;specie_str&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;specie &#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">specie_dict</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Then, I select the data of interest:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Select data of interest</span>
+<span class="n">DOI</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;study id&#39;</span><span class="p">,</span><span class="s1">&#39;specie &#39;</span><span class="p">,</span> <span class="s1">&#39;specie_str&#39;</span><span class="p">,</span> <span class="s1">&#39;structure / tissue&#39;</span><span class="p">,</span> <span class="s1">&#39;structure_renamed&#39;</span><span class="p">,</span>  
+                             <span class="s1">&#39;standardized es&#39;</span><span class="p">,</span>    <span class="s1">&#39;standardized es se&#39;</span><span class="p">,</span> <span class="s1">&#39;weight factor&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">]]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">DOI</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>study id</th>
+      <th>specie</th>
+      <th>specie_str</th>
+      <th>structure / tissue</th>
+      <th>structure_renamed</th>
+      <th>standardized es</th>
+      <th>standardized es se</th>
+      <th>weight factor</th>
+      <th>n</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>0</td>
+      <td>rat</td>
+      <td>ACC</td>
+      <td>ACC</td>
+      <td>0.927872</td>
+      <td>0.235702</td>
+      <td>18</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>0</td>
+      <td>rat</td>
+      <td>LA</td>
+      <td>Amygd_LA</td>
+      <td>0.927872</td>
+      <td>0.235702</td>
+      <td>18</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>0</td>
+      <td>rat</td>
+      <td>HPC</td>
+      <td>HPC</td>
+      <td>0.300000</td>
+      <td>0.235702</td>
+      <td>18</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2</td>
+      <td>0</td>
+      <td>rat</td>
+      <td>ACC</td>
+      <td>ACC</td>
+      <td>0.678397</td>
+      <td>0.258199</td>
+      <td>15</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>0</td>
+      <td>rat</td>
+      <td>HPC</td>
+      <td>HPC</td>
+      <td>0.089124</td>
+      <td>0.408248</td>
+      <td>6</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>77</td>
+      <td>0</td>
+      <td>rat</td>
+      <td>LA</td>
+      <td>Amygd_LA</td>
+      <td>0.768121</td>
+      <td>0.447214</td>
+      <td>5</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>77</td>
+      <td>0</td>
+      <td>rat</td>
+      <td>CeM</td>
+      <td>Amygd_CeM</td>
+      <td>0.308701</td>
+      <td>0.447214</td>
+      <td>5</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>77</td>
+      <td>0</td>
+      <td>rat</td>
+      <td>CeL</td>
+      <td>Amygd_CeL</td>
+      <td>0.344366</td>
+      <td>0.447214</td>
+      <td>5</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>77</td>
+      <td>0</td>
+      <td>rat</td>
+      <td>PrL</td>
+      <td>PrL</td>
+      <td>0.455106</td>
+      <td>0.447214</td>
+      <td>5</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>77</td>
+      <td>0</td>
+      <td>rat</td>
+      <td>IL</td>
+      <td>IL</td>
+      <td>-0.372895</td>
+      <td>0.447214</td>
+      <td>5</td>
+      <td>8</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Below, a description of the columns:<br>
+<strong>study_id</strong>: single identifier of the study from which the data was extracted<br>
+<strong>specie: binary</strong> informing on the specie from which the brain activity was recorded<br>
+<strong>specie_str</strong>: binary string information informing on the specie from which the brain activity was recorded<br>
+<strong>structure / tissue</strong>: Brain structure from which the activity was recorded<br>
+<strong>structure_renamed</strong>: Renamed structure<br>
+<strong>standardized es</strong>: standardized effect size<br>
+<strong>standardized es se</strong>: standard error of the mean attached to the effect size<br>
+<strong>weight factor</strong>: weight facto<br>
+<strong>n</strong>: number of animals from which the data was collected<br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we are interested in computing the effect size, per specie and brain structure. <br>
+Let's look at how many data points we would have per category</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">DOI</span>
+<span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;specie_str&#39;</span><span class="p">,</span> <span class="s1">&#39;structure_renamed&#39;</span><span class="p">])</span>
+<span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[11]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>study id</th>
+      <th>specie</th>
+      <th>structure / tissue</th>
+      <th>standardized es</th>
+      <th>standardized es se</th>
+      <th>weight factor</th>
+      <th>n</th>
+    </tr>
+    <tr>
+      <th>specie_str</th>
+      <th>structure_renamed</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="14" valign="top">rat</th>
+      <th>Amygd_LA</th>
+      <td>14</td>
+      <td>14</td>
+      <td>14</td>
+      <td>14</td>
+      <td>14</td>
+      <td>14</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>Amygd_CeA</th>
+      <td>8</td>
+      <td>8</td>
+      <td>8</td>
+      <td>8</td>
+      <td>8</td>
+      <td>8</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>PAG</th>
+      <td>8</td>
+      <td>8</td>
+      <td>8</td>
+      <td>8</td>
+      <td>8</td>
+      <td>8</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>IL</th>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>PVN</th>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>Amygd_BLA</th>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>Amygd_BA</th>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>PrL</th>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>Hypothalamus</th>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>Amygd_MeA</th>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>Amygd_CoA</th>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>Amygd_CeM</th>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>ACC</th>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>NaCC</th>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>mouse</th>
+      <th>Amygd_BLA</th>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>rat</th>
+      <th>INS</th>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">mouse</th>
+      <th>HPC</th>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>Amygd_LA</th>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th rowspan="6" valign="top">rat</th>
+      <th>Amygd_CeL</th>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>BNST</th>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>BMA</th>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>PFC</th>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>HPC</th>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Septum</th>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th rowspan="7" valign="top">mouse</th>
+      <th>Amygd_CeL</th>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Amygd_CeM</th>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Amygd_CoA</th>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Amygd_MeA</th>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>IL</th>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>PrL</th>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Septum</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>rat</th>
+      <th>LPO</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="9" valign="top">mouse</th>
+      <th>Amygd_CeA</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Hypothalamus</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>BNST</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>INS</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>NaCC</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>PAG</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>PFC</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>PVN</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>ACC</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>That's quite low for many structures (n of 1 will be hard to make meta-analytics...), but we can work with some of these structures that have more 2 or 3 effect sizes. <br>
+Seems though like there are much more effect sizes for rats than mice:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">DOI</span>
+<span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;specie_str&#39;</span><span class="p">])</span>
+<span class="o">.</span><span class="n">count</span><span class="p">()[</span><span class="s1">&#39;study id&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>specie_str
+mouse     32
+rat      112
+Name: study id, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Yup. That is something typical in research literature though. Some models are widely used, leaving some areas of the knowledge unpopuplated. But still, we can move on and see what we get.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Data-transformation">Data transformation<a class="anchor-link" href="#Data-transformation">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As explained in the methods, there are different steps needed in a meta-analytic process.<br><br>Below, I implemented these steps in python:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This function will add a few computations to the dataset.</span>
+<span class="c1"># Computations are self explanatory, and equations are in methods</span>
+<span class="k">def</span> <span class="nf">compute_meta_data</span><span class="p">(</span><span class="n">dataf</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">dataf</span>
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">vi_SE2</span>           <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="mi">1</span><span class="o">/</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;weight factor&#39;</span><span class="p">])</span> <span class="c1"># Equation 15</span>
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">standardized_ESU</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="n">d</span><span class="p">[</span><span class="s1">&#39;standardized es&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;n&#39;</span><span class="p">])</span><span class="o">-</span><span class="mi">9</span><span class="p">))))</span> <span class="c1"># Equation 9</span>
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">wES</span>              <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="n">d</span><span class="p">[</span><span class="s1">&#39;standardized es&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;weight factor&#39;</span><span class="p">])</span>
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">wES2</span>             <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="n">d</span><span class="p">[</span><span class="s1">&#39;weight factor&#39;</span><span class="p">]</span>   <span class="o">*</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;standardized es&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;standardized es&#39;</span><span class="p">])</span> 
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">w2</span>               <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="n">d</span><span class="p">[</span><span class="s1">&#39;weight factor&#39;</span><span class="p">]</span>   <span class="o">*</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;weight factor&#39;</span><span class="p">]))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This function will compute, for each specie&amp;structure, the random effect parameters</span>
+<span class="k">def</span> <span class="nf">compute_random_effects</span><span class="p">(</span><span class="n">dataf</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">dataf</span>
+            <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;specie_str&#39;</span><span class="p">,</span><span class="s1">&#39;structure_renamed&#39;</span><span class="p">])</span>
+            <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span>  
+            <span class="s2">&quot;sum_wi&quot;</span><span class="p">:</span>          <span class="n">d</span><span class="p">[</span><span class="s1">&#39;weight factor&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+            <span class="s2">&quot;sum_wi2&quot;</span><span class="p">:</span>         <span class="n">d</span><span class="p">[</span><span class="s1">&#39;w2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+            <span class="s2">&quot;k&quot;</span><span class="p">:</span>               <span class="n">d</span><span class="p">[</span><span class="s1">&#39;w2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">(),</span> <span class="c1">#num studies</span>
+            <span class="s2">&quot;wxES&quot;</span><span class="p">:</span>            <span class="n">d</span><span class="p">[</span><span class="s1">&#39;wES&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+            <span class="s2">&quot;wxES2&quot;</span><span class="p">:</span>           <span class="n">d</span><span class="p">[</span><span class="s1">&#39;wES2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>     
+            <span class="p">})))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Compute the Q and v0 parameters (see methods)</span>
+<span class="k">def</span> <span class="nf">compute_random_variance</span><span class="p">(</span><span class="n">dataf</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">dataf</span>
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">Q</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="nb">abs</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;wxES2&#39;</span><span class="p">]</span><span class="o">-</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;wxES&#39;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;sum_wi&#39;</span><span class="p">])))</span> 
+            <span class="c1"># For struture with only 1 effect size, the denominator of v0 will automatically</span>
+            <span class="c1"># be equal to 0. hence v0 will not be computed.</span>
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">v0</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;Q&#39;</span><span class="p">]</span><span class="o">-</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;sum_wi&#39;</span><span class="p">]</span><span class="o">-</span>
+                                                        <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;sum_wi2&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;sum_wi&#39;</span><span class="p">])))</span>
+           <span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Turn v0 to 0 if negative (missing reference!)</span>
+<span class="k">def</span> <span class="nf">zero_if_negative</span><span class="p">(</span><span class="n">dataf</span><span class="p">):</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="n">dataf</span><span class="p">[</span><span class="s1">&#39;v0&#39;</span><span class="p">]</span>
+        <span class="n">num</span><span class="p">[</span><span class="n">num</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">dataf</span><span class="p">[</span><span class="s1">&#39;v0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">num</span>
+        <span class="k">return</span> <span class="n">dataf</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Compute corrected parameters (see methods)</span>
+<span class="k">def</span> <span class="nf">apply_corrections</span><span class="p">(</span><span class="n">dataf</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">dataf</span>
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">v0_plus_vi</span>       <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="n">d</span><span class="p">[</span><span class="s1">&#39;vi_SE2&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;v0&#39;</span><span class="p">])</span>  
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">wi_corr</span>          <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="mi">1</span><span class="o">/</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;v0_plus_vi&#39;</span><span class="p">])</span>  
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">wxES_corr</span>        <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="n">d</span><span class="p">[</span><span class="s1">&#39;wi_corr&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;standardized_ESU&#39;</span><span class="p">])</span>  
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">wxESsq_corr</span>      <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="n">d</span><span class="p">[</span><span class="s1">&#39;wi_corr&#39;</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;standardized_ESU&#39;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">SE_corr</span>          <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;wi_corr&#39;</span><span class="p">])</span><span class="o">**</span><span class="mf">0.5</span><span class="p">))</span>  
+            <span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># NaN are replaced by 0</span>
+            <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calculate_constants</span><span class="p">(</span><span class="n">dataf</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">dataf</span>
+            <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;specie_str&#39;</span><span class="p">,</span> <span class="s1">&#39;structure_renamed&#39;</span><span class="p">])</span>
+            <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span>  
+                        <span class="s2">&quot;sum_wxES_corr&quot;</span><span class="p">:</span>        <span class="n">d</span><span class="p">[</span><span class="s1">&#39;wxES_corr&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+                        <span class="s2">&quot;sum_wxESsq_corr&quot;</span><span class="p">:</span>      <span class="n">d</span><span class="p">[</span><span class="s1">&#39;wxESsq_corr&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="c1">#num studies                  </span>
+                        <span class="s2">&quot;sum_wi_corr&quot;</span><span class="p">:</span>          <span class="nb">abs</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;wi_corr&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> 
+             <span class="p">}))</span> 
+             <span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># NaN are replaced by 0</span>
+             <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+           <span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The function below computes the $I^2$ value, ie, percent of variation due to heterogeneity rather than chance.
+By convention, Q = 0 if Q &lt; k-1, so that the precision of a random effects summary estimate will not exceed the precision of a fixed effect summary estimate, see <a href="https://onlinelibrary.wiley.com/doi/10.1002/sim.1186">Higgins &amp; Thompson 2002</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">I2</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">dfg</span><span class="p">):</span>
+<span class="c1">#     if pd.isnull((Q &lt; dfg)):</span>
+<span class="c1">#         I2 = 0</span>
+<span class="c1">#         return I2</span>
+<span class="c1">#     else:</span>
+        <span class="n">I2</span><span class="o">=</span><span class="p">((</span><span class="n">Q</span><span class="o">-</span><span class="n">dfg</span><span class="p">)</span><span class="o">/</span><span class="n">Q</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
+        <span class="k">return</span> <span class="n">I2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calculate_mean_se</span><span class="p">(</span><span class="n">dataf</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">dataf</span>
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">ES_mean</span>       <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;sum_wxES_corr&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;sum_wi_corr&#39;</span><span class="p">])</span> 
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">SE_mean</span>       <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;sum_wi_corr&#39;</span><span class="p">])</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">z</span>             <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;ES_mean&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;SE_mean&#39;</span><span class="p">])</span>
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">high_CI</span>       <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;ES_mean&#39;</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="mf">1.96</span><span class="o">*</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;SE_mean&#39;</span><span class="p">]))</span>
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">low_CI</span>        <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;ES_mean&#39;</span><span class="p">]</span><span class="o">-</span><span class="p">(</span><span class="mf">1.96</span><span class="o">*</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;SE_mean&#39;</span><span class="p">]))</span>                                              
+           <span class="c1"># .assign(k_val         = lambda d: d[&#39;w2&#39;].count())#num studies  </span>
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">I_val</span>         <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">I2</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;Q&#39;</span><span class="p">],</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+           <span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calculate_number_es</span><span class="p">(</span><span class="n">dataf</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">dataf</span>
+            <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;specie_str&#39;</span><span class="p">,</span> <span class="s1">&#39;structure_renamed&#39;</span><span class="p">])</span>
+            <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span>  
+                        <span class="s2">&quot;k_val&quot;</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;w2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">(),</span>
+             <span class="p">}))</span> 
+           <span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Compute &amp; add meta variables to dataset</span>
+<span class="n">cfos_df</span> <span class="o">=</span> <span class="n">DOI</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">compute_meta_data</span><span class="p">)</span>
+<span class="c1"># Compute &amp; add random effect parameters</span>
+<span class="n">rand_df</span> <span class="o">=</span> <span class="p">(</span><span class="n">cfos_df</span>
+<span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">compute_random_effects</span><span class="p">)</span>
+<span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">compute_random_variance</span><span class="p">)</span>
+<span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">zero_if_negative</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="c1"># Merge datasets</span>
+<span class="n">cfos_ana</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">cfos_df</span><span class="p">,</span> <span class="n">rand_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;structure_renamed&#39;</span><span class="p">,</span><span class="s1">&#39;specie_str&#39;</span><span class="p">])</span>
+<span class="n">cfos_ana</span> <span class="o">=</span> <span class="n">apply_corrections</span><span class="p">(</span><span class="n">cfos_ana</span><span class="p">)</span>
+<span class="c1"># Compute constants for each structure</span>
+<span class="n">constants</span> <span class="o">=</span> <span class="n">calculate_constants</span><span class="p">(</span><span class="n">cfos_ana</span><span class="p">)</span>
+<span class="n">cfos_ana</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">cfos_ana</span><span class="p">,</span> <span class="n">constants</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;structure_renamed&#39;</span><span class="p">,</span><span class="s1">&#39;specie_str&#39;</span><span class="p">])</span>
+<span class="c1"># Compute mean &amp; se for each structure</span>
+<span class="n">cfos_ana</span> <span class="o">=</span> <span class="p">(</span><span class="n">cfos_ana</span>
+<span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">calculate_mean_se</span><span class="p">))</span>
+<span class="c1"># Calculate number of ES per structure</span>
+<span class="n">nES</span> <span class="o">=</span> <span class="p">(</span><span class="n">cfos_ana</span>
+<span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">calculate_number_es</span><span class="p">)</span>           
+<span class="p">)</span>
+<span class="n">cfos_ana</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">cfos_ana</span><span class="p">,</span> <span class="n">nES</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;structure_renamed&#39;</span><span class="p">,</span><span class="s1">&#39;specie_str&#39;</span><span class="p">])</span>
+
+<span class="c1"># Sample dataframe</span>
+<span class="n">cfos_ana</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[24]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>study id</th>
+      <th>specie</th>
+      <th>specie_str</th>
+      <th>structure / tissue</th>
+      <th>structure_renamed</th>
+      <th>standardized es</th>
+      <th>standardized es se</th>
+      <th>weight factor</th>
+      <th>n</th>
+      <th>vi_SE2</th>
+      <th>...</th>
+      <th>sum_wxES_corr</th>
+      <th>sum_wxESsq_corr</th>
+      <th>sum_wi_corr</th>
+      <th>ES_mean</th>
+      <th>SE_mean</th>
+      <th>z</th>
+      <th>high_CI</th>
+      <th>low_CI</th>
+      <th>I_val</th>
+      <th>k_val</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>0</td>
+      <td>rat</td>
+      <td>ACC</td>
+      <td>ACC</td>
+      <td>0.927872</td>
+      <td>0.235702</td>
+      <td>18</td>
+      <td>21</td>
+      <td>0.055556</td>
+      <td>...</td>
+      <td>18.885442</td>
+      <td>15.12257</td>
+      <td>32.517006</td>
+      <td>0.580787</td>
+      <td>0.175366</td>
+      <td>3.311859</td>
+      <td>0.924503</td>
+      <td>0.23707</td>
+      <td>40.641371</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>0</td>
+      <td>rat</td>
+      <td>ACC</td>
+      <td>ACC</td>
+      <td>0.678397</td>
+      <td>0.258199</td>
+      <td>15</td>
+      <td>18</td>
+      <td>0.066667</td>
+      <td>...</td>
+      <td>18.885442</td>
+      <td>15.12257</td>
+      <td>32.517006</td>
+      <td>0.580787</td>
+      <td>0.175366</td>
+      <td>3.311859</td>
+      <td>0.924503</td>
+      <td>0.23707</td>
+      <td>40.641371</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>207</td>
+      <td>0</td>
+      <td>rat</td>
+      <td>ACC</td>
+      <td>ACC</td>
+      <td>0.744927</td>
+      <td>0.242536</td>
+      <td>17</td>
+      <td>20</td>
+      <td>0.058824</td>
+      <td>...</td>
+      <td>18.885442</td>
+      <td>15.12257</td>
+      <td>32.517006</td>
+      <td>0.580787</td>
+      <td>0.175366</td>
+      <td>3.311859</td>
+      <td>0.924503</td>
+      <td>0.23707</td>
+      <td>40.641371</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 36 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># By convention, Q = 0 if Q &lt; k-1, so that the precision of a random effects summary estimate will not exceed the precision of a fixed effect summary estimate</span>
+<span class="n">cfos_ana</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cfos_ana</span><span class="p">[</span><span class="s1">&#39;Q&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">cfos_ana</span><span class="p">[</span><span class="s1">&#39;k_val&#39;</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="s1">&#39;I_val&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Prepare data for plotting</span>
+<span class="n">to_plot</span> <span class="o">=</span> <span class="p">(</span><span class="n">cfos_ana</span>
+<span class="c1">#.groupby([&#39;specie_str&#39;])</span>
+<span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span> <span class="o">=</span><span class="p">[</span><span class="s2">&quot;specie_str&quot;</span><span class="p">,</span> <span class="s2">&quot;structure_renamed&quot;</span><span class="p">],</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="c1">#.groupby([&#39;specie_str&#39;, &#39;structure_renamed&#39;])</span>
+<span class="c1">#.head(20)</span>
+<span class="p">)</span>
+<span class="n">to_plot</span> <span class="o">=</span> <span class="n">to_plot</span><span class="p">[[</span><span class="s1">&#39;specie_str&#39;</span><span class="p">,</span> <span class="s1">&#39;structure_renamed&#39;</span><span class="p">,</span><span class="s1">&#39;ES_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;low_CI&#39;</span><span class="p">,</span><span class="s1">&#39;high_CI&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;I_val&#39;</span><span class="p">,</span> <span class="s1">&#39;k_val&#39;</span><span class="p">]]</span>
+<span class="c1"># Visualize higher effect sizes per species</span>
+<span class="n">to_plot</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;specie_str&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;ES_mean&quot;</span><span class="p">],</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">))</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[31]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>specie_str</th>
+      <th>structure_renamed</th>
+      <th>ES_mean</th>
+      <th>low_CI</th>
+      <th>high_CI</th>
+      <th>z</th>
+      <th>I_val</th>
+      <th>k_val</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>mouse</td>
+      <td>Amygd_BLA</td>
+      <td>0.305320</td>
+      <td>-0.012634</td>
+      <td>0.623274</td>
+      <td>1.882120</td>
+      <td>0.000000</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>mouse</td>
+      <td>IL</td>
+      <td>0.250577</td>
+      <td>-0.273255</td>
+      <td>0.774409</td>
+      <td>0.937572</td>
+      <td>0.000000</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>mouse</td>
+      <td>PrL</td>
+      <td>0.227964</td>
+      <td>-0.570073</td>
+      <td>1.026001</td>
+      <td>0.559887</td>
+      <td>56.913815</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>mouse</td>
+      <td>Amygd_CeL</td>
+      <td>0.111359</td>
+      <td>-0.412473</td>
+      <td>0.635191</td>
+      <td>0.416668</td>
+      <td>0.000000</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>mouse</td>
+      <td>Amygd_CeM</td>
+      <td>0.045174</td>
+      <td>-0.478658</td>
+      <td>0.569006</td>
+      <td>0.169027</td>
+      <td>0.000000</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>mouse</td>
+      <td>Amygd_MeA</td>
+      <td>0.025072</td>
+      <td>-0.498760</td>
+      <td>0.548904</td>
+      <td>0.093812</td>
+      <td>0.000000</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>mouse</td>
+      <td>Amygd_CoA</td>
+      <td>0.004438</td>
+      <td>-0.569050</td>
+      <td>0.577927</td>
+      <td>0.015169</td>
+      <td>16.567528</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>mouse</td>
+      <td>HPC</td>
+      <td>-0.131467</td>
+      <td>-0.559174</td>
+      <td>0.296240</td>
+      <td>-0.602458</td>
+      <td>0.000000</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>mouse</td>
+      <td>Amygd_LA</td>
+      <td>-0.177468</td>
+      <td>-0.605175</td>
+      <td>0.250240</td>
+      <td>-0.813258</td>
+      <td>0.000000</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>rat</td>
+      <td>ACC</td>
+      <td>0.580787</td>
+      <td>0.237070</td>
+      <td>0.924503</td>
+      <td>3.311859</td>
+      <td>40.641371</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>rat</td>
+      <td>PrL</td>
+      <td>0.375268</td>
+      <td>0.072834</td>
+      <td>0.677703</td>
+      <td>2.432017</td>
+      <td>0.000000</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>rat</td>
+      <td>Amygd_LA</td>
+      <td>0.352532</td>
+      <td>0.008677</td>
+      <td>0.696386</td>
+      <td>2.009459</td>
+      <td>75.981846</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>rat</td>
+      <td>Amygd_BLA</td>
+      <td>0.350253</td>
+      <td>-0.002779</td>
+      <td>0.703284</td>
+      <td>1.944572</td>
+      <td>39.774832</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>rat</td>
+      <td>NaCC</td>
+      <td>0.318760</td>
+      <td>-0.054253</td>
+      <td>0.691774</td>
+      <td>1.674926</td>
+      <td>25.287225</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>rat</td>
+      <td>Amygd_BA</td>
+      <td>0.268681</td>
+      <td>-0.235761</td>
+      <td>0.773122</td>
+      <td>1.043955</td>
+      <td>77.883006</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>rat</td>
+      <td>Amygd_CoA</td>
+      <td>0.262060</td>
+      <td>-0.159181</td>
+      <td>0.683300</td>
+      <td>1.219345</td>
+      <td>38.222540</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>rat</td>
+      <td>Amygd_MeA</td>
+      <td>0.237278</td>
+      <td>-0.247329</td>
+      <td>0.721886</td>
+      <td>0.959675</td>
+      <td>52.759582</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>rat</td>
+      <td>HPC</td>
+      <td>0.235805</td>
+      <td>-0.164278</td>
+      <td>0.635889</td>
+      <td>1.155206</td>
+      <td>0.000000</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>rat</td>
+      <td>PFC</td>
+      <td>0.218830</td>
+      <td>-0.095022</td>
+      <td>0.532681</td>
+      <td>1.366591</td>
+      <td>0.000000</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>rat</td>
+      <td>Amygd_CeA</td>
+      <td>0.211875</td>
+      <td>0.017806</td>
+      <td>0.405944</td>
+      <td>2.139829</td>
+      <td>0.000000</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>rat</td>
+      <td>IL</td>
+      <td>0.188953</td>
+      <td>-0.051107</td>
+      <td>0.429012</td>
+      <td>1.542728</td>
+      <td>7.079613</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>rat</td>
+      <td>Septum</td>
+      <td>0.174726</td>
+      <td>-0.195679</td>
+      <td>0.545131</td>
+      <td>0.924562</td>
+      <td>0.000000</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>rat</td>
+      <td>BNST</td>
+      <td>0.174373</td>
+      <td>-0.117806</td>
+      <td>0.466553</td>
+      <td>1.169732</td>
+      <td>0.000000</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>rat</td>
+      <td>Hypothalamus</td>
+      <td>0.150351</td>
+      <td>-0.124104</td>
+      <td>0.424806</td>
+      <td>1.073719</td>
+      <td>0.000000</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>rat</td>
+      <td>PVN</td>
+      <td>0.083937</td>
+      <td>-0.313650</td>
+      <td>0.481523</td>
+      <td>0.413786</td>
+      <td>75.792369</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>rat</td>
+      <td>BMA</td>
+      <td>0.058721</td>
+      <td>-0.882053</td>
+      <td>0.999495</td>
+      <td>0.122339</td>
+      <td>71.063206</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>rat</td>
+      <td>PAG</td>
+      <td>0.041619</td>
+      <td>-0.290724</td>
+      <td>0.373962</td>
+      <td>0.245449</td>
+      <td>54.145197</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>rat</td>
+      <td>Amygd_CeL</td>
+      <td>0.020364</td>
+      <td>-0.485705</td>
+      <td>0.526434</td>
+      <td>0.078871</td>
+      <td>0.000000</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>rat</td>
+      <td>INS</td>
+      <td>-0.022349</td>
+      <td>-0.528419</td>
+      <td>0.483720</td>
+      <td>-0.086559</td>
+      <td>0.000000</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>rat</td>
+      <td>Amygd_CeM</td>
+      <td>-0.077602</td>
+      <td>-0.469602</td>
+      <td>0.314398</td>
+      <td>-0.388008</td>
+      <td>0.000000</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#import plotnine as p9</span>
+<span class="kn">import</span> <span class="nn">plotnine</span> <span class="k">as</span> <span class="nn">p9</span>
+<span class="kn">from</span> <span class="nn">plotnine</span> <span class="kn">import</span> <span class="n">ggplot</span><span class="p">,</span> <span class="n">geom_point</span><span class="p">,</span> <span class="n">aes</span><span class="p">,</span> <span class="n">theme</span><span class="p">,</span> <span class="n">element_text</span><span class="p">,</span> <span class="n">save_as_pdf_pages</span>
+<span class="n">p9</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">figure_size</span> <span class="o">=</span> <span class="p">(</span><span class="mf">6.4</span><span class="p">,</span> <span class="mf">4.8</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Plot the effect sizes for each structure, separately for each specie</span>
+<span class="p">(</span><span class="n">p9</span><span class="o">.</span><span class="n">ggplot</span><span class="p">()</span> <span class="o">+</span>
+<span class="n">p9</span><span class="o">.</span><span class="n">geom_point</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">cfos_ana</span><span class="p">,</span> <span class="n">mapping</span> <span class="o">=</span> <span class="n">p9</span><span class="o">.</span><span class="n">aes</span><span class="p">(</span><span class="s1">&#39;structure_renamed&#39;</span><span class="p">,</span> <span class="s1">&#39;k_val&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;ES_mean&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;ES_mean&#39;</span><span class="p">))</span> <span class="o">+</span>
+<span class="n">p9</span><span class="o">.</span><span class="n">facet_wrap</span><span class="p">(</span><span class="s2">&quot;specie_str&quot;</span><span class="p">)</span> <span class="o">+</span> 
+<span class="n">theme</span><span class="p">(</span><span class="n">axis_text_x</span><span class="o">=</span><span class="n">element_text</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">hjust</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/home/julien/anaconda3/lib/python3.7/site-packages/plotnine/scales/scale.py:93: MatplotlibDeprecationWarning: 
+The iterable function was deprecated in Matplotlib 3.1 and will be removed in 3.3. Use np.iterable instead.
+  if cbook.iterable(self.breaks) and cbook.iterable(self.labels):
+/home/julien/anaconda3/lib/python3.7/site-packages/mizani/bounds.py:352: RuntimeWarning: invalid value encountered in less
+  outside = (x &lt; range[0]) | (x &gt; range[1])
+/home/julien/anaconda3/lib/python3.7/site-packages/mizani/bounds.py:352: RuntimeWarning: invalid value encountered in greater
+  outside = (x &lt; range[0]) | (x &gt; range[1])
+/home/julien/anaconda3/lib/python3.7/site-packages/plotnine/layer.py:449: UserWarning: geom_point : Removed 11 rows containing missing values.
+  self.data = self.geom.handle_na(self.data)
+/home/julien/anaconda3/lib/python3.7/site-packages/plotnine/utils.py:553: MatplotlibDeprecationWarning: 
+The iterable function was deprecated in Matplotlib 3.1 and will be removed in 3.3. Use np.iterable instead.
+  return cbook.iterable(var) and not is_string(var)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAqIAAAIPCAYAAACog7zDAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAPYQAAD2EBqD+naQAAADh0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uMy4yLjEsIGh0dHA6Ly9tYXRwbG90bGliLm9yZy+j8jraAAAgAElEQVR4nOzde3yO9f8H8Nd937tns/Nms6mG1ByXOVsJYUq+hBihEpli5ZQo+VIaKZXKKvFDUfGdU47xdWikgwpfh2iFjbAYOx/vw/X7Y3bbfT7sPl+v5+Nxxa7rfV3Xe9Pm5XNd1+eSCIIggIiIiIjIyaSuboCIiIiIxIlBlIiIiIhcgkGUiIiIiFyCQZSIiIiIXIJBlIiIiIhcgkGUiIiIiFyCQZSIiIiIXIJBlIiIiIhcwsfVDThSVlaWq1sgIjuJi4szuo3f60TexdT3O3kXjogSERERkUswiBIRERGRSzCIEhEREZFLMIgSERERkUswiBIRkUc6fvw4hgwZ4uo2iKgOGESJiMgtqdVqCILg6jaIyIG8evomck8jRozAoEGDsH//fly6dAmdOnXCjBkz8NFHH+Hw4cNo2LAh5syZg6ZNm+LSpUv44IMP8McffyA0NBQjRoxA//79AQCrV6/GxYsX8e9//xsAUFVVhYcffhhff/01oqOjceTIEXz66afIzc2Fn58f+vbti+eeew4AcPbsWXzyySc4f/48wsPDMW7cOHTv3t1lXxMiqjZixAg89thjOHDgALKzszFt2jSsW7cO165dQ2hoKIYNG4bBgwejpKQEM2fOhEKhQL9+/QAAn376KRo3buziz4CIrMERUXKJ/fv3Iy0tDevWrcOFCxcwceJE9OnTB1u3bkVCQgI+/vhjKJVKvPrqq2jVqhU2bdqE1157DZ999hl+++03i86xaNEijBgxAjt37sSXX36pCZo3btzAzJkzMWzYMGzZsgUzZ87E4sWLkZOT48hPmYgstGfPHsybNw87d+5EUFAQ0tLSsGPHDsyaNQvLli3D2bNnERgYiEWLFiE0NBS7du3Crl27GEKJPBCDKLnEkCFDEBkZiZCQEHTq1AkxMTHo3LkzZDIZevXqhaysLJw5cwbFxcV4+umnIZfL0bx5c/Tv3x+7d++26BxyuRyXL19GYWEh/P390apVKwDVf8m1b98e3bp1g0wmQ6tWrdCtWzd89913DvyMichSgwcPRqNGjeDj44MHHngAd9xxByQSCe677z506tQJJ06ccHWLRGQnvDRPLhEeHq75vZ+fn97H5eXluH79OiIjIyGTyTTboqOjcfbsWYvO8cYbb2Dt2rUYPXo07rjjDjz99NNITExEbm4uDh8+jH/961+aWpVKhb59+9rhMyOiumrYsKHm9z///DM+//xz/P3331Cr1aisrERsbKwLuyMie2IQJbcVGRmJ69evQ6VSacJobm4uGjRoAADw9/dHZWWlpv7mzZta+8fFxeGNN96ASqXCgQMHMHfuXHzzzTdo2LAhevXqhVmzZjnvkyEii0kkEgDV933PnTsXL7/8Mrp37w4fHx/MmTOHDzAReRFemie31bJlSwQGBmLNmjVQKBTIysrCzp07kZSUBAC45557cOLECVy5cgXl5eX4/PPPNfsqFArs2bMHxcXFkMlkCAwMhEQigUwmQ1JSEo4cOYIffvgBKpUKCoUCv//+O+8RJXIzSqUSCoUCISEhkMlk+OWXX/Drr79qtoeHh6OkpATFxcUu7JKI6oIjouS2fHx8sGDBAixZsgQbNmxAaGgoxo0bh06dOgEAOnTogL59+2LChAkIDAzE2LFj8e2332r237dvH5YuXQqlUono6GjMnTsXvr6+iIyMxMKFC7Fs2TIsWrQIANCsWTNMnDjRJZ8nERlWv359pKamIi0tDVVVVbj//vuRmJio2R4bG4s+ffpg9OjRUKlUSE9P5wNLRB5GInjxNY6srCxXt0BEdhIXF2d0G7/XibyLqe938i68NE9ERERELsEgSkREREQuwSBKRERERC7BIEpERERELsEgSkREREQu4dXTN9V+W0+NmzdvYs+ePejbt6/B7axlrbNr3aUPT6utzVhtQUEB9u3bh969eyM0NNTkMVjLWta6Zy15N6+evikvL09vnUwmQ1hYGPLz86FSqUzuz1rWOqPWXfpw99qaN2oZYuh73VV9spa1rK17ranvd/IuvDRPRERERC7BIEpERERELsEgSkREREQuwSBKRERERC7BIEpERERELsEgSkREREQuwSBKRERERC7h1RPaExGRZVJOL0GhukxrXUL9Znil2XAXdUREYsAgSkQkYk+cXAg1DL/X5HjZOQw/uQCRsmAsbZXq5M6ISAx4aZ6ISKSGn1xgNITWdl1VhCdPvu2EjohIbBhEiYhEaMTJBVbVV0GJqWc/dVA3RCRWDKJERCJkfhxU3xXFTbv3QUTixiBKRCQyI0++ZfO+6y4fsGMnRCR2DKJERCKjgtrmfTff/NGOnRCR2DGIEhEREZFLMIgSERERkUswiBIRERGRSzCIEhGJjKwOP/r/FdbZjp0QkdgxiBIRicynjSfavO+Td/axYydEJHYMokREIhMcHGzTftE+YXbuhIjEjkGUiEiE1se/alW9D6T4oOXzDuqGiMSKQZSISKTWx78KKSRm68JlgfgyfpYTOiIisfFxdQNEROQ6X8e/AgB45tR7KBMqtLbF1bsD8+OedkVbRCQSDKJERIRVbaYBAGQyGcLCwpCfnw+VSuXirojI2/HSPBERERG5BIMoEREREbkEgygRERERuQSDKBERERG5BIMoEREREbkEgygRERERuQSDKBERERG5BIMoEREREbkEgygRERERuQSDKBERERG5BIMoEREREbkEgygRERERuQSDKBERERG5BIMoERERidq8efMgkUgMLm+99RYA4MaNG5g6dSruvfde+Pn5ISoqCt26dcOSJUtc3L1n83F1A0RERESu5u/vj/379+utj42NhVKpRK9evVBQUIBXXnkFLVq0QG5uLg4fPoxt27ZhypQpLujYOzCIEhERkehJpVJ07drV4La9e/fixIkTyMzMRPfu3TXrR4wYAbVa7awWvRIvzRMRERGZkJ+fDwCIiYnR2yaVWh6lxowZgzZt2mDv3r2477774O/vjx49eiA7Oxs3b95EcnIygoOD0axZM6xfv15v/x07dqBLly7w9/dHZGQknn/+eZSWlmq2l5aWIjU1Fc2bN0f9+vXRpEkTPPfccygsLNQ6TpMmTZCamor09HQ0btwYISEhGDRoEK5fv27x52IvDKJEREREAJRKpd4CAAkJCZBKpXj22Wexf/9+VFZW2nyO3NxcTJ8+HbNnz8aXX36Jc+fOYdSoURg+fDji4+OxceNGdOjQAaNHj0ZOTo5mvw0bNmDgwIGIj4/H5s2b8fbbb2PTpk0YN26cpqasrAwqlQppaWnYtWsX3nzzTWRmZmLQoEF6fWzduhVbt25Feno6PvjgA2RmZuKFF16w+fOyFS/NExERkeiVlpZCLpfrrT906BC6deuG9957Dy+//DJ69+4NuVyOLl26IDk5Gc8//zx8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
+"
+>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[39]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;ggplot: (8754481162689)&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Thats's about it! In this notebook, I tried to summarize some equations and practices one might use when running meta-analysis. This work was my own doing, and I do not ensure that all mathemathical implementations are 100% correct, although I reference the papers from which the equations were taken from whenever I can. <br><br></p>
+<p>I hope you enjoyed it, and do not hesitate in contacting me if you have questions, commentaries, or spot an issue or some room for improvement!</p>
+<p>Cheers!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+ 
+
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+
+
+        
+    </div>
+        <!-- /Content --> 
+
+        <!-- Footer -->
+        <div class="footer gradient-2">
+            <div class="container footer-container ">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title">Shortcuts</div>
+                        <ul class="list-unstyled">
+                            <li><a href="/archives.html">Archives</a></li>
+                            <li><a href="/tags.html">Tags</a></li>
+                            <li><a href="/authors.html">Authors</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title">Social</div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://www.linkedin.com/in/julien-hernandez-lallement-b47347b7/" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://www.xing.com/profile/Julien_HernandezLallement/cv" target="_blank">Xing</a></li>
+                            <li><a href="https://www.researchgate.net/profile/Julen_Hernandez_Lallement" target="_blank">ResearchGate</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title">Links</div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://github.com/juls-dotcom" target="_blank">GitHub</a></li>
+                            <li><a href="https://scholar.google.com/citations?user=ppDsLgIAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a></li>
+                        </ul>
+                    </div> 
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <p class="pull-right text-right">
+                            <small><em>Proudly powered by <a href="http://docs.getpelican.com/" target="_blank">pelican</a></em></small><br/>
+                            <small><em>Theme and code by <a href="https://github.com/molivier" target="_blank">molivier</a></em></small><br/>
+                            <small>&copy; juls-dotcom 2020</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Footer -->
+    </body>
+</html>

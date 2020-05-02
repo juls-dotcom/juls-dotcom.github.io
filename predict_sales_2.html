@@ -59,7 +59,7 @@
               <div class="col-lg-12">
                   <div class="header-content">
                       <h1 class="header-title">An Approach to Computing Predicted Purchase - Part 2</h1>
-                      <p class="header-date">By <a href="/author/julien-hernandez-lallement.html">Julien Hernandez Lallement</a>, dim. 12 avril 2020, in category <a href="/category/tutorial.html">Tutorial</a></p>
+                      <p class="header-date">By <a href="/author/julien-hernandez-lallement.html">Julien Hernandez Lallement</a>, dim. 12 avril 2020, in category <a href="/category/marketing.html">Marketing</a></p>
                       <div class="header-underline"></div>
                       <div class="clearfix"></div>
                       <p class="pull-right header-tags">
@@ -748,8 +748,7 @@ HPD = Highest posterior density (region of confidence level α is a (1−α)-con
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a id="model_check"></a></p>
-<h2 id="Model-Check">Model Check<a class="anchor-link" href="#Model-Check">&#182;</a></h2><p>Here we demonstrate usage of out-of-sample diagnostics to evaluate model performance. In addition, we recommend you evaluate the model based on your own domain experience and any existing models or managerial heuristics you currently employ to measure lifetime value.</p>
-<h3 id="Out-of-sample-Evaluation">Out-of-sample Evaluation<a class="anchor-link" href="#Out-of-sample-Evaluation">&#182;</a></h3><p>Lifetimes implements a utility function for summarizing the purchase frequency and time window for an out-of-sample period, typically called the <code>holdout</code> period in the literature. In the case of the CDNOW dataset, the holdout period comprises 39 weeks immediately following the end of the calibration period.</p>
+<h2 id="Model-Check">Model Check<a class="anchor-link" href="#Model-Check">&#182;</a></h2><h3 id="Out-of-sample-Evaluation">Out-of-sample Evaluation<a class="anchor-link" href="#Out-of-sample-Evaluation">&#182;</a></h3><p>As seen in Post I, Lifetimes proposes a few utility function that splits the dataset to obtain an out-of-sample set somteimes referred to as the <code>holdout</code> period. Think train/test split SKlearn.</p>
 
 </div>
 </div>
@@ -892,7 +891,8 @@ HPD = Highest posterior density (region of confidence level α is a (1−α)-con
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To generate predictions for a user, we take the full posterior distribution of the individual <code>lambda</code> and <code>mu</code> parameters from the model trace and input them into the <code>predict</code> function previously defined. The value of <code>t</code> is 39, we have 39 weeks of data following the end of the calibration period. The function returns one prediction for each draw in the Markov chain (2000 in this example) and represents the posterior predictive distribution of future purchases.</p>
+<p>To generate predictions for a given customer, we can use the posterior distribution of the individual <code>lambda</code> and <code>mu</code> parameters from the model trace, and input them into the <code>predict</code> function previously defined. <br>
+<code>t</code> would be equal to the time window corresponding to the holdout period, here 39 weeks. The function returns one prediction for each draw in the x4 Markov chain (2000 in this example) and represents the posterior predictive distribution of future purchases.</p>
 <h3 id="Generating-Predictions-for-a-Single-Customer">Generating Predictions for a Single Customer<a class="anchor-link" href="#Generating-Predictions-for-a-Single-Customer">&#182;</a></h3><p>Let's select the 150th user in the dataset and step through the results of model prediction. This customer made two purchases in the calibration period and three purchases in the holdout period.</p>
 
 </div>
