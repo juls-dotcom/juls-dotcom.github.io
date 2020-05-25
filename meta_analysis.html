@@ -4,20 +4,22 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Meta-Analysis: Quick Introduction and Python Pipeline¶ Brief background¶In research, we typically publish our results in the form of articles, where findings are reported together with statistical...">
+        <meta name="description" content="Meta-Analysis: Quick Introduction and Python Pipeline¶ Table of Content¶Background¶Methods¶Dataset¶Data Transformation¶ Background: In research, we typically publish our results in the form of...">
         <meta name="keywords" content="meta-analysis, neuroscience, python">
-        <link rel="icon" href="/favicon.ico">
+        <link rel="icon" href="https://juls-dotcom.github.io/favicon.ico">
         <!-- Canonical -->
-        <link rel="canonical" href="/meta_analysis.html">
+        <link rel="canonical" href="https://juls-dotcom.github.io/meta_analysis.html">
         <!-- /Canonical -->
 
         <title>Meta-Analysis: Quick Introduction and Python Pipeline - Juls-dotcom</title>
 
         <!-- Stylesheets -->
-        <link href="/theme/css/all.min.css" rel="stylesheet">
+        <link href="https://juls-dotcom.github.io/theme/css/all.min.css" rel="stylesheet">
         <!-- /Stylesheets -->
 
         <!-- RSS Feeds -->
+        <link href="https://juls-dotcom.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Juls-dotcom Full Atom Feed" />
+        <link href="https://juls-dotcom.github.io/feeds/tutorial.atom.xml" type="application/atom+xml" rel="alternate" title="Juls-dotcom Categories Atom Feed" />
         <!-- /RSS Feeds -->
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -33,20 +35,20 @@
     <body>
 
         <!-- Header -->
-    <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/meta_analysis_header.jpg'); background-position: center; background-size: cover;">
+    <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://juls-dotcom.github.io/images/2020_04_meta_analysis_header.jpg'); background-position: center; background-size: cover;">
 
             <!-- Static navbar -->
             <div class="container">
                 <div class="header-nav">
                     <div class="header-logo">
-                      <!--  <a class="pull-left" href="/"><img class="mr20" src="logo.png" alt="logo">Juls-dotcom</a> -->
-                        <a class="pull-left" href="/"><img class="mr20" src="logo.png">Juls-dotcom</a>
+                      <!--  <a class="pull-left" href="https://juls-dotcom.github.io/"><img class="mr20" src="https://juls-dotcom.github.iologo.png" alt="logo">Juls-dotcom</a> -->
+                        <a class="pull-left" href="https://juls-dotcom.github.io/"><img class="mr20" src="https://juls-dotcom.github.iologo.png">Juls-dotcom</a>
                     </div>
                     <div class="nav pull-right">
-                                <a href="/">Home</a>
-                            <a  href="/pages/publications.html">Publications</a>
-                            <a  href="/pages/talks.html">Talks</a>
-                            <a  href="/pages/whois.html">Whois</a>
+                                <a href="https://juls-dotcom.github.io/">Home</a>
+                            <a  href="https://juls-dotcom.github.io/pages/publications.html">Publications</a>
+                            <a  href="https://juls-dotcom.github.io/pages/talks.html">Talks</a>
+                            <a  href="https://juls-dotcom.github.io/pages/whois.html">Whois</a>
                     </div>
                 </div>
             </div>
@@ -59,12 +61,12 @@
               <div class="col-lg-12">
                   <div class="header-content">
                       <h1 class="header-title">Meta-Analysis: Quick Introduction and Python Pipeline</h1>
-                      <p class="header-date">By <a href="/author/julien-hernandez-lallement.html">Julien Hernandez Lallement</a>, lun. 20 avril 2020, in category <a href="/category/neuroscience.html">Neuroscience</a></p>
+                      <p class="header-date">By <a href="https://juls-dotcom.github.io/author/julien-hernandez-lallement.html">Julien Hernandez Lallement</a>, lun. 20 avril 2020, in category <a href="https://juls-dotcom.github.io/category/tutorial.html">Tutorial</a></p>
                       <div class="header-underline"></div>
                       <div class="clearfix"></div>
                       <p class="pull-right header-tags">
                           <span class="glyphicon glyphicon-tags mr5" aria-hidden="true"></span>
-<a href="/tag/meta-analysis.html">meta-analysis</a>, <a href="/tag/neuroscience.html">neuroscience</a>, <a href="/tag/python.html">python</a>                      </p>
+<a href="https://juls-dotcom.github.io/tag/meta-analysis.html">meta-analysis</a>, <a href="https://juls-dotcom.github.io/tag/neuroscience.html">neuroscience</a>, <a href="https://juls-dotcom.github.io/tag/python.html">python</a>                      </p>
                   </div>
               </div>
         </div>
@@ -88,10 +90,19 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Brief-background">Brief background<a class="anchor-link" href="#Brief-background">&#182;</a></h4><p>In research, we typically publish our results in the form of articles, where findings are reported together with statistical analysis, that provide a way to assess the strength and plausibility of observed effects. <br></p>
+<h2 id="Table-of-Content">Table of Content<a class="anchor-link" href="#Table-of-Content">&#182;</a></h2><h3 id="Background"><a href="#background">Background</a><a class="anchor-link" href="#Background">&#182;</a></h3><h3 id="Methods"><a href="#methods">Methods</a><a class="anchor-link" href="#Methods">&#182;</a></h3><h3 id="Dataset"><a href="#dataset">Dataset</a><a class="anchor-link" href="#Dataset">&#182;</a></h3><h3 id="Data-Transformation"><a href="#data_transformation">Data Transformation</a><a class="anchor-link" href="#Data-Transformation">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a id="background"></a></p>
+<h3><strong>Background:</strong> <br></h3>
+<p>In research, we typically publish our results in the form of articles, where findings are reported together with statistical analysis, that provide a way to assess the strength and plausibility of observed effects. <br></p>
 <p>While statistical analysis is critical to any research paper, concluding on one single study might not be the best approach. <br><br>
-For instance, one might have a too small sample, while still drawing conclusions on results. Small samples limit your ability (in statistical terms, you are lacking power) to have meaningful conclusions about the effects you are observing. Normally (unfortunately, not typically), one should run a priori power analysis using pre collected data. That is: "from what we know about the process we want to investigate, what effect size would we expect?". Using historical data helps you making an informed guess about the expected outcome, which in turns allows you to calcule the required sample size. The math behing this is not too complicated, but I won't be going in detail here. Some open source software like <a href="https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitspsychologie/gpower.html">G-Power</a> allow you to make that kind of computation. <br><br> Alternatively, you might be looking at a very particular set of data, mostly created by outliers (normally, that would be ruled you with large enough statistical power), so your observed truth would not be the truth of the overall population from which you believe your sample to be taken. <br><br>
-Of course, you might as well be doing something wrong with your statistics. I myself remember running ANOVAs, non parametric tests and correlations that required some set of assumptions to be fullfiled, without having checked these assumptions before hand. This is, I think, a problem of how researchers are (or at least how <strong>I</strong> was) taught to use statistics... but that's for another post! <br></p>
+For instance, one might have a too small sample, while still drawing conclusions on results. Small samples limit your ability (in statistical terms, you are lacking power) to have meaningful conclusions about the effects you are observing. Normally (unfortunately, not typically), one runs a priori power analysis using pre collected data. That is: "<em>from what we know about the process we want to investigate, what effect size would we expect?</em>". Using historical data helps you making an informed guess about the expected outcome, which in turns allows you to calculate the required sample size. The math behind this is not too complicated, but I won't be going in detail here. Some open source software like <a href="https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitsps*ychologie/gpower.html">G-Power</a> allow you to make that kind of computation. <br><br> Alternatively, you might be looking at a very particular set of data, mostly created by outliers (normally, that would be ruled you with large enough statistical power), so your observed truth would not be the truth of the overall population from which you believe your sample to be taken. <br><br>
+Alternatively, you might as well be doing something wrong with your statistics. I myself remember running ANOVAs, non parametric tests and correlations that required some set of assumptions to be fullfiled, without having checked these assumptions before hand. This is, I think, a problem of how researchers are (or at least how <strong>I</strong> was) taught to use statistics... but that's for another post! <br></p>
 
 </div>
 </div>
@@ -117,19 +128,8 @@ Of course, you might as well be doing something wrong with your statistics. I my
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Methods">Methods<a class="anchor-link" href="#Methods">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Data typically takes the shape of distributions, which have some parameters, like a mean and a standard deviation. You can do all of stuff on these distributions, like comparing them to some value (one sample testing, t-test or Wilcoxon, if parametric assumptions are met ;) ) or compare them to some other distribution (paired testing, t-test or Mann-Whitney), among other things. <br><br>
-That's very useful, because you can tell whether these distributions are <strong>significantly</strong> different from one another (although this frequentists approach as some downsides as well, but that's for another post on Bayesian statistics).</p>
-<p>Statistical significance is the probability that the observed difference between two distributions is due to chance. If the <em>p</em>-value is larger than a threshold arbitrarily chosen (i.e., alpha level, typically equal to 0.05), it is assumed that observed differences can be explained by random noise in the data. <br><br>
-Problem is, with a sufficiently large sample, statistical tests will very often find a significant difference, sometimes for even lower alpha levels. These small differences that emerge as significant are often useless for research results, and no meaningful conclusion can be drawned from them. The fact that <em>p</em>-values are dependent not onlyz on effect sizes, but also on <em>sample</em> size makes it crutial to report other measures. This is why authors working with statistical comparisons should not only report <em>p</em>-values, but also differences in magnitude between the distributions. In the words of <a href="https://www.semanticscholar.org/paper/Things-I-have-learned-(so-far">Jacob Cohen</a>.-Cohen/64b9025b84a6a257f3bbc1161868884589d9ca14), "<em>Statistical significance is the least interesting thing about the results. You should describe the results in terms of measures of magnitude –not just, does a treatment affect people, but how much does it affect them.</em>".</p>
-<p>A commonly cited example illustrating this problem is a Physicians Health Study, that investigated whether aspirin could help preventing myocardial infarction (MI). The researchers tested around 22.000 subjects, and found that aspirin was associated with a reduction in myocardial infarction, with a significance level &lt; .00001. In other words, very very significant (the kind of value that makes PhD students' head drool...). The study was terminated early than scheduled due to the conclusive findings, resulting in a recommendation of aspirin to treat this problem. Problem was, the effect size was very small (r2 = 0.001), suggesting that actual between group differences were very small and negligeable. The recommendation to use aspirin has since been changed, but for quite some time, this study fueled a treatment that was not very suited to the problem. All due to a focus on <em>p</em>-value...</p>
-<p>Conclusion "<em>The primary product of a research inquiry is one or more measures of effect size, not P values.</em>". <a href="https://scholar.google.com/scholar_lookup?title=Beyond+Significance+Testing:+Reforming+Data+Analysis+Methods+in+Behavioral+Research&amp;author=RB+Kline&amp;publication_year=2004&amp;">Gene V. Glass</a></p>
+<p><a id="methods"></a></p>
+<h3><strong>Methods:</strong> <br></h3>
 
 </div>
 </div>
@@ -137,7 +137,13 @@ Problem is, with a sufficiently large sample, statistical tests will very often 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Effect-sizes:-what-are-they?">Effect sizes: what are they?<a class="anchor-link" href="#Effect-sizes:-what-are-they?">&#182;</a></h2>
+<p>Data typically takes the shape of distributions, which have some parameters, like a mean and a standard deviation. You can do all of stuff on these distributions, like comparing them to some value (one sample testing, t-test or Wilcoxon, if parametric assumptions are met ;) ) or compare them to some other distribution (paired testing, t-test or Mann-Whitney), among other things. <br><br>
+That's very useful, because you can tell whether these distributions are <strong>significantly</strong> different from one another (although this frequentist approach as some downsides as well, but that's for another post on Bayesian statistics).</p>
+<p>Statistical significance is the probability that the observed difference between two distributions is due to chance. If the <em>p</em>-value is larger than a threshold arbitrarily chosen (i.e., alpha level, typically equal to 0.05), it is assumed that observed differences can be explained by random noise in the data. <br><br>
+Problem is, with a sufficiently large sample, statistical tests will very often find a significant difference, sometimes for even lower alpha levels. These small differences that emerge as significant are often useless for research results, and no meaningful conclusion can be drawned from them. The fact that <em>p</em>-values are dependent not only on effect sizes, but also on <em>sample</em> size makes it crutial to report other measures. This is why authors working with statistical comparisons should not only report <em>p</em>-values, but also differences in magnitude between the distributions. In the words of <a href="https://pdfs.semanticscholar.org/fa77/0a7fb7c45a59abbc4c2bc7d174fa51e5d946.pdf">Jacob Cohen</a>, "<em>Statistical significance is the least interesting thing about the results. You should describe the results in terms of measures of magnitude –not just, does a treatment affect people, but how much does it affect them.</em>".</p>
+<p>A commonly cited example illustrating this problem is a Physicians Health Study, that investigated whether aspirin could help preventing myocardial infarction (MI). The researchers tested around 22.000 subjects, and found that aspirin was associated with a reduction in myocardial infarction, with a significance level &lt; .00001. In other words, very very significant (the kind of value that makes PhD students' head drool...). The study was terminated early than scheduled due to the conclusive findings, resulting in a recommendation of aspirin to treat this problem. Problem was, the effect size was very small (r2 = 0.001), suggesting that actual between group differences were very small and negligeable. The recommendation to use aspirin has since been changed, but for quite some time, this study fueled a treatment that was not very suited to the problem. All due to a focus on <em>p</em>-value...</p>
+<p>Conclusion "<em>The primary product of a research inquiry is one or more measures of effect size, not P values.</em>". <a href="https://scholar.google.com/scholar_lookup?title=Beyond+Significance+Testing:+Reforming+Data+Analysis+Methods+in+Behavioral+Research&amp;author=RB+Kline&amp;publication_year=2004&amp;">Gene V. Glass</a></p>
+
 </div>
 </div>
 </div>
@@ -151,7 +157,7 @@ Problem is, with a sufficiently large sample, statistical tests will very often 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Effect sizes (<code>ES</code>) are a way to boil down the strenght of an observed effect. Typicall, you data will take the shape of distributions, that have parameters such as the mean and the standard deviation (I assume the readers know about these concepts). Since the data I use in this post was based on these parameters, I describe below the analysis pipeline for data preparation.</p>
+<p>Effect sizes (<code>ES</code>) are a way to boil down the strenght of an observed effect. Typicall, your data will take the shape of distributions, that have parameters such as the mean and the standard deviation (I assume the readers know about these concepts). Since the data I use in this post was based on these parameters, I describe below the analysis pipeline for data preparation.</p>
 
 </div>
 </div>
@@ -503,7 +509,9 @@ Problem is, with a sufficiently large sample, statistical tests will very often 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Dataset">Dataset<a class="anchor-link" href="#Dataset">&#182;</a></h3>
+<p><a id="dataset"></a></p>
+<h3><strong>Dataset:</strong> <br></h3>
+
 </div>
 </div>
 </div>
@@ -662,8 +670,14 @@ I will hard code the specie from which the data was collected, which will be our
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Select data of interest</span>
-<span class="n">DOI</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;study id&#39;</span><span class="p">,</span><span class="s1">&#39;specie &#39;</span><span class="p">,</span> <span class="s1">&#39;specie_str&#39;</span><span class="p">,</span> <span class="s1">&#39;structure / tissue&#39;</span><span class="p">,</span> <span class="s1">&#39;structure_renamed&#39;</span><span class="p">,</span>  
-                             <span class="s1">&#39;standardized es&#39;</span><span class="p">,</span>    <span class="s1">&#39;standardized es se&#39;</span><span class="p">,</span> <span class="s1">&#39;weight factor&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">]]</span>
+<span class="n">DOI</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;study id&#39;</span><span class="p">,</span><span class="s1">&#39;specie &#39;</span><span class="p">,</span> 
+          <span class="s1">&#39;specie_str&#39;</span><span class="p">,</span> 
+          <span class="s1">&#39;structure / tissue&#39;</span><span class="p">,</span> 
+          <span class="s1">&#39;structure_renamed&#39;</span><span class="p">,</span>              
+          <span class="s1">&#39;standardized es&#39;</span><span class="p">,</span>    
+          <span class="s1">&#39;standardized es se&#39;</span><span class="p">,</span> 
+          <span class="s1">&#39;weight factor&#39;</span><span class="p">,</span> 
+          <span class="s1">&#39;n&#39;</span><span class="p">]]</span>
 </pre></div>
 
     </div>
@@ -1436,7 +1450,9 @@ Name: study id, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Data-transformation">Data transformation<a class="anchor-link" href="#Data-transformation">&#182;</a></h2>
+<p><a id="data_transformation"></a></p>
+<h3><strong>Data Transformation:</strong> <br></h3>
+
 </div>
 </div>
 </div>
@@ -1458,10 +1474,14 @@ Name: study id, dtype: int64</pre>
 <span class="k">def</span> <span class="nf">compute_meta_data</span><span class="p">(</span><span class="n">dataf</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">dataf</span>
             <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">vi_SE2</span>           <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="mi">1</span><span class="o">/</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;weight factor&#39;</span><span class="p">])</span> <span class="c1"># Equation 15</span>
-            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">standardized_ESU</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="n">d</span><span class="p">[</span><span class="s1">&#39;standardized es&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;n&#39;</span><span class="p">])</span><span class="o">-</span><span class="mi">9</span><span class="p">))))</span> <span class="c1"># Equation 9</span>
-            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">wES</span>              <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="n">d</span><span class="p">[</span><span class="s1">&#39;standardized es&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;weight factor&#39;</span><span class="p">])</span>
-            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">wES2</span>             <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="n">d</span><span class="p">[</span><span class="s1">&#39;weight factor&#39;</span><span class="p">]</span>   <span class="o">*</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;standardized es&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;standardized es&#39;</span><span class="p">])</span> 
-            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">w2</span>               <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="n">d</span><span class="p">[</span><span class="s1">&#39;weight factor&#39;</span><span class="p">]</span>   <span class="o">*</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;weight factor&#39;</span><span class="p">]))</span>
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">standardized_ESU</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="n">d</span><span class="p">[</span><span class="s1">&#39;standardized es&#39;</span><span class="p">]</span> 
+                    <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;n&#39;</span><span class="p">])</span><span class="o">-</span><span class="mi">9</span><span class="p">))))</span> <span class="c1"># Equation 9</span>
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">wES</span>              <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="n">d</span><span class="p">[</span><span class="s1">&#39;standardized es&#39;</span><span class="p">]</span> 
+                    <span class="o">*</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;weight factor&#39;</span><span class="p">])</span>
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">wES2</span>             <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="n">d</span><span class="p">[</span><span class="s1">&#39;weight factor&#39;</span><span class="p">]</span>   
+                    <span class="o">*</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;standardized es&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;standardized es&#39;</span><span class="p">])</span> 
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">w2</span>               <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="n">d</span><span class="p">[</span><span class="s1">&#39;weight factor&#39;</span><span class="p">]</span>   
+                    <span class="o">*</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;weight factor&#39;</span><span class="p">]))</span>
 </pre></div>
 
     </div>
@@ -1501,8 +1521,8 @@ Name: study id, dtype: int64</pre>
 <span class="k">def</span> <span class="nf">compute_random_variance</span><span class="p">(</span><span class="n">dataf</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">dataf</span>
             <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">Q</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="nb">abs</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;wxES2&#39;</span><span class="p">]</span><span class="o">-</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;wxES&#39;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;sum_wi&#39;</span><span class="p">])))</span> 
-            <span class="c1"># For struture with only 1 effect size, the denominator of v0 will automatically</span>
-            <span class="c1"># be equal to 0. hence v0 will not be computed.</span>
+            <span class="c1"># For struture with only 1 effect size, the denominator of v0 will </span>
+            <span class="c1"># automatically be equal to 0. hence v0 will not be computed.</span>
             <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">v0</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span>  <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;Q&#39;</span><span class="p">]</span><span class="o">-</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;sum_wi&#39;</span><span class="p">]</span><span class="o">-</span>
                                                         <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;sum_wi2&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;sum_wi&#39;</span><span class="p">])))</span>
            <span class="p">)</span>
@@ -1846,9 +1866,20 @@ By convention, Q = 0 if Q &lt; k-1, so that the precision of a random effects su
 <span class="c1">#.groupby([&#39;specie_str&#39;, &#39;structure_renamed&#39;])</span>
 <span class="c1">#.head(20)</span>
 <span class="p">)</span>
-<span class="n">to_plot</span> <span class="o">=</span> <span class="n">to_plot</span><span class="p">[[</span><span class="s1">&#39;specie_str&#39;</span><span class="p">,</span> <span class="s1">&#39;structure_renamed&#39;</span><span class="p">,</span><span class="s1">&#39;ES_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;low_CI&#39;</span><span class="p">,</span><span class="s1">&#39;high_CI&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;I_val&#39;</span><span class="p">,</span> <span class="s1">&#39;k_val&#39;</span><span class="p">]]</span>
+<span class="n">to_plot</span> <span class="o">=</span> <span class="n">to_plot</span><span class="p">[[</span><span class="s1">&#39;specie_str&#39;</span><span class="p">,</span> 
+                   <span class="s1">&#39;structure_renamed&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;ES_mean&#39;</span><span class="p">,</span> 
+                   <span class="s1">&#39;low_CI&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;high_CI&#39;</span><span class="p">,</span> 
+                   <span class="s1">&#39;z&#39;</span><span class="p">,</span> 
+                   <span class="s1">&#39;I_val&#39;</span><span class="p">,</span> 
+                   <span class="s1">&#39;k_val&#39;</span><span class="p">]]</span>
 <span class="c1"># Visualize higher effect sizes per species</span>
-<span class="n">to_plot</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;specie_str&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;ES_mean&quot;</span><span class="p">],</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">))</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="p">(</span><span class="n">to_plot</span>
+<span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;specie_str&quot;</span><span class="p">])</span>
+<span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;ES_mean&quot;</span><span class="p">],</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">))</span>
+<span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="p">)</span>
 </pre></div>
 
     </div>
@@ -2259,7 +2290,13 @@ By convention, Q = 0 if Q &lt; k-1, so that the precision of a random effects su
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Plot the effect sizes for each structure, separately for each specie</span>
 <span class="p">(</span><span class="n">p9</span><span class="o">.</span><span class="n">ggplot</span><span class="p">()</span> <span class="o">+</span>
-<span class="n">p9</span><span class="o">.</span><span class="n">geom_point</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">cfos_ana</span><span class="p">,</span> <span class="n">mapping</span> <span class="o">=</span> <span class="n">p9</span><span class="o">.</span><span class="n">aes</span><span class="p">(</span><span class="s1">&#39;structure_renamed&#39;</span><span class="p">,</span> <span class="s1">&#39;k_val&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;ES_mean&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;ES_mean&#39;</span><span class="p">))</span> <span class="o">+</span>
+<span class="n">p9</span><span class="o">.</span><span class="n">geom_point</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">cfos_ana</span><span class="p">,</span> 
+              <span class="n">mapping</span> <span class="o">=</span> <span class="n">p9</span><span class="o">.</span><span class="n">aes</span><span class="p">(</span><span class="s1">&#39;structure_renamed&#39;</span><span class="p">,</span> 
+                               <span class="s1">&#39;k_val&#39;</span><span class="p">,</span> 
+                               <span class="n">color</span><span class="o">=</span><span class="s1">&#39;ES_mean&#39;</span><span class="p">,</span> 
+                               <span class="n">size</span><span class="o">=</span><span class="s1">&#39;ES_mean&#39;</span>
+                              <span class="p">)</span>
+             <span class="p">)</span> <span class="o">+</span>
 <span class="n">p9</span><span class="o">.</span><span class="n">facet_wrap</span><span class="p">(</span><span class="s2">&quot;specie_str&quot;</span><span class="p">)</span> <span class="o">+</span> 
 <span class="n">theme</span><span class="p">(</span><span class="n">axis_text_x</span><span class="o">=</span><span class="n">element_text</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">hjust</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 <span class="p">)</span>
@@ -2332,23 +2369,12 @@ The iterable function was deprecated in Matplotlib 3.1 and will be removed in 3.
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Thats's about it! In this notebook, I tried to summarize some equations and practices one might use when running meta-analysis. This work was my own doing, and I do not ensure that all mathemathical implementations are 100% correct, although I reference the papers from which the equations were taken from whenever I can. <br><br></p>
 <p>I hope you enjoyed it, and do not hesitate in contacting me if you have questions, commentaries, or spot an issue or some room for improvement!</p>
+<p>The functions described in this post can be found in the following repo:
+<a href="https://github.com/juls-dotcom/meta_analysis">https://github.com/juls-dotcom/meta_analysis</a></p>
 <p>Cheers!</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div>
  
 
@@ -2395,9 +2421,10 @@ The iterable function was deprecated in Matplotlib 3.1 and will be removed in 3.
                     <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
                         <div class="footer-title">Shortcuts</div>
                         <ul class="list-unstyled">
-                            <li><a href="/archives.html">Archives</a></li>
-                            <li><a href="/tags.html">Tags</a></li>
-                            <li><a href="/authors.html">Authors</a></li>
+                            <li><a href="https://juls-dotcom.github.io/archives.html">Archives</a></li>
+                            <li><a href="https://juls-dotcom.github.io/tags.html">Tags</a></li>
+                            <li><a href="https://juls-dotcom.github.io/authors.html">Authors</a></li>
+                            <li><a href="https://juls-dotcom.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">Atom Feed</a></li>
                         </ul>
                     </div>
                     <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
