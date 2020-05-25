@@ -3,28 +3,118 @@
   <component name="ChangeListManager">
     <list default="true" id="7932ba2c-96d1-41e1-8cf2-ec3b3a0f2f4e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/.ipynb_checkpoints/predicted_purchase_I-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/.ipynb_checkpoints/predicted_purchase_I-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/.ipynb_checkpoints/predicted_purchase_II-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/.ipynb_checkpoints/predicted_purchase_II-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/.ipynb_checkpoints/predicted_purchase_III-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/.ipynb_checkpoints/predicted_purchase_III-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/pages/whois.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/pages/whois.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/predicted_purchase_I.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/predicted_purchase_I.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/meta_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/meta_analysis.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/predicted_purchase_II.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/predicted_purchase_II.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/predicted_purchase_III.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/customer_predicted_purchase_comparison_DeFacto.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/customer_predicted_purchase_comparison_DeFacto.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/generate_campaign_file.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/generate_campaign_file.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/pareto-nbd.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/pareto-nbd.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/predicted_turnover.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/predicted_turnover.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/archives.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/author/julien-hernandez-lallement.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/author/julien-hernandez-lallement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/authors.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/authors.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/category/tutorial.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/category/tutorial.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/predict_sales_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/predict_sales_2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tag/marketing.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/marketing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tag/python.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/python.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tag/sales.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/sales.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tags.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tags.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/archives.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/author/julien-hernandez-lallement.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/authors.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/categories.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/category/tutorial.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/feeds/all.atom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/output/feeds/all.atom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/images/Logo_website_blue.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/images/Logo_website_green.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/images/extra/logo.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/images/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/images/header_sales_prediction.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/images/header_sales_prediction_other.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/images/logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/images/logo_website.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/images/logo_website_old.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/pages/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/pages/publications.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/pages/talks.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/pages/whois.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/predict_sales_1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/predict_sales_2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/predict_sales_3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/predicted_purchase_part_one.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tag/marketing.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tag/python.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tag/sales.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tags.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/css/all.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/css/fonts.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/css/nest.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/css/pygment.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-02a7f5c491cda3d79832291d9f0903a1086ad308.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-0780068aad6429b678dbfc89a831016b16efa340.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-082d935809ff8624c407f5ebfa9f707031f6871d.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-0843ae9e7843eae6a72c5b8f28d4dd6e5106f516.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-101147f1175d6b5ffc2f79f8a3f64a0d7f94e418.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-14a380d9ddfdee7aecf38c241c450bfe813d94e5.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-1771169127bd9e07adbb7c767f2804f20ab73745.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-231fcd661359bf887f4f24566723a0d640c015ad.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-256fc89d0e1b746440955b22d1792532cd9c8b28.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-257209387d9006aad15c25e62a999102d74e2d34.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-30e035a07a13db060570f5382a749e6150963c7d.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-3601b8c8df77687232aa48455f95585cd02a1c20.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-3823779db9f51a34658809ce66bdd6ed1145ed8e.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-38448be4db4d82e2ccf22e2527f6e7831b053b30.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-3a9baf0916be2f57d8dc0edb6ac1d62584613628.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-3cd7287c1f241c0bd6df553af45ef1459dea2a29.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-3d488e790bbea9ba0975ddd77ad8378510caee01.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-42286008c766c2fa87d1b3dfa90d8d9f273e580a.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-4b163b622b3cfc64eacdb3a24f485d58be1bdbae.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-510e65d731654fda529690b06e382db085b612e3.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-5147015c86d27c3dce7724fc177e7543eda86c0d.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-57690d9bdac0b609a7a309afa66d228213b7967a.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-58f09077c668b82398e90f3104c01a9bdf3b3b40.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-5d011e60828f77f264c3305324cd6179e74d59ab.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-5d71d1757bb745b55a9eb47f628062753cb5b58c.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-6058911ac41968c2164c6a3ba59cc884939c2511.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-618b78a8f6ffe7e1998eab67268859e2ab54be8e.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-6430a52dab446fc805d3f5b1221bf9a38e154d3b.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-6aa866c008a8bb532458b049ab255945e286940a.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-6c118f4639d3ee03a0c1cce2a6047ccb5e4b6dac.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-6cd331cfa6a58dd852a22e42276a2dd2e1445ae6.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-797e92ab741300e5bd43f45ae934f2b2a7b137e6.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-808769b38614943b5116b559ac7528386b7cb020.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-829b0eefbb7ba0be775b7d741d0c41978a20a481.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-85e3ce3d35d4e067d1f533d1aab7a8e0ee51a963.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-8ed28b622974c995298647854f054668863021d1.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-92d2e645589fad0f22b789b050928dea5db6bc3b.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-95486a9c61867ecd4b703703ff4343306c16e03b.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-95618ec1cef0a5becd89ad80bff3d140a358b6ad.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-9ead99d8fbb79a1f78c2ed07bc1f1aee1e4866ba.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-9ee51d47218830874fc05f4a0c1970392608ede0.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-a590b0edc76d8942dd06ba85279414d91af85f43.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-a824a9f6a32d64bcd79534ad310703b5ff94d24e.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-aeac2c6d52f83f11761dad079a4b4ce67b1985ed.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-af9bb31cbe924f6f4742cda969cfa46ee92bdb8a.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-b3601a97e762646a1e17e821ac947646a686f38d.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-b606fc8cefcb8c9b9e11cd25c3d04864893a5651.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-bae60a4ef6c2573e304d448d4478294c0ba7778f.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-c2a6cdc1dc4d57eef444571f285fd73ad164fdb1.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-cb44fe2b2923f938486e2c5f7f0fa7a00bbd24d2.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-cc5e3ec30d0402200e3c1905a44ea5d37d543368.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-cc9bc768c595f045f6a31340c763c5e494e0ee0e.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-ccbe7ac33491ce00e73dd57ddfee63f24121bf4b.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-ce6f0578fc94b8e05a1eaf537c2587e938f2a158.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-d0eeac030704f91d16e2201d107d7ee8a2c1dd2a.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-d2f58eb442c4d4f47f2bf2950560a1e56ef02b76.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-d4d19ed3a763ce10e050662542bc0318bb620096.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-e3fd16403f24a08113a25694375f81f33c5a258c.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-e78854b43389426899362d164d53fbf48274b93a.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-e839476c7410d2f694c65d3944604ad28914ca2f.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-e9d0949ee599c94d4f310e35793abe016cb7e86b.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-ebd05b36b3d9ee7ed2cbcee6cdf5796ce05d839c.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-ec2590bc030c185025fbc09afe2f268af6e38985.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-ee96f92c030d0e35d631a16c507a7a269e9594b5.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/fonts/opensans-f06dff19fbba12718cd431381a1dd1202bd13763.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/images/icons/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/theme/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/publishconf.py" beforeDir="false" afterPath="$PROJECT_DIR$/publishconf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/theme/nest/static/css/nest.css" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/static/css/nest.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/theme/nest/templates/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/templates/archives.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/theme/nest/templates/article.html" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/templates/article.html" afterDir="false" />
@@ -45,7 +135,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/theme/nest" />
   </component>
   <component name="ProjectId" id="1aP7ClVJGHA5sE4e6NwzqhiHbef" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -69,5 +159,11 @@
       <updated>1586625249818</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="776" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1588458910254">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="776" y="311" width="424" height="491" key="FileChooserDialogImpl/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1588458910254" />
   </component>
 </project>

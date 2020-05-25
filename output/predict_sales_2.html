@@ -6,18 +6,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="In [4]: import pymc3 as pm import numpy as np import matplotlib.pyplot as plt %matplotlib inline import pandas as pd import lifetimes Predictive Purchase Computation in Python¶Table of...">
         <meta name="keywords" content="marketing, python, sales">
-        <link rel="icon" href="/favicon.ico">
+        <link rel="icon" href="https://juls-dotcom.github.io/favicon.ico">
         <!-- Canonical -->
-        <link rel="canonical" href="/predict_sales_2.html">
+        <link rel="canonical" href="https://juls-dotcom.github.io/predict_sales_2.html">
         <!-- /Canonical -->
 
         <title>An Approach to Computing Predicted Purchase - Part 2 - Juls-dotcom</title>
 
         <!-- Stylesheets -->
-        <link href="/theme/css/all.min.css" rel="stylesheet">
+        <link href="https://juls-dotcom.github.io/theme/css/all.min.css" rel="stylesheet">
         <!-- /Stylesheets -->
 
         <!-- RSS Feeds -->
+        <link href="https://juls-dotcom.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Juls-dotcom Full Atom Feed" />
+        <link href="https://juls-dotcom.github.io/feeds/tutorial.atom.xml" type="application/atom+xml" rel="alternate" title="Juls-dotcom Categories Atom Feed" />
         <!-- /RSS Feeds -->
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -33,20 +35,20 @@
     <body>
 
         <!-- Header -->
-    <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/header_sales_prediction_other.jpg'); background-position: center; background-size: cover;">
+    <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://juls-dotcom.github.io/images/2020_03_predicted_purchase_header.jpg'); background-position: center; background-size: cover;">
 
             <!-- Static navbar -->
             <div class="container">
                 <div class="header-nav">
                     <div class="header-logo">
-                      <!--  <a class="pull-left" href="/"><img class="mr20" src="logo.png" alt="logo">Juls-dotcom</a> -->
-                        <a class="pull-left" href="/"><img class="mr20" src="logo.png">Juls-dotcom</a>
+                      <!--  <a class="pull-left" href="https://juls-dotcom.github.io/"><img class="mr20" src="https://juls-dotcom.github.iologo.png" alt="logo">Juls-dotcom</a> -->
+                        <a class="pull-left" href="https://juls-dotcom.github.io/"><img class="mr20" src="https://juls-dotcom.github.iologo.png">Juls-dotcom</a>
                     </div>
                     <div class="nav pull-right">
-                                <a href="/">Home</a>
-                            <a  href="/pages/publications.html">Publications</a>
-                            <a  href="/pages/talks.html">Talks</a>
-                            <a  href="/pages/whois.html">Whois</a>
+                                <a href="https://juls-dotcom.github.io/">Home</a>
+                            <a  href="https://juls-dotcom.github.io/pages/publications.html">Publications</a>
+                            <a  href="https://juls-dotcom.github.io/pages/talks.html">Talks</a>
+                            <a  href="https://juls-dotcom.github.io/pages/whois.html">Whois</a>
                     </div>
                 </div>
             </div>
@@ -59,12 +61,12 @@
               <div class="col-lg-12">
                   <div class="header-content">
                       <h1 class="header-title">An Approach to Computing Predicted Purchase - Part 2</h1>
-                      <p class="header-date">By <a href="/author/julien-hernandez-lallement.html">Julien Hernandez Lallement</a>, dim. 12 avril 2020, in category <a href="/category/tutorial.html">Tutorial</a></p>
+                      <p class="header-date">By <a href="https://juls-dotcom.github.io/author/julien-hernandez-lallement.html">Julien Hernandez Lallement</a>, dim. 12 avril 2020, in category <a href="https://juls-dotcom.github.io/category/tutorial.html">Tutorial</a></p>
                       <div class="header-underline"></div>
                       <div class="clearfix"></div>
                       <p class="pull-right header-tags">
                           <span class="glyphicon glyphicon-tags mr5" aria-hidden="true"></span>
-<a href="/tag/marketing.html">marketing</a>, <a href="/tag/python.html">python</a>, <a href="/tag/sales.html">sales</a>                      </p>
+<a href="https://juls-dotcom.github.io/tag/marketing.html">marketing</a>, <a href="https://juls-dotcom.github.io/tag/python.html">python</a>, <a href="https://juls-dotcom.github.io/tag/sales.html">sales</a>                      </p>
                   </div>
               </div>
         </div>
@@ -478,12 +480,26 @@ Another classic prior is the inverse gamma, but half-Cauchy is sometimes preferr
     <span class="c1"># Gamma prior on purchasing rate parameter lambda</span>
     <span class="c1"># Adding the shape = number of customers will give one lambda and mu parameter for each customer</span>
     <span class="c1"># The gamma prior are quite useful for conjugacy, but one might wonder what other prior could be</span>
-    <span class="n">lambda_</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Gamma</span><span class="p">(</span><span class="s1">&#39;lambda&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="n">N</span><span class="p">,</span> <span class="n">testval</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+    <span class="n">lambda_</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Gamma</span><span class="p">(</span><span class="s1">&#39;lambda&#39;</span><span class="p">,</span> 
+                       <span class="n">alpha</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> 
+                       <span class="n">beta</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> 
+                       <span class="n">shape</span><span class="o">=</span><span class="n">N</span><span class="p">,</span> 
+                       <span class="n">testval</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+                      <span class="p">)</span>
     <span class="c1"># Gamma prior on lifetime parameter mu</span>
-    <span class="n">mu</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Gamma</span><span class="p">(</span><span class="s1">&#39;mu&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="n">beta</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="n">N</span><span class="p">,</span> <span class="n">testval</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+    <span class="n">mu</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Gamma</span><span class="p">(</span><span class="s1">&#39;mu&#39;</span><span class="p">,</span> 
+                  <span class="n">alpha</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> 
+                  <span class="n">beta</span><span class="o">=</span><span class="n">beta</span><span class="p">,</span> 
+                  <span class="n">shape</span><span class="o">=</span><span class="n">N</span><span class="p">,</span> 
+                  <span class="n">testval</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+                 <span class="p">)</span>
 
     <span class="c1"># Custom distribution for Pareto-NBD likelihood function</span>
-    <span class="n">loglikelihood</span> <span class="o">=</span> <span class="n">ParetoNBD</span><span class="p">(</span><span class="s2">&quot;loglikelihood&quot;</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="n">mu</span><span class="p">,</span> <span class="n">lambda_</span><span class="o">=</span><span class="n">lambda_</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;t_x&#39;</span><span class="p">:</span> <span class="n">t_x</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">:</span> <span class="n">T</span><span class="p">})</span>
+    <span class="n">loglikelihood</span> <span class="o">=</span> <span class="n">ParetoNBD</span><span class="p">(</span><span class="s2">&quot;loglikelihood&quot;</span><span class="p">,</span> 
+                              <span class="n">mu</span><span class="o">=</span><span class="n">mu</span><span class="p">,</span> 
+                              <span class="n">lambda_</span><span class="o">=</span><span class="n">lambda_</span><span class="p">,</span> 
+                              <span class="n">observed</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;t_x&#39;</span><span class="p">:</span> <span class="n">t_x</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">:</span> <span class="n">T</span><span class="p">}</span>
+                             <span class="p">)</span>
     
     <span class="c1"># Sample the model</span>
     <span class="c1"># Train de model and extract the parameters</span>
@@ -633,7 +649,7 @@ HPD = Highest posterior density (region of confidence level α is a (1−α)-con
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can calculate other KPIs that are relevant for business. For instance, let's look at the probability a customer is still alive at a future period. we can write a function that will calculate that probability:</p>
+<p>We can calculate other KPIs that are relevant for business. For instance, let's look at the probability a customer is still alive at a future period. we can write a function that will calculate that probability. These functions were taken form a talk by <a href="https://www.youtube.com/watch?v=gx6oHqpRgpY">Ben Van Dyke and Jean-Rene Gauthier</a></p>
 
 </div>
 </div>
@@ -748,8 +764,7 @@ HPD = Highest posterior density (region of confidence level α is a (1−α)-con
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a id="model_check"></a></p>
-<h2 id="Model-Check">Model Check<a class="anchor-link" href="#Model-Check">&#182;</a></h2><p>Here we demonstrate usage of out-of-sample diagnostics to evaluate model performance. In addition, we recommend you evaluate the model based on your own domain experience and any existing models or managerial heuristics you currently employ to measure lifetime value.</p>
-<h3 id="Out-of-sample-Evaluation">Out-of-sample Evaluation<a class="anchor-link" href="#Out-of-sample-Evaluation">&#182;</a></h3><p>Lifetimes implements a utility function for summarizing the purchase frequency and time window for an out-of-sample period, typically called the <code>holdout</code> period in the literature. In the case of the CDNOW dataset, the holdout period comprises 39 weeks immediately following the end of the calibration period.</p>
+<h2 id="Model-Check">Model Check<a class="anchor-link" href="#Model-Check">&#182;</a></h2><h3 id="Out-of-sample-Evaluation">Out-of-sample Evaluation<a class="anchor-link" href="#Out-of-sample-Evaluation">&#182;</a></h3><p>As seen in Post I, Lifetimes proposes a few utility function that splits the dataset to obtain an out-of-sample set somteimes referred to as the <code>holdout</code> period. Think train/test split SKlearn.</p>
 
 </div>
 </div>
@@ -892,7 +907,8 @@ HPD = Highest posterior density (region of confidence level α is a (1−α)-con
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To generate predictions for a user, we take the full posterior distribution of the individual <code>lambda</code> and <code>mu</code> parameters from the model trace and input them into the <code>predict</code> function previously defined. The value of <code>t</code> is 39, we have 39 weeks of data following the end of the calibration period. The function returns one prediction for each draw in the Markov chain (2000 in this example) and represents the posterior predictive distribution of future purchases.</p>
+<p>To generate predictions for a given customer, we can use the posterior distribution of the individual <code>lambda</code> and <code>mu</code> parameters from the model trace, and input them into the <code>predict</code> function previously defined. <br>
+<code>t</code> would be equal to the time window corresponding to the holdout period, here 39 weeks. The function returns one prediction for each draw in the x4 Markov chain (2000 in this example) and represents the posterior predictive distribution of future purchases.</p>
 <h3 id="Generating-Predictions-for-a-Single-Customer">Generating Predictions for a Single Customer<a class="anchor-link" href="#Generating-Predictions-for-a-Single-Customer">&#182;</a></h3><p>Let's select the 150th user in the dataset and step through the results of model prediction. This customer made two purchases in the calibration period and three purchases in the holdout period.</p>
 
 </div>
@@ -962,7 +978,12 @@ Name: 1623, dtype: float64</pre>
 
 <span class="c1"># predict purchases for the user at t = 39</span>
 <span class="n">t</span> <span class="o">=</span> <span class="mi">39</span> <span class="c1"># Hold out window</span>
-<span class="n">predict</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">lambda_individual</span><span class="p">,</span> <span class="n">mu_individual</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="n">customer_index</span><span class="p">],</span> <span class="n">t_x</span><span class="p">[</span><span class="n">customer_index</span><span class="p">],</span> <span class="n">T</span><span class="p">[</span><span class="n">customer_index</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">predict</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> 
+        <span class="n">lambda_individual</span><span class="p">,</span> 
+        <span class="n">mu_individual</span><span class="p">,</span> 
+        <span class="n">x</span><span class="p">[</span><span class="n">customer_index</span><span class="p">],</span> 
+        <span class="n">t_x</span><span class="p">[</span><span class="n">customer_index</span><span class="p">],</span> 
+        <span class="n">T</span><span class="p">[</span><span class="n">customer_index</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -1020,7 +1041,8 @@ Name: 1623, dtype: float64</pre>
         <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
     <span class="p">)</span>
 
-<span class="c1"># predictions are posterior mean for each customer, and put it back in the initial dataframe</span>
+<span class="c1"># predictions are posterior mean for each customer, </span>
+<span class="c1"># and put it back in the initial dataframe</span>
 <span class="n">rfm</span><span class="p">[</span><span class="s1">&#39;frequency_predicted&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">holdout_predictions</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
@@ -1086,8 +1108,10 @@ dtype: float64</pre>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Diagnostic plot</span>
-<span class="c1"># Binned by number of transactions in the calibration period, plot theaverage  number of transactions in the holdout period</span>
-<span class="c1"># for observed and what the model predicted</span>
+<span class="c1"># Binned by number of transactions in the calibration period,</span>
+<span class="c1"># plot the average  number of transactions in the holdout period</span>
+<span class="c1"># for observed data and what the model predicted</span>
+
 <span class="c1"># the black line is a simple heuristic, what would be observed based on the previous rate</span>
 <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">mean_frequencies</span> <span class="o">=</span> <span class="n">rfm</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;frequency_cal&#39;</span><span class="p">)[[</span><span class="s1">&#39;frequency_holdout&#39;</span><span class="p">,</span>
@@ -1096,7 +1120,8 @@ dtype: float64</pre>
                                  <span class="s1">&#39;frequency_predicted&#39;</span><span class="p">:</span> <span class="s1">&#39;Model&#39;</span><span class="p">},</span>
                         <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">mean_frequencies</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span>
-                      <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Conditional Expected Purchases in Holdout Period&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+                      <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Conditional Expected Purchases in Holdout Period&#39;</span><span class="p">,</span> 
+                      <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 
 <span class="c1"># Generate a dummy model with holdout freq = t_holdout/t_calib</span>
 <span class="n">t_calib</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">rfm</span><span class="p">[</span><span class="s1">&#39;T_cal&#39;</span><span class="p">])</span>
@@ -1104,7 +1129,12 @@ dtype: float64</pre>
 <span class="n">x_heuristics</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">xlim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">xlim</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">heuristics</span> <span class="o">=</span> <span class="n">t_holdout</span><span class="o">/</span><span class="n">t_calib</span> <span class="o">*</span> <span class="n">x_heuristics</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_heuristics</span><span class="p">,</span> <span class="n">heuristics</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Simple Heuristics&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_heuristics</span><span class="p">,</span> 
+         <span class="n">heuristics</span><span class="p">,</span> 
+         <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> 
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> 
+         <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Simple Heuristics&#39;</span>
+        <span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">xlim</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Mean Number of Transactions in Holdout Period&#39;</span><span class="p">)</span>
@@ -1154,7 +1184,11 @@ dtype: float64</pre>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RMSE: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">rfm</span><span class="p">[</span><span class="s1">&#39;frequency_holdout&#39;</span><span class="p">],</span> <span class="n">rfm</span><span class="p">[</span><span class="s1">&#39;frequency_predicted&#39;</span><span class="p">])))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RMSE: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">rfm</span><span class="p">[</span><span class="s1">&#39;frequency_holdout&#39;</span><span class="p">],</span> 
+                                              <span class="n">rfm</span><span class="p">[</span><span class="s1">&#39;frequency_predicted&#39;</span><span class="p">]</span>
+                                             <span class="p">)</span>
+                          <span class="p">)</span>
+     <span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1225,9 +1259,10 @@ dtype: float64</pre>
                     <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
                         <div class="footer-title">Shortcuts</div>
                         <ul class="list-unstyled">
-                            <li><a href="/archives.html">Archives</a></li>
-                            <li><a href="/tags.html">Tags</a></li>
-                            <li><a href="/authors.html">Authors</a></li>
+                            <li><a href="https://juls-dotcom.github.io/archives.html">Archives</a></li>
+                            <li><a href="https://juls-dotcom.github.io/tags.html">Tags</a></li>
+                            <li><a href="https://juls-dotcom.github.io/authors.html">Authors</a></li>
+                            <li><a href="https://juls-dotcom.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">Atom Feed</a></li>
                         </ul>
                     </div>
                     <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
