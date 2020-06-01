@@ -54,11 +54,11 @@ NEST_CSS_MINIFY = True
 # Add canonical link element to top page header and all article/author/category/tag page header
 NEST_REL_CANONICAL_LINK = True
 # Add items to top menu before pages
-MENUITEMS = [('Home', '/')]
+MENUITEMS = [('Home', '/'),('Categories','/categories.html')]
 # Add header background image from content/images : 'background.jpg'
 NEST_HEADER_IMAGES = 'Logo_website_green.jpg'
 # Add logo in the root of the output folder
-NEST_HEADER_LOGO = 'logo.png'
+NEST_HEADER_LOGO = ''
 # Footer
 NEST_SITEMAP_COLUMN_TITLE = u'Shortcuts'
 NEST_SITEMAP_MENU = [('Archives', '/archives.html'),('Tags','/tags.html'), ('Authors','/authors.html')]
@@ -130,6 +130,6 @@ NEST_TAGS_CONTENT_LIST = u'tagged'
 STATIC_PATHS = ['extra', 'images']
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
-    'extra/favicon.ico': {'path': 'favicon.ico'}
-    #'extra/logo.svg': {'path': 'logo.svg'}
+    'extra/favicon.ico': {'path': 'favicon.ico'},
+    'extra/logo.png': {'path': 'logo.png'}
 }
