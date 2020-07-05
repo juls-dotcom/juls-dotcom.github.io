@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Meta-Analysis: Quick Introduction¶ Table of Content¶Background¶Methods¶ Background: In research, we typically publish our results in the form of articles, where findings are reported together with...">
+        <meta name="keywords" content="meta-analysis, neuroscience, python">
+        <link rel="icon" href="/extra/favicon.ico">
+        <!-- Canonical -->
+        <link rel="canonical" href="/meta_analysis_intro.html">
+        <!-- /Canonical -->
+
+        <title>tutorial: Meta-Analysis: Quick Introduction - Juls-dotcom</title>
+
+        <!-- Stylesheets -->
+        <link href="/theme/css/all.min.css" rel="stylesheet">
+        <!-- /Stylesheets -->
+
+        <!-- RSS Feeds -->
+        <!-- /RSS Feeds -->
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+    </head>
+
+    <body>
+
+        <!-- Header -->
+    <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/2020_04_meta_analysis_header.jpg'); background-position: center; background-size: cover;">
+
+            <!-- Static navbar -->
+            <div class="container">
+                <div class="header-nav">
+                    <div class="header-logo">
+                      <!--  <a class="pull-left" href="/"><img class="mr20" src="/logo.jpg" alt="logo">Juls-dotcom</a> -->
+                        <a class="pull-left" href="/"><img class="mr20" src="">Juls-dotcom</a>
+                    </div>
+                    <div class="nav pull-right">
+                                <a href="/">Home</a>
+                                <a href="/categories.html">Categories</a>
+                            <a  href="/pages/publications.html">Publications</a>
+                            <a  href="/pages/talks.html">Talks</a>
+                            <a  href="/pages/whois.html">Whois</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /Static navbar -->
+
+            <!-- Header -->
+    <!-- Header -->
+    <div class="container header-wrapper">
+        <div class="row">
+              <div class="col-lg-12">
+                  <div class="header-content">
+                      <h1 class="header-title">tutorial: Meta-Analysis: Quick Introduction</h1>
+                      <p class="header-date">By <a href="/author/julien-hernandez-lallement.html">Julien Hernandez Lallement</a>, lun. 20 avril 2020, in category <a href="/category/course.html">Course</a></p>
+                      <div class="header-underline"></div>
+                      <div class="clearfix"></div>
+                      <p class="pull-right header-tags">
+                          <span class="glyphicon glyphicon-tags mr5" aria-hidden="true"></span>
+<a href="/tag/meta-analysis.html">meta-analysis</a>, <a href="/tag/neuroscience.html">neuroscience</a>, <a href="/tag/python.html">python</a>                      </p>
+                  </div>
+              </div>
+        </div>
+    </div>
+    <!-- /Header -->
+            <!-- /Header -->
+
+        </div>
+        <!-- /Header -->
+
+
+        <!-- Content -->
+    <div class="container content">
+        <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Meta-Analysis:-Quick-Introduction">Meta-Analysis: Quick Introduction<a class="anchor-link" href="#Meta-Analysis:-Quick-Introduction">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Table-of-Content">Table of Content<a class="anchor-link" href="#Table-of-Content">&#182;</a></h2><h3 id="Background"><a href="#background">Background</a><a class="anchor-link" href="#Background">&#182;</a></h3><h3 id="Methods"><a href="#methods">Methods</a><a class="anchor-link" href="#Methods">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a id="background"></a></p>
+<h3><strong>Background:</strong> <br></h3>
+<p>In research, we typically publish our results in the form of articles, where findings are reported together with statistical analysis, that provide a way to assess the strength and plausibility of observed effects. <br></p>
+<p>While statistical analysis is critical to any research paper, concluding on one single study might not be the best approach. <br><br>
+For instance, one might have a too small sample, while still drawing conclusions on results. Small samples limit your ability (in statistical terms, you are lacking power) to have meaningful conclusions about the effects you are observing. Normally (unfortunately, not typically), one runs a priori power analysis using pre collected data. That is: "<em>from what we know about the process we want to investigate, what effect size would we expect?</em>". Using historical data helps you making an informed guess about the expected outcome, which in turns allows you to calculate the required sample size. The math behind this is not too complicated, but I won't be going in detail here. Some open source software like <a href="https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitsps*ychologie/gpower.html">G-Power</a> allow you to make that kind of computation. <br><br> Alternatively, you might be looking at a very particular set of data, mostly created by outliers (normally, that would be ruled you with large enough statistical power), so your observed truth would not be the truth of the overall population from which you believe your sample to be taken. <br><br>
+Alternatively, you might as well be doing something wrong with your statistics. I myself remember running ANOVAs, non parametric tests and correlations that required some set of assumptions to be fullfiled, without having checked these assumptions before hand. This is, I think, a problem of how researchers are (or at least how <strong>I</strong> was) taught to use statistics... but that's for another post! <br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Meta-analytical-approach">Meta-analytical approach<a class="anchor-link" href="#Meta-analytical-approach">&#182;</a></h4><p>Now, when multiple papers investigating a similar process are published, one useful thing to do is to review them together, and see whether trends are emerging in the data collected independently in each paper. These so-called <code>systematic reviews</code> can be quite useful to outline unexplored areas of a process, which in turn would guide researchers to collect the necessary data to populate that missing part of the distribution. <br></p>
+<p>Another approach, maybe one step further, would be to perform a <code>meta-analysis</code>. This differs from a systematic review in that a meta-analysis does not simply <em>reviews</em> the current knowledge of a given process, but also <strong>quantifies</strong> the strength of statistical effects, and provides an overall estimation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Having worked in the field of Neuroscience for quite a bit, together with a colleague of mine, we collected data on animal empathy, to quantify the strength of effects reported across the literature.</p>
+<p>Here, I intend to report a small part of that paper to share some code that might be useful to people currently working on meta-analytic approaches.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a id="methods"></a></p>
+<h3><strong>Methods:</strong> <br></h3>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Data typically takes the shape of distributions, which have some parameters, like a mean and a standard deviation. You can do all of stuff on these distributions, like comparing them to some value (one sample testing, t-test or Wilcoxon, if parametric assumptions are met ;) ) or compare them to some other distribution (paired testing, t-test or Mann-Whitney), among other things. <br><br>
+That's very useful, because you can tell whether these distributions are <strong>significantly</strong> different from one another (although this frequentist approach as some downsides as well, but that's for another post on Bayesian statistics).</p>
+<p>Statistical significance is the probability that the observed difference between two distributions is due to chance. If the <em>p</em>-value is larger than a threshold arbitrarily chosen (i.e., alpha level, typically equal to 0.05), it is assumed that observed differences can be explained by random noise in the data. <br><br>
+Problem is, with a sufficiently large sample, statistical tests will very often find a significant difference, sometimes for even lower alpha levels. These small differences that emerge as significant are often useless for research results, and no meaningful conclusion can be drawned from them. The fact that <em>p</em>-values are dependent not only on effect sizes, but also on <em>sample</em> size makes it crutial to report other measures. This is why authors working with statistical comparisons should not only report <em>p</em>-values, but also differences in magnitude between the distributions. In the words of <a href="https://pdfs.semanticscholar.org/fa77/0a7fb7c45a59abbc4c2bc7d174fa51e5d946.pdf">Jacob Cohen</a>, "<em>Statistical significance is the least interesting thing about the results. You should describe the results in terms of measures of magnitude –not just, does a treatment affect people, but how much does it affect them.</em>".</p>
+<p>A commonly cited example illustrating this problem is a Physicians Health Study, that investigated whether aspirin could help preventing myocardial infarction (MI). The researchers tested around 22.000 subjects, and found that aspirin was associated with a reduction in myocardial infarction, with a significance level &lt; .00001. In other words, very very significant (the kind of value that makes PhD students' head drool...). The study was terminated early than scheduled due to the conclusive findings, resulting in a recommendation of aspirin to treat this problem. Problem was, the effect size was very small (r2 = 0.001), suggesting that actual between group differences were very small and negligeable. The recommendation to use aspirin has since been changed, but for quite some time, this study fueled a treatment that was not very suited to the problem. All due to a focus on <em>p</em>-value...</p>
+<p>Conclusion "<em>The primary product of a research inquiry is one or more measures of effect size, not P values.</em>". <a href="https://scholar.google.com/scholar_lookup?title=Beyond+Significance+Testing:+Reforming+Data+Analysis+Methods+in+Behavioral+Research&amp;author=RB+Kline&amp;publication_year=2004&amp;">Gene V. Glass</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Extraction-of-effect-sizes">Extraction of effect sizes<a class="anchor-link" href="#Extraction-of-effect-sizes">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Effect sizes (<code>ES</code>) are a way to boil down the strenght of an observed effect. Typicall, your data will take the shape of distributions, that have parameters such as the mean and the standard deviation (I assume the readers know about these concepts). Since the data I use in this post was based on these parameters, I describe below the analysis pipeline for data preparation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Assume your first study used two different independent groups, each one with a mean (<code>M</code>) and a standard deviation (<code>SD</code>). It is easy to convert that data in a so-called standardized effect size, given by the simple equation below:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (ES \right) = \left( \ \frac{M1 - M2}{\sqrt{\frac{(SD1^2*n1)+(SD2^2*n2)}{(n1+n2)}}} \right)      (1)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>where M, SD and n are the mean, standard deviation and sample size of each distribution 1 &amp; 2, respectively.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that very often, standard error of the mean (<code>SEM</code>) is provided in the graphical representation of data. You can then convert to the <code>SD</code> by using the following formula:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (SD \right) = \left(SEM * \sqrt{n}\right)      (2)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Assume that the second study you screened used the same group at two different time points (e.g., before and after treatment). Here, you are be dealing with a within-subject design instead of a between-subject one. In this case, you could compute the <code>ES</code> using the following equation:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (ES \right) = \left( \ \frac{M1_{t+i} - M_t}{\sqrt{SD^2_{t+i}+SD2^2_t}} \right)      (3)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>where <code>Mt</code> is the mean initial measurement (usually baseline), <code>M(t+i)</code> is the measurement at a second time point, <code>SDt</code> is the standard deviation of the distribution during the initial measurement, <code>SD(t+i)</code> is the standard deviation of the distribution at the second measurement point, and <code>N</code> represents the sample size of the group</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Standardization-of-effect-sizes">Standardization of effect sizes<a class="anchor-link" href="#Standardization-of-effect-sizes">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In order to bring all measures to the same metric and to ease interpretation, the effect sizes can be transformed to correlation coefficient, called <code>r</code>, following this equation:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (r \right) = \left( \ \frac{ES}{\sqrt{ES^2+4}} \right)      (4)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In some cases, the relevant statistics are actually provided in the paper, in which case, the following equations can be used:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (t-statistics; r \right) = \left( \frac{t^2}{\sqrt{t^2+df}} \right)      (5)
+\end{equation*}\begin{equation*}
+\left (F-statistics; r \right) = \left( \sqrt{\frac{F}{F+df}} \right)      (6)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In some cases (typically in old publications), no statistical information is available nor graphical representation of data, and only <em>p</em>-values are reported. In this case, you could use z-scores if you have p-values reported, using the following equation:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (r \right) = \left( \frac{z}{\sqrt{N}} \right)  (7)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>where <code>z</code> is the z-score value and <code>N</code> is the sample size. You can extract <code>z-scores</code> from z-scpre tables like <a href="http://www.z-table.com/">this one</a>. Remember though, <em>p</em>-values are dependent on group size and should be evaluated cautiously.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Combining-effect-sizes-and-comparisons">Combining effect sizes and comparisons<a class="anchor-link" href="#Combining-effect-sizes-and-comparisons">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>At some point, we get in troubles because the value of <code>r</code> becomes increasingly skewed as it gets further from 0. To compensate that effect, we can normalize the effect sizes using Fisher transformation described <a href="https://books.google.de/books?hl=en&amp;lr=&amp;id=7GviBQAAQBAJ&amp;oi=fnd&amp;pg=PP1&amp;dq=Statistical+Methods+for+Meta-Analysis.+Statistical+Methods+for+Meta-Analysis,&amp;ots=Dw__nKb48y&amp;sig=iTxsYslhkobz_pCAt8u4ep-LsZg#v=onepage&amp;q=Statistical%20Methods%20for%20Meta-Analysis.%20Statistical%20Methods%20for%20Meta-Analysis%2C&amp;f=false">here</a>, following this equation:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (Z_r \right) = \left (0.5 * Ln (\frac{1+r}{1-r}\right) (8)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>where <code>r</code> is the effect size computed through the methods described above. By convention, $Z_r$ can be <a href="http://rogeriofvieira.com/wp-content/uploads/2016/05/Wilson.pdf">converted back to r</a> for ease of interpretation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you are dealing with low sample sizes, which can create some bias in your analysis (&lt; 20 or 10 in each group, see <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1469-185X.2007.00027.x">Nakagawa &amp; Cuthill, 2007</a>, we computed the unbiased $Z_r$  (zru) value using the equation proposed by <a href="https://www.sciencedirect.com/book/9780080570655/statistical-methods-for-meta-analysis">Hedges &amp; Olkin, 1985</a>:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (Z_{ru}  \right) = \left (Z_r * (1-\frac{3}{4*(n1+n2)}-9)\right) (9)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Random-and-Fix-Effect-Models">Random and Fix Effect Models<a class="anchor-link" href="#Random-and-Fix-Effect-Models">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When conducting meta-analytic approaches, it is necessary to use either a fixed effect or a random effects statistical model. A fixed effect model assumes that all effect sizes are measuring the same effect, whereas a random effects model takes into account potential variance in the between-studies effect. Since the chosen model affects the interpretation of the summary estimates, one can test which model to use by conducting a heterogeneity test, that generates the <code>Q-statistic</code> described in eq. 14. The <code>Q</code> value is a measure of the dispersion of the effect sizes. This measure follows the chi square distribution with <code>k-1</code> degrees of freedom, where k is the total number of effect sizes. This model assumes that the variance of each effect size ($v_i$, eq. 10) is composed of variance due to intrinsic sampling errors ($v_0$, eq. 11 &amp; 12), plus other sources of randomly distributed variability ($v_r$, eq 12). To estimate these values, you can use the formulas 10 through 15 thoroughly described by (<a href="https://idostatistics.com/lipsey-wilson-2001-practical-meta-analysis-2001/">Lipsey &amp; Wilson, 2001</a>; <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1469-185X.2007.00027.x">Nakagawa &amp; Cuthill, 2007</a>):</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (v_i \right) = \left (v_0 + v_r \right)    (10)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (v_0 \right) = \left (SE^2 \right)   (11)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (SE \right) = \left (\frac{1}{\sqrt{n-3}}\right)    (12)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (v_r \right) = \left (\frac{Q-(k-1)}{(\sum w_i - (\sum w_i^2/\sum w_i)} \right) (13)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (Q \right) = \left (\sum w_i * Z_{ru_i}^2 - \frac{(\sum w_i * Z_{ru_i})^2}{\sum w_i} \right) (14)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (w_i \right) = \left (\frac{1}{SE^2} \right)   (15)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To complement the <code>Q statistic</code>, one can provide a I^2 statistic using eq. 16, which measures the percent of variance between studies, which is due to true heterogeneity rather than chance.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (I^2 \right) = \left (\frac{Q-df}{Q}\right) (16)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>where Q is calculated using eq. 14 and df is the number of effect sizes minus one, with higher percent values indicating higher heterogeneity. Typically, the I^2 will be expressed in percent, and can have a <em>p</em>-value associated to it, which, if significant, would indicate a substantial amount of heterogeneity and giving further support for a random model effects.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Calculating-confidence-intervals-for-effect-sizes">Calculating confidence intervals for effect sizes<a class="anchor-link" href="#Calculating-confidence-intervals-for-effect-sizes">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For each variable and its different levels, one can calculated the mean effect size, 95% confidence intervals (CI) and zscore value using eqs. 16, 17, 18 and 19. See <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1469-185X.2007.00027.x">Nakagawa &amp; Cuthill, 2007</a> for more information on this topic, and note that there are other proposed methods to compare these values.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (\overline{Z_ru}  \right) = \left (\frac{(\sum w_i * Z_{ru_i})}{(\sum w_i}\right) (17)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (\ 95 \%CI\right) = \left (\overline{Z_ru} \pm 1.96*(SE_{Z_{ru}})\right) (18)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (\ SE_{\overline{Z_{ru}}}\right) = \left (\sqrt{\frac{\overline{Z_ru}}{\overline{SE_Zru}}}\right) (19)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation*}
+\left (\overline{SE}_Zru\right) = \left (\sqrt{\frac{1}{\sum w_i}}\right) (20)
+\end{equation*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Additional-side-computation-for-meta-analysis">Additional side computation for meta-analysis<a class="anchor-link" href="#Additional-side-computation-for-meta-analysis">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are other analysis that one might want to do when running a meta-analysis. In particular, file drawer analysis (that allows to estimate how many more effect size one might require to abolish any overall meta-analytic effect found) and funnel plots (that allow to assess publication bias) could be of interest. I won't be talking about these, but you could look at <a href="https://jasp-stats.org/">JASP</a> if you think of running some of these on your data.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a id="background"></a></p>
+<h3><strong>Final Notes</strong> <br></h3>
+<p>I am done with presenting the theoretical background of running a meta-analysis. In a following post, I will be putting these equations to the test by using a dataset we collected in the lab.</p>
+<p>Cheers!</p>
+
+</div>
+</div>
+</div>
+ 
+
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+
+
+        
+    </div>
+        <!-- /Content --> 
+
+        <!-- Footer -->
+        <div class="footer gradient-2">
+            <div class="container footer-container ">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title">Shortcuts</div>
+                        <ul class="list-unstyled">
+                            <li><a href="/archives.html">Archives</a></li>
+                            <li><a href="/tags.html">Tags</a></li>
+                            <li><a href="/authors.html">Authors</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title">Social</div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://www.linkedin.com/in/julien-hernandez-lallement-b47347b7/" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://www.xing.com/profile/Julien_HernandezLallement/cv" target="_blank">Xing</a></li>
+                            <li><a href="https://www.researchgate.net/profile/Julen_Hernandez_Lallement" target="_blank">ResearchGate</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title">Links</div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://github.com/juls-dotcom" target="_blank">GitHub</a></li>
+                            <li><a href="https://scholar.google.com/citations?user=ppDsLgIAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a></li>
+                        </ul>
+                    </div> 
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <p class="pull-right text-right">
+                            <small><em>Proudly powered by <a href="http://docs.getpelican.com/" target="_blank">pelican</a></em></small><br/>
+                            <small><em>Theme and code by <a href="https://github.com/molivier" target="_blank">molivier</a></em></small><br/>
+                            <small>&copy; juls-dotcom 2020</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Footer -->
+    </body>
+</html>
