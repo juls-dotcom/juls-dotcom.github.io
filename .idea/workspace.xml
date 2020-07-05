@@ -3,39 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7932ba2c-96d1-41e1-8cf2-ec3b3a0f2f4e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/2020_03_predicted_purchase_I.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_03_predicted_purchase_I.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/2020_05_Introduction to Machine Learning I.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_05_Introduction to Machine Learning I.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content_additional/JaspEvidenceofAbsence/JaspEvidenceofAbsence/AllVar4Jasp copy.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content_additional/JaspEvidenceofAbsence/JaspEvidenceofAbsence/Gender.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content_additional/JaspEvidenceofAbsence/JaspEvidenceofAbsence/Presentation.pptx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content_additional/JaspEvidenceofAbsence/JaspEvidenceofAbsence/anova.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content_additional/JaspEvidenceofAbsence/JaspEvidenceofAbsence/makeAnovaData.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content_additional/JaspEvidenceofAbsence/JaspEvidenceofAbsence/ttest.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content_additional/JaspEvidenceofAbsence/__MACOSX/JaspEvidenceofAbsence/m._akeAnovaData.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/on_going/opinion:academia_vs_private/academia_company.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/archives.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/author/julien-hernandez-lallement.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/author/julien-hernandez-lallement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/authors.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/authors.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/category/tutorial.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/category/tutorial.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/category/workshop.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/category/workshop.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/machine_learn_intro_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/machine_learn_intro_1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/meta_analysis.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/meta_analysis.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/pages/publications.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/pages/publications.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/pages/talks.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/pages/talks.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/pages/whois.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/pages/whois.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/predict_sales_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/predict_sales_1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/predict_sales_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/predict_sales_2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tag/course.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/course.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tag/machine-learning.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/machine-learning.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tag/marketing.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/marketing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tag/meta-analysis.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/meta-analysis.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tag/neuroscience.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/neuroscience.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tag/python.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/python.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tag/sales.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/sales.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tags.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tags.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pelicanconf.py" beforeDir="false" afterPath="$PROJECT_DIR$/pelicanconf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/theme/nest/static/css/nest.css" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/static/css/nest.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/theme/nest/templates/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/templates/archives.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/theme/nest/templates/article.html" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/templates/article.html" afterDir="false" />
