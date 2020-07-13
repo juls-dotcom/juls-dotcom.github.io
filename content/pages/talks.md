@@ -14,14 +14,14 @@ July 2018. Meta-Analysis: Good Practices and Analytical Tools. Amsterdam, The Ne
 
 **Invited talks**
 
-July 2019. Tokyo University. Special Workshop. <br> <br>
-November 2018. Society for Neuroscience.<br> <br>
-March 2018. Cognitive Neuroscience Society.<br> <br>
-October 2017. Society for NeuroEconomics. <br> <br>
+July 2019. Organized Workshop, Tokyo, Japan. <br> <br>
+November 2018. Society for Neuroscience, San Diego, USA..<br> <br>
+March 2018. Cognitive Neuroscience Society, Boston, USA.<br> <br>
+October 2017. Society for NeuroEconomics, Toronto, Canada. <br> <br>
 February 2016. Wolf Science Center, Wien, Austria.<br> <br>
-December 2015. Social Brain Lab, Netherlands Institute of Neuroscience. The Netherlands.<br> <br>
-November 2015. Comparative Psychology Lab colloquia, Düsseldorf, Germany. <br> <br>
+December 2015. Netherlands Institute of Neuroscience, Amsterdam, The Netherlands.<br> <br>
+November 2015. Comparative Psychology Lab, Düsseldorf, Germany. <br> <br>
 September 2014. Society for Neuroeconomics, Miami, USA. <br> <br>
-July 2013. PhD symposium”, Düsseldorf, Germany. <br> <br>
+July 2013. PhD symposium, Düsseldorf, Germany. <br> <br>
 July 2012. FENs, Barcelona, Spain. <br> <br>
 May 2012. Brain dynamics and decision making conference, Ascona, Switzerland.  <br> <br>

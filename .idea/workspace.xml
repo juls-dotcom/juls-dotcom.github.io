@@ -2,7 +2,128 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7932ba2c-96d1-41e1-8cf2-ec3b3a0f2f4e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/2020_07_frequ_vs_bayes_Part1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_07_frequ_vs_bayes_Part1.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/2020_07_frequ_vs_bayes_Part2.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_07_frequ_vs_bayes_Part2.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/pages/talks.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/pages/talks.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/pages/whois.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/pages/whois.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/.Rapp.history" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/.Rapp.history" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/.Rhistory" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/.Rhistory" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/1M.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/1M.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/Auto.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/Auto.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/BostonHousing.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/BostonHousing.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/BreastCancer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/BreastCancer.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/CNAE9.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/CNAE9.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/Cars93.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/Cars93.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/Cars93_miss.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/Cars93_miss.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/Carseats.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/Carseats.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/ChickWeight.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/ChickWeight.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/College.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/College.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/GermanCredit.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/GermanCredit.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/Glass.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/Glass.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/GlaucomaM.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/GlaucomaM.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/Hitters.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/Hitters.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/HouseVotes84.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/HouseVotes84.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/Ionosphere.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/Ionosphere.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/LetterRecognition.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/LetterRecognition.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/LifeCycleSavings" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/LifeCycleSavings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/Life_Expectancy_Data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/Life_Expectancy_Data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/MarketArrivals.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/MarketArrivals.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/PimaIndiansDiabetes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/PimaIndiansDiabetes.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/Prestige.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/Prestige.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/Prestige_miss.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/Prestige_miss.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/Raotbl6.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/Raotbl6.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/Sacramento.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/Sacramento.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/Servo.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/Servo.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/Smarket.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/Smarket.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/Sonar.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/Sonar.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/Soybean.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/Soybean.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/USArrests.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/USArrests.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/Vehicle.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/Vehicle.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/Vowel.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/Vowel.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/Wage.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/Wage.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/Weekly.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/Weekly.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/Zoo.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/Zoo.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/adultTest.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/adultTest.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/adultTrain.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/adultTrain.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/adult_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/adult_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/adult_train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/adult_train.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/breastcancer_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/breastcancer_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/breastcancer_training.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/breastcancer_training.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/cosine_sim/sachin.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/cosine_sim/sachin.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/daily-min-temperatures.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/daily-min-temperatures.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/datasets_prep.R" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/datasets_prep.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/diamonds.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/diamonds.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/diamonds_filter.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/diamonds_filter.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/diamonds_filtered.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/diamonds_filtered.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/diamonds_select.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/diamonds_select.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/economics.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/economics.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/email_campaign_funnel.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/email_campaign_funnel.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/en" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/en" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/en-basic" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/en-basic" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/gdppercap.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/gdppercap.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/har_train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/har_train.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/har_validate.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/har_validate.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/health.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/health.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/hflights.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/hflights.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/hypotenuse.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/hypotenuse.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/income.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/income.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/iris_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/iris_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/iris_train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/iris_train.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/barack obama.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/barack obama.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/baseball.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/baseball.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/dosa.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/dosa.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/idli.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/idli.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/lee quan yew.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/lee quan yew.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/narendra modi.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/narendra modi.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/noodles.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/noodles.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/pasta.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/pasta.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/pizza.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/pizza.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/queen elizabeth.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/queen elizabeth.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/shinzo abe.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/shinzo abe.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/tipu sultan.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/lda_sports_politics_docs/tipu sultan.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/lda_sports_politics_long_docs/basketball.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/lda_sports_politics_long_docs/basketball.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/lda_sports_politics_long_docs/nelson mandela.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/lda_sports_politics_long_docs/nelson mandela.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/lsa_sports_food_docs/baseball.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/lsa_sports_food_docs/baseball.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/lsa_sports_food_docs/dosa.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/lsa_sports_food_docs/dosa.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/lsa_sports_food_docs/idli.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/lsa_sports_food_docs/idli.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/lsa_sports_food_docs/noodles.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/lsa_sports_food_docs/noodles.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/lsa_sports_food_docs/pasta.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/lsa_sports_food_docs/pasta.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/lsa_sports_food_docs/pizza.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/lsa_sports_food_docs/pizza.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/midwest.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/midwest.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/midwest_filter.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/midwest_filter.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/mortality.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/mortality.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/movie_ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/movie_ratings.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/mpg_ggplot2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/mpg_ggplot2.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/mtcars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/mtcars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/musk.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/musk.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/nightvisitors.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/nightvisitors.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/nightvisitors_multi_ts.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/nightvisitors_multi_ts.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/olist_orders_45d.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/olist_orders_45d.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/orange_juice_withmissing.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/orange_juice_withmissing.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/orders_45d.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/orders_45d.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/ozone.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/ozone.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/prideprejudice.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/prideprejudice.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/proglanguages.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/proglanguages.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/promotergene.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/promotergene.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/prostate.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/prostate.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/sample.html" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/sample.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/sample.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/seeds.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/seeds.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/segmentationData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/segmentationData.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/spam.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/spam.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/stopwords_en.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/stopwords_en.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/text_classfication.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/text_classfication.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/ticdata.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/ticdata.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/user_orders_hourofday.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/user_orders_hourofday.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/wwwusage.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/wwwusage.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/yahoo.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yahoo.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/yahoo_close.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yahoo_close.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/yoga.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/yoga_raw.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga_raw.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/yoga_wiki.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga_wiki.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/theme/nest/static/css/nest.css" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/static/css/nest.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/theme/nest/templates/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/templates/archives.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/theme/nest/templates/article.html" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/templates/article.html" afterDir="false" />
@@ -57,6 +178,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="863" y="422" width="470" height="452" key="#Notifications" timestamp="1594411091275">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="863" y="422" width="470" height="452" key="#Notifications/67.27.1853.1053@67.27.1853.1053" timestamp="1594411091275" />
     <state x="776" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1590418329535">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
