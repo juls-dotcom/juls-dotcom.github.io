@@ -5,6 +5,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="meta_analysis" />
+    <orderEntry type="module" module-name="honorary_gui" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />

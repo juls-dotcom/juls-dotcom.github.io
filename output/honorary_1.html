@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="My mom works as a translator in law enforcing organisations. She gets called at any hour of the day or night to reach a location where translation is needed, and performs a so-called mission over...">
+        <meta name="keywords" content="application, python">
+        <link rel="icon" href="/extra/favicon.ico">
+        <!-- Canonical -->
+        <link rel="canonical" href="/honorary_1.html">
+        <!-- /Canonical -->
+
+        <title>tutorial: Python can also help our parents ;) - Juls-dotcom</title>
+
+        <!-- Stylesheets -->
+        <link href="/theme/css/all.min.css" rel="stylesheet">
+        <!-- /Stylesheets -->
+
+        <!-- RSS Feeds -->
+        <!-- /RSS Feeds -->
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+    </head>
+
+    <body>
+
+        <!-- Header -->
+    <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/2020_08_honoraire.jpg'); background-position: center; background-size: cover;">
+
+            <!-- Static navbar -->
+            <div class="container">
+                <div class="header-nav">
+                    <div class="header-logo">
+                      <!--  <a class="pull-left" href="/"><img class="mr20" src="/logo.jpg" alt="logo">Juls-dotcom</a> -->
+                        <a class="pull-left" href="/"><img class="mr20" src="">Juls-dotcom</a>
+                    </div>
+                    <div class="nav pull-right">
+                                <a href="/">Home</a>
+                                <a href="/categories.html">Categories</a>
+                            <a  href="/pages/publications.html">Publications</a>
+                            <a  href="/pages/talks.html">Talks</a>
+                            <a  href="/pages/whois.html">Whois</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /Static navbar -->
+
+            <!-- Header -->
+    <!-- Header -->
+    <div class="container header-wrapper">
+        <div class="row">
+              <div class="col-lg-12">
+                  <div class="header-content">
+                      <h1 class="header-title">tutorial: Python can also help our parents ;)</h1>
+                      <p class="header-date">By <a href="/author/julien-hernandez-lallement.html">Julien Hernandez Lallement</a>, lun. 03 août 2020, in category <a href="/category/tutorial.html">Tutorial</a></p>
+                      <div class="header-underline"></div>
+                      <div class="clearfix"></div>
+                      <p class="pull-right header-tags">
+                          <span class="glyphicon glyphicon-tags mr5" aria-hidden="true"></span>
+<a href="/tag/application.html">application</a>, <a href="/tag/python.html">python</a>                      </p>
+                  </div>
+              </div>
+        </div>
+    </div>
+    <!-- /Header -->
+            <!-- /Header -->
+
+        </div>
+        <!-- /Header -->
+
+
+        <!-- Content -->
+    <div class="container content">
+        <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>My mom works as a translator in law enforcing organisations. She gets called at any hour of the day or night to reach a location where translation is needed, and performs a so-called mission over there.</p>
+<p>Now, for every mission, she would get a transcript that states the date and hour of start &amp; end of mission. She would then use that transcript to calculate the amount in euros she would be payed for her work.</p>
+<p>But my mom is not very good with computers and paperwork, so it took her forever to look up the dates (because week end, holiday and normal business day are payed differently) and hours (cause day and night hours are payed differently)...These transcripts accumulated, and she was getting stressed about it.</p>
+<p>I realized that her problem could be solved quite easily by a simple application that would calculate for her the fees she would receive from her employer and for each mission.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This notebook describes the easy solution I came up with (always helped by many posts online of course!). In the follow up post, I create a GUI using Tkinter (my mom is scared of code...)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">pandas.tseries.holiday</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pandas.tseries.offsets</span> <span class="kn">import</span> <span class="n">CustomBusinessDay</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>My mom works in France. So first, I created a calendar of french holidays, since the fare that my mom is getting differs whether the day was holiday or a regular business day.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">FrenchBusinessCalendar</span><span class="p">(</span><span class="n">AbstractHolidayCalendar</span><span class="p">):</span>
+   <span class="n">rules</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;New Years Day&#39;</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">EasterMonday</span><span class="p">,</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;Labour Day&#39;</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;Victory in Europe Day&#39;</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">8</span><span class="p">),</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;Ascension Day&#39;</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="p">[</span><span class="n">Easter</span><span class="p">(),</span> <span class="n">Day</span><span class="p">(</span><span class="mi">39</span><span class="p">)]),</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;Bastille Day&#39;</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">14</span><span class="p">),</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;Assumption of Mary to Heaven&#39;</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">15</span><span class="p">),</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;All Saints Day&#39;</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;Armistice Day&#39;</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">11</span><span class="p">),</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;Christmas Day&#39;</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+   <span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Second, I make a list of all regular business days</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">French_BD</span> <span class="o">=</span> <span class="n">CustomBusinessDay</span><span class="p">(</span><span class="n">calendar</span><span class="o">=</span><span class="n">FrenchBusinessCalendar</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The missions my mom was performing were ranging between 2016 and 2020 so I took up to 2021, anticipation is key ;)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;2016-12-29&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2021-01-03&#39;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="n">French_BD</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>           Date
+0    2016-12-29
+1    2016-12-30
+2    2017-01-02
+3    2017-01-03
+4    2017-01-04
+...         ...
+1008 2020-12-24
+1009 2020-12-28
+1010 2020-12-29
+1011 2020-12-30
+1012 2020-12-31
+
+[1013 rows x 1 columns]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Third, I define the fares (based on the aforementioned rules) in different dictionnaries. These fares are in euros, but you can add whatever you want in there, currency is not relevant.</p>
+<p>There were some rules I had to follow:</p>
+<ul>
+<li>The first hour is paid higher than subsequent hours</li>
+<li>Day and night hours are paid differently</li>
+<li>If the mission sprends over multiple days, only the first hour of the mission costs more</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Define fares depending on day time</span>
+<span class="n">normal_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;day_first_hour_fare&#39;</span><span class="p">:</span><span class="s1">&#39;40&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;night_first_hour_fare&#39;</span><span class="p">:</span><span class="s1">&#39;49.50&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;day_subsequent_hour_fare&#39;</span><span class="p">:</span> <span class="s1">&#39;32&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;night_subsequent_hour_fare&#39;</span><span class="p">:</span> <span class="s1">&#39;37.50&#39;</span>
+          <span class="p">}</span>
+
+<span class="n">holiday_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;day_first_hour_fare&#39;</span><span class="p">:</span><span class="s1">&#39;49.50&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;night_first_hour_fare&#39;</span><span class="p">:</span><span class="s1">&#39;57&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;day_subsequent_hour_fare&#39;</span><span class="p">:</span><span class="s1">&#39;37.50&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;night_subsequent_hour_fare&#39;</span><span class="p">:</span><span class="s1">&#39;45&#39;</span>
+
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Last, I create a function that calculates to total fare based on start and end date, and fare dictionnaries</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calculate_honorary</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">,</span> <span class="n">normal_dict</span><span class="p">,</span> <span class="n">holiday_dict</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the honorary for worked hours based on following rules</span>
+<span class="sd">    </span>
+<span class="sd">    params: start_date (str), start date in format &#39;%Y-%m-%d-H:M:S&#39;</span>
+<span class="sd">    params: end_date (str), end date in format &#39;%Y-%m-%d-H:M:S&#39;</span>
+<span class="sd">    params: normal_dict (dict), business day fare dictionnary</span>
+<span class="sd">    params: holiday_dict (dict), holiday day fare dictionnary</span>
+<span class="sd">    </span>
+<span class="sd">    #### Payment Rules</span>
+
+<span class="sd">    day is between 0700 and 2200</span>
+<span class="sd">    night is between 2200 and 0700</span>
+
+<span class="sd">    normal day fare:</span>
+<span class="sd">     * first hour = 40 euros</span>
+<span class="sd">     * subsequent hour = 32 euros</span>
+
+<span class="sd">    normal night fare</span>
+<span class="sd">     * first hour = 49.50 euros</span>
+<span class="sd">     * subsequent hour = 37.50 euros</span>
+
+<span class="sd">    holiday fare:</span>
+<span class="sd">     * first hour = 49.50 euros</span>
+<span class="sd">     * subsequent hour = 37.50 euros</span>
+
+<span class="sd">    holiday fare</span>
+<span class="sd">     * first hour = 57 euros</span>
+<span class="sd">     * subsequent hour = 45 euros</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Transform dates to Timestamps</span>
+    <span class="n">start_date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">start_date</span><span class="p">)</span>
+    <span class="n">end_date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">end_date</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start date: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">start_date</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;End date: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">end_date</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="c1"># Get number of hours worked</span>
+    <span class="n">number_hours_worked</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">end_date</span><span class="o">-</span><span class="n">start_date</span><span class="p">,</span><span class="n">unit</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">number_hours_worked</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;End date happened before start date&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You have worked &#39;</span> <span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">number_hours_worked</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; hours.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Get actual hours relative to the day</span>
+    <span class="n">worked_hours</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span><span class="n">end_date</span><span class="p">,</span><span class="n">freq</span><span class="o">=</span><span class="s1">&#39;H&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span>
+    
+    <span class="c1"># Get whether these hours were day or night shift</span>
+    <span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">22</span><span class="p">]</span> <span class="c1"># Day is defined between 0700 and 2200</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Night&#39;</span><span class="p">,</span> <span class="s1">&#39;Day&#39;</span><span class="p">]</span>
+    <span class="n">shift</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">worked_hours</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">include_lowest</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Night1&#39;</span><span class="p">,</span> <span class="s1">&#39;Night&#39;</span><span class="p">)</span>
+    <span class="n">hours_per_shift</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">worked_hours</span><span class="p">,</span><span class="n">shift</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">hours_per_shift</span><span class="p">)</span>
+    
+    <span class="c1"># Verify whether start date is holiday</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">start_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># Day in calendar, so not holiday</span>
+        <span class="n">start_holiday</span><span class="o">=</span><span class="kc">False</span>
+        <span class="n">fare_dict</span> <span class="o">=</span> <span class="n">normal_dict</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start date is business day.&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Day not in calendar, so holiday</span>
+        <span class="n">start_holiday</span><span class="o">=</span><span class="kc">True</span>
+        <span class="n">fare_dict</span> <span class="o">=</span> <span class="n">holiday_dict</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start date is weekend or holiday&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">df</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">end_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># Day in calendar, so not holiday</span>
+        <span class="n">end_holiday</span><span class="o">=</span><span class="kc">False</span>
+        <span class="n">fare_dict</span> <span class="o">=</span> <span class="n">normal_dict</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;End date is business day&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Day not in calendar, so holiday</span>
+        <span class="n">end_holiday</span><span class="o">=</span><span class="kc">True</span>
+        <span class="n">fare_dict</span> <span class="o">=</span> <span class="n">holiday_dict</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;End date is weekend or holiday&#39;</span><span class="p">)</span>
+
+    <span class="n">honorary_night</span> <span class="o">=</span> <span class="p">((</span><span class="n">hours_per_shift</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">Night</span><span class="o">.</span><span class="n">values</span>  <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">normal_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;night_subsequent_hour_fare&quot;</span><span class="p">))</span>
+    <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">normal_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;night_first_hour_fare&quot;</span><span class="p">))</span>
+    <span class="p">)</span>
+
+    <span class="n">honorary_day</span> <span class="o">=</span> <span class="p">((</span><span class="n">hours_per_shift</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">Day</span><span class="o">.</span><span class="n">values</span>  <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">normal_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;day_subsequent_hour_fare&quot;</span><span class="p">))</span>
+    <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">normal_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;day_first_hour_fare&quot;</span><span class="p">))</span>
+    <span class="p">)</span>
+
+    <span class="n">honorary_total</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">honorary_day</span><span class="o">+</span><span class="n">honorary_night</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You are owed &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">honorary_total</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; euros.&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">honorary_total</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Testing-area">Testing area<a class="anchor-link" href="#Testing-area">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">calculate_honorary</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2019-05-01 15:00:00&#39;</span><span class="p">,</span> 
+                   <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2019-05-02 01:00:00&#39;</span><span class="p">,</span>
+                   <span class="n">normal_dict</span><span class="o">=</span><span class="n">normal_dict</span><span class="p">,</span> 
+                   <span class="n">holiday_dict</span><span class="o">=</span><span class="n">holiday_dict</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Start date: 2019-05-01 15:00:00
+End date: 2019-05-02 01:00:00
+ 
+You have worked 10 hours.
+       0
+1       
+Night  2
+Day    8
+Start date is weekend or holiday
+End date is business day
+ 
+You are owed 351 euros.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>351</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Indeed, the First of May 2019 was holiday in France. I do not distinguish between week end and holiday, since the fare is the same. But you could do that eventually by modifying the function.</p>
+<p>I added a quick feedback on how many hours per day and night were performed, as well as the total amount of euros owed to my mom.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">calculate_honorary</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2019-04-16 15:00:00&#39;</span><span class="p">,</span> 
+                   <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2019-04-17 09:00:00&#39;</span><span class="p">,</span>
+                   <span class="n">normal_dict</span><span class="o">=</span><span class="n">normal_dict</span><span class="p">,</span> 
+                   <span class="n">holiday_dict</span><span class="o">=</span><span class="n">holiday_dict</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Start date: 2019-04-16 15:00:00
+End date: 2019-04-17 09:00:00
+ 
+You have worked 18 hours.
+        0
+1        
+Night   8
+Day    10
+Start date is business day.
+End date is business day
+ 
+You are owed 640 euros.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>640</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And here again, these two days were indeed regular business days</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the following post, I used Tkinter to create a GUI that allowed my mom to use this code without ever needing to see it, which was quite important to not scare her off :D</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I hope you enjoyed this, and maybe found it useful!</p>
+
+</div>
+</div>
+</div>
+ 
+
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+
+
+        
+    </div>
+        <!-- /Content --> 
+
+        <!-- Footer -->
+        <div class="footer gradient-2">
+            <div class="container footer-container ">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title">Shortcuts</div>
+                        <ul class="list-unstyled">
+                            <li><a href="/archives.html">Archives</a></li>
+                            <li><a href="/tags.html">Tags</a></li>
+                            <li><a href="/authors.html">Authors</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title">Social</div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://www.linkedin.com/in/julien-hernandez-lallement-b47347b7/" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://www.xing.com/profile/Julien_HernandezLallement/cv" target="_blank">Xing</a></li>
+                            <li><a href="https://www.researchgate.net/profile/Julen_Hernandez_Lallement" target="_blank">ResearchGate</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title">Links</div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://github.com/juls-dotcom" target="_blank">GitHub</a></li>
+                            <li><a href="https://scholar.google.com/citations?user=ppDsLgIAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a></li>
+                        </ul>
+                    </div> 
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <p class="pull-right text-right">
+                            <small><em>Proudly powered by <a href="http://docs.getpelican.com/" target="_blank">pelican</a></em></small><br/>
+                            <small><em>Theme and code by <a href="https://github.com/molivier" target="_blank">molivier</a></em></small><br/>
+                            <small>&copy; juls-dotcom 2020</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Footer -->
+    </body>
+</html>
