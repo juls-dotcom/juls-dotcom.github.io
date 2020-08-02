@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="In the previous post, I created a function, based on a business day calendar, to calculate fees that should be paid to a expert translator for hours worked during day or night, on business or...">
+        <meta name="keywords" content="application, python">
+        <link rel="icon" href="/extra/favicon.ico">
+        <!-- Canonical -->
+        <link rel="canonical" href="/honorary_2.html">
+        <!-- /Canonical -->
+
+        <title>tutorial: Creating a simple GUI with Tkinter - Juls-dotcom</title>
+
+        <!-- Stylesheets -->
+        <link href="/theme/css/all.min.css" rel="stylesheet">
+        <!-- /Stylesheets -->
+
+        <!-- RSS Feeds -->
+        <!-- /RSS Feeds -->
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+    </head>
+
+    <body>
+
+        <!-- Header -->
+    <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/2020_08_honoraire.jpg'); background-position: center; background-size: cover;">
+
+            <!-- Static navbar -->
+            <div class="container">
+                <div class="header-nav">
+                    <div class="header-logo">
+                      <!--  <a class="pull-left" href="/"><img class="mr20" src="/logo.jpg" alt="logo">Juls-dotcom</a> -->
+                        <a class="pull-left" href="/"><img class="mr20" src="">Juls-dotcom</a>
+                    </div>
+                    <div class="nav pull-right">
+                                <a href="/">Home</a>
+                                <a href="/categories.html">Categories</a>
+                            <a  href="/pages/publications.html">Publications</a>
+                            <a  href="/pages/talks.html">Talks</a>
+                            <a  href="/pages/whois.html">Whois</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /Static navbar -->
+
+            <!-- Header -->
+    <!-- Header -->
+    <div class="container header-wrapper">
+        <div class="row">
+              <div class="col-lg-12">
+                  <div class="header-content">
+                      <h1 class="header-title">tutorial: Creating a simple GUI with Tkinter</h1>
+                      <p class="header-date">By <a href="/author/julien-hernandez-lallement.html">Julien Hernandez Lallement</a>, mar. 25 août 2020, in category <a href="/category/tutorial.html">Tutorial</a></p>
+                      <div class="header-underline"></div>
+                      <div class="clearfix"></div>
+                      <p class="pull-right header-tags">
+                          <span class="glyphicon glyphicon-tags mr5" aria-hidden="true"></span>
+<a href="/tag/application.html">application</a>, <a href="/tag/python.html">python</a>                      </p>
+                  </div>
+              </div>
+        </div>
+    </div>
+    <!-- /Header -->
+            <!-- /Header -->
+
+        </div>
+        <!-- /Header -->
+
+
+        <!-- Content -->
+    <div class="container content">
+        <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the previous post, I created a function, based on a business day calendar, to calculate fees that should be paid to a expert translator for hours worked during day or night, on business or weekend/holidays.</p>
+<p>Here, I wrote a small script to put all of that in the form of a GUI using Tkinter. This was new to me, so I followed tutorials, including <a href="https://www.youtube.com/watch?v=YXPyB4XeYLA">this</a> very nice one I can recommend if you know nothing about Tkinter.</p>
+<p>Let's get started!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>First, I am going to copy paste the function I wrote in the previous post</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">pandas.tseries.holiday</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pandas.tseries.offsets</span> <span class="kn">import</span> <span class="n">CustomBusinessDay</span>
+
+<span class="k">class</span> <span class="nc">FrenchBusinessCalendar</span><span class="p">(</span><span class="n">AbstractHolidayCalendar</span><span class="p">):</span>
+   <span class="n">rules</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;New Years Day&#39;</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">EasterMonday</span><span class="p">,</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;Labour Day&#39;</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;Victory in Europe Day&#39;</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">8</span><span class="p">),</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;Ascension Day&#39;</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="p">[</span><span class="n">Easter</span><span class="p">(),</span> <span class="n">Day</span><span class="p">(</span><span class="mi">39</span><span class="p">)]),</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;Bastille Day&#39;</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">14</span><span class="p">),</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;Assumption of Mary to Heaven&#39;</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">15</span><span class="p">),</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;All Saints Day&#39;</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;Armistice Day&#39;</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">11</span><span class="p">),</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;Christmas Day&#39;</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+   <span class="p">]</span>
+
+<span class="n">French_BD</span> <span class="o">=</span> <span class="n">CustomBusinessDay</span><span class="p">(</span><span class="n">calendar</span><span class="o">=</span><span class="n">FrenchBusinessCalendar</span><span class="p">())</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;2016-12-29&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2021-01-03&#39;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="n">French_BD</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
+
+<span class="c1"># Define fares depending on day time</span>
+<span class="n">normal_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;day_first_hour_fare&#39;</span><span class="p">:</span><span class="s1">&#39;40&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;night_first_hour_fare&#39;</span><span class="p">:</span><span class="s1">&#39;49.50&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;day_subsequent_hour_fare&#39;</span><span class="p">:</span> <span class="s1">&#39;32&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;night_subsequent_hour_fare&#39;</span><span class="p">:</span> <span class="s1">&#39;37.50&#39;</span>
+          <span class="p">}</span>
+
+<span class="n">holiday_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;day_first_hour_fare&#39;</span><span class="p">:</span><span class="s1">&#39;49.50&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;night_first_hour_fare&#39;</span><span class="p">:</span><span class="s1">&#39;57&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;day_subsequent_hour_fare&#39;</span><span class="p">:</span><span class="s1">&#39;37.50&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;night_subsequent_hour_fare&#39;</span><span class="p">:</span><span class="s1">&#39;45&#39;</span>
+
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I modified a bit the function, so that the ouput would not be the actual amount in euros needed to be paid, but a string displaying different information:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calculate_honorary</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">,</span> <span class="n">normal_dict</span><span class="p">,</span> <span class="n">holiday_dict</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the honorary for worked hours based on following rules</span>
+
+<span class="sd">    params: start_date (str), start date in format &#39;%Y-%m-%d-H:M:S&#39;</span>
+<span class="sd">    params: end_date (str), end date in format &#39;%Y-%m-%d-H:M:S&#39;</span>
+<span class="sd">    params: normal_dict (dict), business day fare dictionnary</span>
+<span class="sd">    params: holiday_dict (dict), holiday day fare dictionnary</span>
+
+<span class="sd">    #### Payment Rules</span>
+
+<span class="sd">    day is between 0700 and 2200</span>
+<span class="sd">    night is between 2200 and 0700</span>
+
+<span class="sd">    normal day fare:</span>
+<span class="sd">     * first hour = 40 euros</span>
+<span class="sd">     * subsequent hour = 32 euros</span>
+
+<span class="sd">    normal night fare</span>
+<span class="sd">     * first hour = 49.50 euros</span>
+<span class="sd">     * subsequent hour = 37.50 euros</span>
+
+<span class="sd">    holiday fare:</span>
+<span class="sd">     * first hour = 49.50 euros</span>
+<span class="sd">     * subsequent hour = 37.50 euros</span>
+
+<span class="sd">    holiday fare</span>
+<span class="sd">     * first hour = 57 euros</span>
+<span class="sd">     * subsequent hour = 45 euros</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Transform dates to Timestamps</span>
+    <span class="n">start_date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">start_date</span><span class="p">)</span>
+    <span class="n">end_date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">end_date</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start date: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">start_date</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;End date: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">end_date</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="c1"># Get number of hours worked</span>
+    <span class="n">number_hours_worked</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">end_date</span> <span class="o">-</span> <span class="n">start_date</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">number_hours_worked</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;End date happened before start date&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">main_mess</span> <span class="o">=</span> <span class="s1">&#39;You have worked &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">number_hours_worked</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; hours.&#39;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">main_mess</span><span class="p">)</span>
+
+    <span class="c1"># Get actual hours relative to the day</span>
+    <span class="n">worked_hours</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;H&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span>
+
+    <span class="c1"># Get whether these hours were day or night shift</span>
+    <span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>  <span class="c1"># Day is defined between 0700 and 2200</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Night&#39;</span><span class="p">,</span> <span class="s1">&#39;Day&#39;</span><span class="p">]</span>
+    <span class="n">shift</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">worked_hours</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">include_lowest</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Night1&#39;</span><span class="p">,</span> <span class="s1">&#39;Night&#39;</span><span class="p">)</span>
+    <span class="n">hours_per_shift</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">worked_hours</span><span class="p">,</span> <span class="n">shift</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">hours_per_shift</span><span class="p">)</span>
+
+    <span class="c1"># Verify whether start date is holiday</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">start_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># Day in calendar, so not holiday</span>
+        <span class="n">start_holiday</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">fare_dict</span> <span class="o">=</span> <span class="n">normal_dict</span>
+        <span class="n">start_date_mess</span> <span class="o">=</span> <span class="s1">&#39;Start date is business day.&#39;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">start_date_mess</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Day not in calendar, so holiday</span>
+        <span class="n">start_holiday</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">fare_dict</span> <span class="o">=</span> <span class="n">holiday_dict</span>
+        <span class="n">start_date_mess</span> <span class="o">=</span> <span class="s1">&#39;Start date is weekend or holiday&#39;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">start_date_mess</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">df</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">end_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># Day in calendar, so not holiday</span>
+        <span class="n">end_holiday</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">fare_dict</span> <span class="o">=</span> <span class="n">normal_dict</span>
+        <span class="n">end_date_mess</span> <span class="o">=</span> <span class="s1">&#39;End date is business day&#39;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">end_date_mess</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Day not in calendar, so holiday</span>
+        <span class="n">end_holiday</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">fare_dict</span> <span class="o">=</span> <span class="n">holiday_dict</span>
+        <span class="n">end_date_mess</span> <span class="o">=</span> <span class="s1">&#39;End date is weekend or holiday&#39;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">end_date_mess</span><span class="p">)</span>
+
+    <span class="n">honorary_night</span> <span class="o">=</span> <span class="p">((</span><span class="n">hours_per_shift</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">Night</span><span class="o">.</span><span class="n">values</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">normal_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;night_subsequent_hour_fare&quot;</span><span class="p">))</span>
+                      <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">normal_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;night_first_hour_fare&quot;</span><span class="p">))</span>
+                      <span class="p">)</span>
+
+    <span class="n">honorary_day</span> <span class="o">=</span> <span class="p">((</span><span class="n">hours_per_shift</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">Day</span><span class="o">.</span><span class="n">values</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">normal_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;day_subsequent_hour_fare&quot;</span><span class="p">))</span>
+                    <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">normal_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;day_first_hour_fare&quot;</span><span class="p">))</span>
+                    <span class="p">)</span>
+
+    <span class="n">honorary_total</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">honorary_day</span> <span class="o">+</span> <span class="n">honorary_night</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="n">honorary_mess</span> <span class="o">=</span> <span class="s1">&#39;You are owed &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">honorary_total</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; euros.&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">honorary_mess</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="s1">&#39;Start date: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">start_date</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;          &#39;</span>
+           <span class="o">+</span> <span class="s1">&#39;End date: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">end_date</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;          &#39;</span>
+           <span class="o">+</span>  <span class="n">start_date_mess</span> <span class="o">+</span> <span class="s1">&#39;               &#39;</span>
+           <span class="o">+</span> <span class="n">end_date_mess</span><span class="o">+</span> <span class="s1">&#39;                   &#39;</span>
+           <span class="o">+</span> <span class="n">main_mess</span> <span class="o">+</span> <span class="s1">&#39;                    &#39;</span>
+           <span class="o">+</span> <span class="n">honorary_mess</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, I can wrap this function in a GUI using Tkinter</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>First, import the necessary packages:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">tkcalendar</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="n">messagebox</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We then start the Tkinter instance by calling <code>Tk()</code>, and giving it a title</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+<span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Honorary Calculator&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, what I need is for the user to enter both a start and end date of mission, as well as a start and end hour of mission.
+To do so, I am using the Tkcalendar package (you will need to install it via pip), which provides a nice date picker GUI, see <code>Calendar</code> instance below</p>
+<p>I provide a date picker for the date, and a simple entry box for the hours of begin and end of mission, using the <code>Entry</code> instance below.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create Calendar instance for the start date</span>
+<span class="c1"># Y, M &amp; D just indicates the standard date to be showed when opening the calendar instance</span>
+<span class="n">cal_start_date</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">selectmode</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">,</span><span class="n">year</span><span class="o">=</span><span class="mi">2020</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Create a frame around the Entry box for mission start hour</span>
+<span class="n">frame_start_hour</span> <span class="o">=</span> <span class="n">LabelFrame</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Start Hour(H:M:S)&#39;</span><span class="p">,</span><span class="n">padx</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">frame_start_hour</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">padx</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1"># Create an Entry Box in that frame</span>
+<span class="n">e_start_hour</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame_start_hour</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span><span class="n">bg</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">fg</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">borderwidth</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Calendar for End Date</span>
+<span class="n">cal_end_date</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">selectmode</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">,</span><span class="n">year</span><span class="o">=</span><span class="mi">2020</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">cal_end_date</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="c1">#padx=10,pady=10)</span>
+<span class="c1"># Box for end hour</span>
+<span class="n">frame_end_hour</span> <span class="o">=</span> <span class="n">LabelFrame</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;End Hour (H:M:S)&#39;</span><span class="p">,</span><span class="n">padx</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1"># Entry for end hour</span>
+<span class="n">e_end_hour</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">frame_end_hour</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span><span class="n">bg</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">fg</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">borderwidth</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>That's it! Tkinter is really easy to use and intuitive, so you can get to quite nice results very fast.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, let's mount all of that on the GUI window by defining different rows and columns</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Mount on GUI window</span>
+<span class="n">cal_start_date</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">padx</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">e_start_hour</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                  
+<span class="n">frame_end_hour</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">padx</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">e_end_hour</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">If</span> <span class="n">you</span> <span class="n">now</span> <span class="n">run</span> <span class="n">this</span> <span class="n">code</span><span class="p">,</span> <span class="n">you</span> <span class="n">will</span> <span class="n">see</span> <span class="n">the</span> <span class="n">following</span> <span class="n">GUI</span><span class="p">:</span>
+    
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">PATH</span> <span class="o">=</span> <span class="s2">&quot;/home/julien/website/content/images/2020_08_tkinter/&quot;</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="n">PATH</span> <span class="o">+</span> <span class="s2">&quot;screenshot_1.png&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1200</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+
+<div class="output_png output_subarea output_execute_result">
+<img src="data:image/png;base64,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
+"
+width=1000
+height=1200
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, we need to create a interaction, so that pushing a button (that we define later) really does the fee calculation coded in the function.</p>
+<p>Since this GUI was coded for my mom, I really need a very easy, not fancy, interface that displays the message once the button is pressed.</p>
+<p>Hence, I decided to go for the <code>showinfo</code> messagebox, that will display the results in a info window (btw, this is the reason why I changed the output of the function to a series of string).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">popup</span><span class="p">():</span>
+    <span class="n">messagebox</span><span class="o">.</span><span class="n">showinfo</span><span class="p">(</span><span class="s1">&#39;Honorary Results&#39;</span><span class="p">,</span> <span class="n">calculate_honorary</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">cal_start_date</span><span class="o">.</span><span class="n">get_date</span><span class="p">())</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">e_start_hour</span><span class="o">.</span><span class="n">get</span><span class="p">()),</span>
+                                                                                                       <span class="n">end_date</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">cal_end_date</span><span class="o">.</span><span class="n">get_date</span><span class="p">())</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">e_end_hour</span><span class="o">.</span><span class="n">get</span><span class="p">()),</span>
+                                                                                                       <span class="n">normal_dict</span><span class="o">=</span><span class="n">normal_dict</span><span class="p">,</span>
+                                                                                                       <span class="n">holiday_dict</span><span class="o">=</span><span class="n">holiday_dict</span><span class="p">)</span>
+                        <span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I now add a few buttons so that the user can interact with the GUI.</p>
+<p>Note that the <code>command</code> parameter is given the <code>popup</code> function, which in terms enables the user to use the function we defined previously to calculate the fees.</p>
+<p>I also add a Quit button, just because I can ;)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Define Buttons</span>
+
+<span class="n">button_confirm</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Calculate!&quot;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">popup</span><span class="p">)</span>
+
+
+<span class="c1"># Put the buttons on screen</span>
+
+<span class="n">button_confirm</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">button_quit</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Exit Calculator&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">root</span><span class="o">.</span><span class="n">quit</span><span class="p">)</span>
+<span class="n">button_quit</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You would then be seeing something like this:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="n">PATH</span> <span class="o">+</span> <span class="s2">&quot;screenshot1.png&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1200</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_png output_subarea output_execute_result">
+<img src="data:image/png;base64,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
+"
+width=1000
+height=1200
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that for the GUI to work, you need to add the classic <code>root.mainloop()</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>That's it! You have a functional GUI that allows users to run the code by providing the date and hour input, which will return the amount in euros that need to be paid for the service.</p>
+<p>You could make that much fancier, and add more functionnalities, but that's where I'll stop for now.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I should not that running this code separatly in notebook is not going to produce the GUI. You would have to pack the code in one or multiple .py files, and run them from the prompt, preceded by <code>python</code>.</p>
+<p>You can find this .py files, together with a few other examples of Tkinter in my repository <a href="https://github.com/juls-dotcom/honorary_calculator">https://github.com/juls-dotcom/honorary_calculator</a></p>
+<p>Cheers!</p>
+
+</div>
+</div>
+</div>
+ 
+
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+
+
+        
+    </div>
+        <!-- /Content --> 
+
+        <!-- Footer -->
+        <div class="footer gradient-2">
+            <div class="container footer-container ">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title">Shortcuts</div>
+                        <ul class="list-unstyled">
+                            <li><a href="/archives.html">Archives</a></li>
+                            <li><a href="/tags.html">Tags</a></li>
+                            <li><a href="/authors.html">Authors</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title">Social</div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://www.linkedin.com/in/julien-hernandez-lallement-b47347b7/" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://www.xing.com/profile/Julien_HernandezLallement/cv" target="_blank">Xing</a></li>
+                            <li><a href="https://www.researchgate.net/profile/Julen_Hernandez_Lallement" target="_blank">ResearchGate</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title">Links</div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://github.com/juls-dotcom" target="_blank">GitHub</a></li>
+                            <li><a href="https://scholar.google.com/citations?user=ppDsLgIAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a></li>
+                        </ul>
+                    </div> 
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <p class="pull-right text-right">
+                            <small><em>Proudly powered by <a href="http://docs.getpelican.com/" target="_blank">pelican</a></em></small><br/>
+                            <small><em>Theme and code by <a href="https://github.com/molivier" target="_blank">molivier</a></em></small><br/>
+                            <small>&copy; juls-dotcom 2020</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Footer -->
+    </body>
+</html>
