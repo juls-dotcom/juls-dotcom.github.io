@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7932ba2c-96d1-41e1-8cf2-ec3b3a0f2f4e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/website.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/website.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets" beforeDir="false" afterPath="$PROJECT_DIR$/datasets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/.Rapp.history" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/.Rapp.history" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/.Rhistory" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/.Rhistory" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/1M.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/1M.csv" afterDir="false" />
@@ -121,17 +120,8 @@
       <change beforePath="$PROJECT_DIR$/datasets/yoga.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/yoga_raw.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga_raw.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/yoga_wiki.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga_wiki.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/on_going/JaspEvidenceofAbsence/.ipynb_checkpoints/Untitled-Copy1-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/on_going/JaspEvidenceofAbsence/.ipynb_checkpoints/frequentist vs bayesian - Part I-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/on_going/JaspEvidenceofAbsence/JaspEvidenceofAbsence/.~lock.Presentation.pptx#" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/on_going/JaspEvidenceofAbsence/JaspEvidenceofAbsence/AllVar4Jasp copy.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/on_going/JaspEvidenceofAbsence/JaspEvidenceofAbsence/Gender.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/on_going/JaspEvidenceofAbsence/JaspEvidenceofAbsence/Presentation.pptx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/on_going/JaspEvidenceofAbsence/JaspEvidenceofAbsence/anova.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/on_going/JaspEvidenceofAbsence/JaspEvidenceofAbsence/makeAnovaData.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/on_going/JaspEvidenceofAbsence/JaspEvidenceofAbsence/ttest.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/on_going/JaspEvidenceofAbsence/Untitled-Copy1.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/on_going/JaspEvidenceofAbsence/__MACOSX/JaspEvidenceofAbsence/m._akeAnovaData.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/on_going/Untitled.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/on_going/Untitled.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theme/nest" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/theme/nest/static/css/nest.css" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/static/css/nest.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/theme/nest/templates/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/templates/archives.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/theme/nest/templates/article.html" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/templates/article.html" afterDir="false" />
@@ -170,13 +160,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PycharmProjects/honorary_gui/src/honorary_gui" />
+    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/honorary_gui/src/honorary_gui" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../PycharmProjects/honorary_gui/src/honorary_gui" />
+      <recent name="$USER_HOME$/PycharmProjects/honorary_gui/src/honorary_gui" />
     </key>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
