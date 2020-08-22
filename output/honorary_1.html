@@ -116,7 +116,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>My mom works in France. So first, I created a calendar of french holidays, since the fare that my mom is getting differs whether the day was holiday or a regular business day.</p>
+<p>My mom works in France. So first, I created a calendar of french holidays, since the fare that she is getting differs whether the day was holiday or a regular business day.</p>
 
 </div>
 </div>
@@ -241,9 +241,9 @@
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Define fares depending on day time</span>
-<span class="n">normal_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;day_first_hour_fare&#39;</span><span class="p">:</span><span class="s1">&#39;40&#39;</span><span class="p">,</span>
+<span class="n">normal_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;day_first_hour_fare&#39;</span><span class="p">:</span><span class="s1">&#39;42&#39;</span><span class="p">,</span>
            <span class="s1">&#39;night_first_hour_fare&#39;</span><span class="p">:</span><span class="s1">&#39;49.50&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;day_subsequent_hour_fare&#39;</span><span class="p">:</span> <span class="s1">&#39;32&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;day_subsequent_hour_fare&#39;</span><span class="p">:</span> <span class="s1">&#39;30&#39;</span><span class="p">,</span>
            <span class="s1">&#39;night_subsequent_hour_fare&#39;</span><span class="p">:</span> <span class="s1">&#39;37.50&#39;</span>
           <span class="p">}</span>
 
@@ -270,7 +270,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[186]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calculate_honorary</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">,</span> <span class="n">normal_dict</span><span class="p">,</span> <span class="n">holiday_dict</span><span class="p">):</span>
@@ -288,8 +288,8 @@
 <span class="sd">    night is between 2200 and 0700</span>
 
 <span class="sd">    normal day fare:</span>
-<span class="sd">     * first hour = 40 euros</span>
-<span class="sd">     * subsequent hour = 32 euros</span>
+<span class="sd">     * first hour = 42 euros</span>
+<span class="sd">     * subsequent hour = 30 euros</span>
 
 <span class="sd">    normal night fare</span>
 <span class="sd">     * first hour = 49.50 euros</span>
@@ -320,45 +320,107 @@
 
     <span class="c1"># Get actual hours relative to the day</span>
     <span class="n">worked_hours</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span><span class="n">end_date</span><span class="p">,</span><span class="n">freq</span><span class="o">=</span><span class="s1">&#39;H&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span>
-    
+    <span class="n">worked_dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span><span class="n">end_date</span><span class="p">,</span><span class="n">freq</span><span class="o">=</span><span class="s1">&#39;H&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
+
     <span class="c1"># Get whether these hours were day or night shift</span>
-    <span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">22</span><span class="p">]</span> <span class="c1"># Day is defined between 0700 and 2200</span>
-    <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Night&#39;</span><span class="p">,</span> <span class="s1">&#39;Day&#39;</span><span class="p">]</span>
-    <span class="n">shift</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">worked_hours</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">include_lowest</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Night1&#39;</span><span class="p">,</span> <span class="s1">&#39;Night&#39;</span><span class="p">)</span>
-    <span class="n">hours_per_shift</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">worked_hours</span><span class="p">,</span><span class="n">shift</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="c1">## Day is defined between 0700 and 2200</span>
+    <span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span> <span class="mi">24</span><span class="p">]</span> 
+    <span class="c1"># I add a third night label that I rename later on. Suboptimal</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Night&#39;</span><span class="p">,</span> <span class="s1">&#39;Day&#39;</span><span class="p">,</span> <span class="s1">&#39;Night1&#39;</span><span class="p">]</span>
+    <span class="c1"># Compute shifts</span>
+    <span class="n">shift</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">worked_hours</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">include_lowest</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Night1&#39;</span><span class="p">,</span> <span class="s1">&#39;Night&#39;</span><span class="p">)</span>
+    <span class="c1"># Concatenate data  </span>
+    <span class="n">hours_per_shift</span> <span class="o">=</span> <span class="p">(</span><span class="n">pd</span>
+                        <span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">worked_dates</span><span class="p">,</span> <span class="n">worked_hours</span><span class="p">,</span><span class="n">shift</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+                        <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;hour&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="s1">&#39;shifts&#39;</span><span class="p">}))</span>
+    <span class="c1"># Shift the shifts column to get correct number of hours per shift per day</span>
+    <span class="n">hours_per_shift</span><span class="o">.</span><span class="n">shifts</span> <span class="o">=</span> <span class="n">hours_per_shift</span><span class="o">.</span><span class="n">shifts</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># Groupby and count the number of hours</span>
+    <span class="c1"># Fill NaN with 0 hours worked</span>
+    <span class="n">hours_per_shift</span> <span class="o">=</span> <span class="n">hours_per_shift</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;shifts&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">hours_per_shift</span><span class="p">)</span>
-    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
     <span class="c1"># Verify whether start date is holiday</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">start_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="c1"># Day in calendar, so not holiday</span>
         <span class="n">start_holiday</span><span class="o">=</span><span class="kc">False</span>
-        <span class="n">fare_dict</span> <span class="o">=</span> <span class="n">normal_dict</span>
+        <span class="n">fare_dict_start</span> <span class="o">=</span> <span class="n">normal_dict</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start date is business day.&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># Day not in calendar, so holiday</span>
         <span class="n">start_holiday</span><span class="o">=</span><span class="kc">True</span>
-        <span class="n">fare_dict</span> <span class="o">=</span> <span class="n">holiday_dict</span>
+        <span class="n">fare_dict_start</span> <span class="o">=</span> <span class="n">holiday_dict</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start date is weekend or holiday&#39;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">df</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">end_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="c1"># Day in calendar, so not holiday</span>
         <span class="n">end_holiday</span><span class="o">=</span><span class="kc">False</span>
-        <span class="n">fare_dict</span> <span class="o">=</span> <span class="n">normal_dict</span>
+        <span class="n">fare_dict_end</span> <span class="o">=</span> <span class="n">normal_dict</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;End date is business day&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># Day not in calendar, so holiday</span>
         <span class="n">end_holiday</span><span class="o">=</span><span class="kc">True</span>
-        <span class="n">fare_dict</span> <span class="o">=</span> <span class="n">holiday_dict</span>
+        <span class="n">fare_dict_end</span> <span class="o">=</span> <span class="n">holiday_dict</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;End date is weekend or holiday&#39;</span><span class="p">)</span>
 
-    <span class="n">honorary_night</span> <span class="o">=</span> <span class="p">((</span><span class="n">hours_per_shift</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">Night</span><span class="o">.</span><span class="n">values</span>  <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">normal_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;night_subsequent_hour_fare&quot;</span><span class="p">))</span>
-    <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">normal_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;night_first_hour_fare&quot;</span><span class="p">))</span>
-    <span class="p">)</span>
+    <span class="c1"># Calculate fee</span>
 
-    <span class="n">honorary_day</span> <span class="o">=</span> <span class="p">((</span><span class="n">hours_per_shift</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">Day</span><span class="o">.</span><span class="n">values</span>  <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">normal_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;day_subsequent_hour_fare&quot;</span><span class="p">))</span>
-    <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">normal_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;day_first_hour_fare&quot;</span><span class="p">))</span>
-    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">start_date</span><span class="o">.</span><span class="n">date</span><span class="p">()</span> <span class="o">==</span> <span class="n">end_date</span><span class="o">.</span><span class="n">date</span><span class="p">():</span> <span class="c1"># if mission was on one day only </span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mission was on one single day&#39;</span><span class="p">)</span>
+         <span class="c1"># Set end date as no gain</span>
+        <span class="n">honorary_end_date</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="c1"># Get first day data</span>
+        <span class="n">day_one</span> <span class="o">=</span> <span class="n">hours_per_shift</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">hours_per_shift</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">start_date</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">shift</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Day&#39;</span><span class="p">:</span>
+            <span class="n">honorary_start_date</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">fare_dict_start</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;day_first_hour_fare&quot;</span><span class="p">))</span>
+                       <span class="o">+</span> <span class="nb">float</span><span class="p">((</span><span class="n">day_one</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">day_one</span><span class="o">.</span><span class="n">shifts</span> <span class="o">==</span> <span class="s1">&#39;Day&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hour</span>  <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> 
+                               <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">fare_dict_start</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;day_subsequent_hour_fare&quot;</span><span class="p">)))</span>
+                       <span class="o">+</span> <span class="nb">float</span><span class="p">((</span><span class="n">day_one</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">day_one</span><span class="o">.</span><span class="n">shifts</span> <span class="o">==</span> <span class="s1">&#39;Night&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span> 
+                               <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">fare_dict_start</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;night_subsequent_hour_fare&quot;</span><span class="p">))))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">honorary_start_date</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">fare_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;night_first_hour_fare&quot;</span><span class="p">))</span>
+                       <span class="o">+</span> <span class="nb">float</span><span class="p">((</span><span class="n">day_one</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">day_one</span><span class="o">.</span><span class="n">shifts</span> <span class="o">==</span> <span class="s1">&#39;Night&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hour</span>  <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> 
+                               <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">fare_dict_start</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;night_subsequent_hour_fare&quot;</span><span class="p">)))</span>
+                       <span class="o">+</span> <span class="nb">float</span><span class="p">((</span><span class="n">day_one</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">day_one</span><span class="o">.</span><span class="n">shifts</span> <span class="o">==</span> <span class="s1">&#39;Day&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span> 
+                           <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">fare_dict_start</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;day_subsequent_hour_fare&quot;</span><span class="p">))))</span>
 
-    <span class="n">honorary_total</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">honorary_day</span><span class="o">+</span><span class="n">honorary_night</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c1"># if mission was on two consecutive days</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mission was on two consecutive days&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">day_one</span> <span class="o">=</span> <span class="n">hours_per_shift</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">hours_per_shift</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">start_date</span><span class="p">]</span>
+        <span class="n">day_two</span> <span class="o">=</span> <span class="n">hours_per_shift</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">hours_per_shift</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">end_date</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">shift</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Day&#39;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;First hour is day shift&#39;</span><span class="p">)</span>     
+            <span class="c1"># Honorary Start Date</span>
+            <span class="n">honorary_start_date</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">fare_dict_start</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;day_first_hour_fare&quot;</span><span class="p">))</span>
+                           <span class="o">+</span> <span class="nb">float</span><span class="p">((</span><span class="n">day_one</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">day_one</span><span class="o">.</span><span class="n">shifts</span> <span class="o">==</span> <span class="s1">&#39;Day&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hour</span>  <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> 
+                                   <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">fare_dict_start</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;day_subsequent_hour_fare&quot;</span><span class="p">)))</span>
+                           <span class="o">+</span> <span class="nb">float</span><span class="p">((</span><span class="n">day_one</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">day_one</span><span class="o">.</span><span class="n">shifts</span> <span class="o">==</span> <span class="s1">&#39;Night&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span> 
+                                   <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">fare_dict_start</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;night_subsequent_hour_fare&quot;</span><span class="p">))))</span>
+            <span class="c1"># Honorary End Date</span>
+            <span class="n">honorary_end_date</span> <span class="o">=</span> <span class="p">(</span>
+                           <span class="o">+</span> <span class="nb">float</span><span class="p">((</span><span class="n">day_two</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">day_two</span><span class="o">.</span><span class="n">shifts</span> <span class="o">==</span> <span class="s1">&#39;Night&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span> 
+                                   <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">fare_dict_end</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;night_subsequent_hour_fare&quot;</span><span class="p">)))</span>
+                           <span class="o">+</span> <span class="nb">float</span><span class="p">((</span><span class="n">day_two</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">day_two</span><span class="o">.</span><span class="n">shifts</span> <span class="o">==</span> <span class="s1">&#39;Day&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span> 
+                                   <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">fare_dict_end</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;day_subsequent_hour_fare&quot;</span><span class="p">))))</span>
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;First hour isnight shift&#39;</span><span class="p">)</span>
+            <span class="c1"># Honorary Start Date</span>
+            <span class="n">honorary_start_date</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">fare_dict_start</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;night_first_hour_fare&quot;</span><span class="p">))</span>
+                           <span class="o">+</span> <span class="nb">float</span><span class="p">((</span><span class="n">day_one</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">day_one</span><span class="o">.</span><span class="n">shifts</span> <span class="o">==</span> <span class="s1">&#39;Night&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hour</span>  <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> 
+                                   <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">fare_dict_start</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;night_subsequent_hour_fare&quot;</span><span class="p">)))</span>
+                           <span class="o">+</span> <span class="nb">float</span><span class="p">((</span><span class="n">day_one</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">day_one</span><span class="o">.</span><span class="n">shifts</span> <span class="o">==</span> <span class="s1">&#39;Day&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span> 
+                                   <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">fare_dict_start</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;day_subsequent_hour_fare&quot;</span><span class="p">))))</span>
+            <span class="c1"># Honorary End Date</span>
+            <span class="n">honorary_end_date</span> <span class="o">=</span> <span class="p">(</span>
+                           <span class="o">+</span> <span class="nb">float</span><span class="p">((</span><span class="n">day_two</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">day_two</span><span class="o">.</span><span class="n">shifts</span> <span class="o">==</span> <span class="s1">&#39;Night&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span> 
+                                   <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">fare_dict_end</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;night_subsequent_hour_fare&quot;</span><span class="p">)))</span>
+                           <span class="o">+</span> <span class="nb">float</span><span class="p">((</span><span class="n">day_two</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">day_two</span><span class="o">.</span><span class="n">shifts</span> <span class="o">==</span> <span class="s1">&#39;Day&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span> 
+                                   <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">fare_dict_end</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;day_subsequent_hour_fare&quot;</span><span class="p">))))</span>
+
+
+    <span class="n">honorary_total</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">honorary_start_date</span><span class="o">+</span><span class="n">honorary_end_date</span><span class="p">)</span>
     
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You are owed &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">honorary_total</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; euros.&#39;</span><span class="p">)</span>
@@ -379,11 +441,11 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[187]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">calculate_honorary</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2019-05-01 15:00:00&#39;</span><span class="p">,</span> 
-                   <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2019-05-02 01:00:00&#39;</span><span class="p">,</span>
+                   <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;2019-05-02 00:00:00&#39;</span><span class="p">,</span>
                    <span class="n">normal_dict</span><span class="o">=</span><span class="n">normal_dict</span><span class="p">,</span> 
                    <span class="n">holiday_dict</span><span class="o">=</span><span class="n">holiday_dict</span><span class="p">)</span>
 </pre></div>
@@ -403,30 +465,37 @@
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Start date: 2019-05-01 15:00:00
-End date: 2019-05-02 01:00:00
+End date: 2019-05-02 00:00:00
  
-You have worked 10 hours.
-       0
-1       
-Night  2
-Day    8
+You have worked 9 hours.
+                   hour
+date       shifts      
+2019-05-01 Night    2.0
+           Day      7.0
+2019-05-02 Night    0.0
+           Day      0.0
+ 
 Start date is weekend or holiday
 End date is business day
+
+Mission was on two consecutive days
+
+First hour is day shift
  
-You are owed 351 euros.
+You are owed 364 euros.
 </pre>
 </div>
 </div>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[187]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>351</pre>
+<pre>364</pre>
 </div>
 
 </div>
@@ -446,7 +515,7 @@ You are owed 351 euros.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[185]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">calculate_honorary</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2019-04-16 15:00:00&#39;</span><span class="p">,</span> 
@@ -473,27 +542,34 @@ You are owed 351 euros.
 End date: 2019-04-17 09:00:00
  
 You have worked 18 hours.
-        0
-1        
-Night   8
-Day    10
+                   hour
+date       shifts      
+2019-04-16 Night      2
+           Day        7
+2019-04-17 Night      7
+           Day        2
+ 
 Start date is business day.
 End date is business day
+
+Mission was on two consecutive days
+
+First hour is day shift
  
-You are owed 640 euros.
+You are owed 619 euros.
 </pre>
 </div>
 </div>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[185]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>640</pre>
+<pre>619</pre>
 </div>
 
 </div>

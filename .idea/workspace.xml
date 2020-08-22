@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7932ba2c-96d1-41e1-8cf2-ec3b3a0f2f4e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/2020_08_honorary_calculator.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_08_honorary_calculator.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/2020_01_Permutation.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_01_Permutation.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets" beforeDir="false" afterPath="$PROJECT_DIR$/datasets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/.Rapp.history" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/.Rapp.history" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/.Rhistory" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/.Rhistory" afterDir="false" />
@@ -121,17 +121,6 @@
       <change beforePath="$PROJECT_DIR$/datasets/yoga.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/yoga_raw.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga_raw.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/yoga_wiki.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga_wiki.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/archives.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/author/julien-hernandez-lallement.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/author/julien-hernandez-lallement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/author/julien-hernandez-lallement2.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/author/julien-hernandez-lallement2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/authors.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/authors.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/category/tutorial.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/category/tutorial.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/index2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tag/application.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/application.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tag/python.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/python.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tags.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tags.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/theme/nest" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/theme/nest/static/css/nest.css" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/static/css/nest.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/theme/nest/templates/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/templates/archives.html" afterDir="false" />
@@ -171,11 +160,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/honorary_gui/src/honorary_gui" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PycharmProjects/honorary_gui/src/honorary_gui" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$USER_HOME$/PycharmProjects/honorary_gui/src/honorary_gui" />
+      <recent name="$PROJECT_DIR$/../PycharmProjects/honorary_gui/src/honorary_gui" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
