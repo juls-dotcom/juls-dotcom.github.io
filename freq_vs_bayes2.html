@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+ <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -60,7 +60,7 @@
               <div class="col-lg-12">
                   <div class="header-content">
                       <h1 class="header-title">tutorial: Frequentist vs Bayesian: Round 2!</h1>
-                      <p class="header-date">By <a href="/author/julien-hernandez-lallement.html">Julien Hernandez Lallement</a>, dim. 05 juillet 2020, in category <a href="/category/tutorial.html">Tutorial</a></p>
+                      <p class="header-date">By <a href="/author/julien-hernandez-lallement.html">Julien Hernandez Lallement</a>, 2020-07-05, in category <a href="/category/tutorial.html">Tutorial</a></p>
                       <div class="header-underline"></div>
                       <div class="clearfix"></div>
                       <p class="pull-right header-tags">
@@ -98,7 +98,7 @@ Of course, these statistics can be applied on any other dataset. I selected the 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -112,7 +112,7 @@ Of course, these statistics can be applied on any other dataset. I selected the 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -137,7 +137,7 @@ You will find all kind of approaches to analyse this dataset, as well as machine
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
@@ -175,7 +175,7 @@ Embarked
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -201,7 +201,7 @@ If you do the analysis yourself, you will find out that some variables are prett
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Age</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">)</span>
@@ -217,13 +217,13 @@ If you do the analysis yourself, you will find out that some variables are prett
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[17]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f44bc4dbf50&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f90e8f40a90&gt;</pre>
 </div>
 
 </div>
@@ -257,7 +257,7 @@ If you do the analysis yourself, you will find out that some variables are prett
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Survived&#39;</span><span class="p">)</span>
@@ -339,7 +339,7 @@ However, during my time in research, I got used to the open source software <a h
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
@@ -357,7 +357,7 @@ However, during my time in research, I got used to the open source software <a h
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -403,7 +403,7 @@ Let's first start with the classic frequentist approach.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="n">PATH</span> <span class="o">+</span> <span class="s2">&quot;Slide2_independent_sample_descri.PNG&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
@@ -419,7 +419,7 @@ Let's first start with the classic frequentist approach.</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[42]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -448,7 +448,7 @@ height=800
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="n">PATH</span> <span class="o">+</span> <span class="s2">&quot;Slide2_independent_sample_result.PNG&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
@@ -464,7 +464,7 @@ height=800
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -501,7 +501,7 @@ height=400
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="n">PATH</span> <span class="o">+</span> <span class="s2">&quot;Slide4_independent_sample_bayes_descr.PNG&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
@@ -517,7 +517,7 @@ height=400
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[45]:</div>
+    <div class="prompt output_prompt">Out[9]:</div>
 
 
 
@@ -555,7 +555,7 @@ We find interesting options in the main window, that would allow you to perform 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="n">PATH</span> <span class="o">+</span> <span class="s2">&quot;Slide5_independent_sample_bayes_result.PNG&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
@@ -571,7 +571,7 @@ We find interesting options in the main window, that would allow you to perform 
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[46]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -637,7 +637,7 @@ In the Bayesian world, and according to initial classifications by <a href="http
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_housing</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;BostonHousing.csv&#39;</span><span class="p">)</span>
@@ -658,7 +658,7 @@ In the Bayesian world, and according to initial classifications by <a href="http
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">df_housing</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;chas&#39;</span><span class="p">)</span>
@@ -723,7 +723,7 @@ Now, let's explore this observation statistically.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="n">PATH</span> <span class="o">+</span> <span class="s2">&quot;Slide5_independent_boston.PNG&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
@@ -739,7 +739,7 @@ Now, let's explore this observation statistically.</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[18]:</div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -769,7 +769,7 @@ Let's see what we obtain with a bayesian test.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="n">PATH</span> <span class="o">+</span> <span class="s2">&quot;Slide5_independent_bayes_boston.PNG&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
@@ -785,7 +785,7 @@ Let's see what we obtain with a bayesian test.</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -817,6 +817,59 @@ So far, so good. Both approaches make sense. Now let's look at another variable 
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Instead of looking at a variable that is likely to show a difference in price, let's look at another one: the "zn" variable, i.e., the proportion of residential land zoned for lots over 25,000 sq.ft.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>First, let's use frequentist statistics:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="n">PATH</span> <span class="o">+</span> <span class="s2">&quot;Capture.PNG&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_png output_subarea output_execute_result">
+<img src="data:image/png;base64,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
+"
+width=400
+height=400
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And compare then to what Bayesian would say:</p>
 
 </div>
 </div>
@@ -861,7 +914,15 @@ height=400
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Here, BF10 = 0.284. This value is below 1/3 and, according to the nomenclature mentioned above, this time, our data provides moderate evidence for H0, i.e., that locations on or far from the Charles River does not lead to a higher proportion in industrial zone. This result should be opposed to a moderate evidence of absence as we found before in the Titanic dataset. This illustrates how we can not only quantify the strength of an effect, but also the absence of evidence for an effect.</p>
+<p>The frequentist would say that there is no effect, but again, we do not know whether there actually is no effect, or whether we are lacking statistical power...</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The bayesian says that we have a BF10 = 0.284. This value is below 1/3 and, according to the nomenclature mentioned above, this time, our data provides moderate evidence for H0, i.e., that locations on or far from the Charles River does not lead to a higher proportion in industrial zone. This result should be opposed to a moderate evidence of absence as we found before in the Titanic dataset. This illustrates how we can not only quantify the strength of an effect, but also the absence of evidence for an effect.</p>
 
 </div>
 </div>
