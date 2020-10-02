@@ -4,3 +4,6 @@
 [submodule "juls-dotcom.github.io"]
 	path = juls-dotcom.github.io
 	url = https://github.com/juls-dotcom/juls-dotcom.github.io
+[submodule "plugins/ipythonnb"]
+	path = plugins/ipythonnb
+	url = git://github.com/danielfrg/pelican-ipythonnb.git
