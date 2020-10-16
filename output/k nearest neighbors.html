@@ -45,6 +45,7 @@
                     <div class="nav pull-right">
                                 <a href="/">Home</a>
                                 <a href="/categories.html">Categories</a>
+                            <a  href="/pages/CV.html">CV</a>
                             <a  href="/pages/publications.html">Publications</a>
                             <a  href="/pages/talks.html">Talks</a>
                             <a  href="/pages/whois.html">Whois</a>
@@ -104,7 +105,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>KNN is a supervised learning technique, which means that it uses labelled data. The data is represented by vector of features, such as shape, length, and color. The dimension of the space in which these data points evolve is the number of features you are dealing with. In other words, each data point is represented by a vector of X features.</p>
+<p>KNN is a supervised learning technique, which means that it uses labelled data. The data is represented by vector of features, such as shape, length, and color. The dimension of the space in which these data points evolve is the number of features you are dealing with. In other words, each data point is represented by a vector of $X$ features.</p>
 
 </div>
 </div>
@@ -156,7 +157,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As introduced before, a new data point is classified based on a majority <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">vote</a> of its neighbors, with the data point being categorized as the class most common amongst its K nearest neighbors measured by a distance function. If K = 1, the data point is simply assigned to the class of its nearest neighbor.</p>
+<p>As introduced before, a new data point is classified based on a majority <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">vote</a> of its neighbors, with the data point being categorized as the class most common amongst its $K$ nearest neighbors measured by a distance function. If $K$ = 1, the data point is simply assigned to the class of its nearest neighbor.</p>
 <p>Different distance functions can be used, and they may provide slightly different results:</p>
 
 </div>
@@ -181,6 +182,16 @@
 <p>It should be noted that the above distance functions are only valid for continuous variables. If you are working with  categorical variables, then you should use the Hamming distance instead, but I will not be covering it in this post.</p>
 <p>Moreover, there are other distances, such as the Chebyshev distance (absolute value of the differences between all the entries in two vectors AND the maximum of these values), which could be useful for multi-dimenstional space. I have not yet tried such computations in a KNN, but maybe you find the time to try it out ;)</p>
 <p>Finally, note that all three distance functions can be easily implemented using the KNN from SciKit Learn (see below).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Search-Algorithm">Search Algorithm<a class="anchor-link" href="#Search-Algorithm">&#182;</a></h3><p>For very large datasets, it can become extremely computionally demanding to run a KNN. Other search algorithms sacrifice an exhaustive search for a faster run time. Structures such as KDTrees (see <a href="https://en.wikipedia.org/wiki/K-d_tree">https://en.wikipedia.org/wiki/K-d_tree</a>) or Ball trees (see <a href="https://en.wikipedia.org/wiki/Ball_tree">https://en.wikipedia.org/wiki/Ball_tree</a>) are used for faster run times. Have a look at them to see how they can optimize your process.</p>
+<h3 id="Radius-Neighbors-Classifier">Radius Neighbors Classifier<a class="anchor-link" href="#Radius-Neighbors-Classifier">&#182;</a></h3><p>This is the same idea as a $K$ nearest neighbors classifier, but instead of finding the $K$ nearest neighbors, it will look at all the neighbors within a given radius. Decision on radius value should be taken after closely looking at the data distribution.</p>
+<h3 id="K-Neighbors-Regressor">K Neighbors Regressor<a class="anchor-link" href="#K-Neighbors-Regressor">&#182;</a></h3><p>To use the same logic on a regression problem (as opposed to classification as it is now), we simply find the weighted average of the $K$ nearest neighbors. Instead of taking the majority class, we calculate a weighted average of these nearest values, using the same weighting method as above.</p>
 
 </div>
 </div>

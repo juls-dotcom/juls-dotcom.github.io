@@ -2,31 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7932ba2c-96d1-41e1-8cf2-ec3b3a0f2f4e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/plugins/ipythonnb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/pages/CV.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshot from 2020-08-09 17-30-25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshot from 2020-08-09 17-37-20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshot from 2020-08-09 17-38-42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshot from 2020-08-09 17-54-21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshot from 2020-08-09 17-56-14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshot from 2020-08-09 17-57-31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshot from 2020-08-09 17-59-00.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshot from 2020-08-09 17-59-59.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshot from 2020-08-09 18-07-06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshot from 2020-08-09 18-07-34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/choco.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/2020_01_Permutation.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_01_Permutation.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/2020_02_permutation_real_data.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_02_permutation_real_data.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/2020_03_predicted_purchase_I.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_03_predicted_purchase_I.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/2020_04_meta_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_04_meta_analysis.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/2020_04_meta_analysis_2.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_04_meta_analysis_2.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/2020_05_Introduction to Machine Learning I.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_05_Introduction to Machine Learning I.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/2020_07_frequ_vs_bayes_Part1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_07_frequ_vs_bayes_Part1.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/2020_07_frequ_vs_bayes_Part2.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_07_frequ_vs_bayes_Part2.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/2020_08_honorary_calculator.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_08_honorary_calculator.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/2020_08_honorary_calculator_2.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_08_honorary_calculator_2.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/2020_09_tableau_python.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_09_tableau_python.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/2020_10_linear_regression.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_10_linear_regression.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/2020_10_logistic_regression.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_10_logistic_regression.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/pages/whois.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/pages/whois.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets" beforeDir="false" afterPath="$PROJECT_DIR$/datasets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/.Rapp.history" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/.Rapp.history" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/.Rhistory" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/.Rhistory" afterDir="false" />
@@ -144,10 +125,7 @@
       <change beforePath="$PROJECT_DIR$/datasets/yoga.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/yoga_raw.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga_raw.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/yoga_wiki.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga_wiki.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/johan1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/johan2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/johan3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/non_choco.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/K-Means.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/K-Means.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/academia vs private.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/academia vs private.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/archives.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/author/julien-hernandez-lallement.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/author/julien-hernandez-lallement.html" afterDir="false" />
@@ -163,7 +141,10 @@
       <change beforePath="$PROJECT_DIR$/output/honorary_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/honorary_2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/index2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/k nearest neighbors.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/k nearest neighbors.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/logistic regression.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/logistic regression.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/machine_learn_intro_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/machine_learn_intro_1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/machine_learn_intro_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/machine_learn_intro_2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/meta_analysis_intro.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/meta_analysis_intro.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/meta_analysis_python.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/meta_analysis_python.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/pages/publications.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/pages/publications.html" afterDir="false" />
@@ -173,6 +154,7 @@
       <change beforePath="$PROJECT_DIR$/output/permutation_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/permutation_2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/predict_sales_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/predict_sales_1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/predict_sales_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/predict_sales_2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/regression_approaches.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/regression_approaches.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/tableau&amp;python.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tableau&amp;python.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/tag/academia.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/academia.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/tag/analysis.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/analysis.html" afterDir="false" />
@@ -181,6 +163,7 @@
       <change beforePath="$PROJECT_DIR$/output/tag/course.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/course.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/tag/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/tag/data-science.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/data-science.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tag/kmeans.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/kmeans.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/tag/machine-learning.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/machine-learning.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/tag/marketing.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/marketing.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/tag/meta-analysis.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/meta-analysis.html" afterDir="false" />
@@ -192,9 +175,12 @@
       <change beforePath="$PROJECT_DIR$/output/tag/statistics.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/statistics.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/tag/tableau.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/tableau.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/tags.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tags.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pelicanconf.py" beforeDir="false" afterPath="$PROJECT_DIR$/pelicanconf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/ipynb/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipynb/core.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stats.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/ipythonnb" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipythonnb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/ipythonnb/pelican_jupyter/markup.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipythonnb/pelican_jupyter/markup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/pelican-ipythonnb" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/pelican-ipythonnb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/pelican-ipythonnb/ipythonnb.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/pelican-ipythonnb/ipythonnb.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/theme/nest" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/theme/nest/static/css/nest.css" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/static/css/nest.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/theme/nest/templates/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/theme/nest/templates/archives.html" afterDir="false" />
@@ -226,7 +212,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1aP7ClVJGHA5sE4e6NwzqhiHbef" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
