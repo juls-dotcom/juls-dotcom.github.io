@@ -16,7 +16,7 @@ Currently, I work at Orsay, a retail company where I implement data-driven marke
 increase our understanding of customer dynamics. I use Machine Learning approaches when necessary, while trying to find 
 a good balance between interpretability and accuracy, keeping the "hype" in data science as much at bay as possible.
 
-See my [CV](https://drive.google.com/file/d/1fSZbN9TxmumlBKqbvGJGwyrhMxHmltDO/view?usp=sharing) for more historical information.
+See my [CV](https://drive.google.com/file/d/19IeqTXfXb7emQ8OtWoj6Rbh7GM0vm8Pp/view?usp=sharing) for more historical information.
 
 I've come to realize that my research training is quite useful to approach business problems. From coding in 
 [Python](https://drive.google.com/file/d/1ncaKdl5IqaaYDdXAOPmLrDQtG2Oc0Dzv/view) or 

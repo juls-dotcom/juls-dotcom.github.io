@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7932ba2c-96d1-41e1-8cf2-ec3b3a0f2f4e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/content/pages/CV.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/pages/CV.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/pages/whois.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/pages/whois.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets" beforeDir="false" afterPath="$PROJECT_DIR$/datasets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/.Rapp.history" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/.Rapp.history" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/.Rhistory" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/.Rhistory" afterDir="false" />
@@ -121,6 +120,8 @@
       <change beforePath="$PROJECT_DIR$/datasets/yoga.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/yoga_raw.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga_raw.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/yoga_wiki.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga_wiki.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/pages/CV.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/pages/CV.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/pages/whois.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/pages/whois.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/ipynb/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipynb/core.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/ipythonnb" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipythonnb" afterDir="false" />
