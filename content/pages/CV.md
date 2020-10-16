@@ -6,4 +6,4 @@ Slug: CV
 Authors: Julien Hernandez Lallement
 Summary: CV
 
-You can find a full version of my CV [here](https://drive.google.com/file/d/1dgodO7OCbI6RIhbVppNWwzDICgTohfvr/view?usp=sharing)
+You can find a full version of my CV [here](https://drive.google.com/file/d/1fSZbN9TxmumlBKqbvGJGwyrhMxHmltDO/view?usp=sharing)
