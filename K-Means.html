@@ -45,6 +45,7 @@
                     <div class="nav pull-right">
                                 <a href="/">Home</a>
                                 <a href="/categories.html">Categories</a>
+                            <a  href="/pages/CV.html">CV</a>
                             <a  href="/pages/publications.html">Publications</a>
                             <a  href="/pages/talks.html">Talks</a>
                             <a  href="/pages/whois.html">Whois</a>
@@ -133,14 +134,14 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As always, we have N data points represented by a vector of M features.</p>
+<p>As always, we have $N$ data points represented by a vector of $M$ features.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[107]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -155,7 +156,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[129]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
@@ -174,13 +175,13 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[130]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">first_cluster_x</span><span class="p">,</span> <span class="n">first_cluster_y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">second_cluster_x</span><span class="p">,</span> <span class="n">second_cluster_y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">third_cluster_x</span><span class="p">,</span> <span class="n">third_cluster_y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Cluster 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Cluster 2&quot;</span><span class="p">,</span> <span class="s2">&quot;Cluster 3&quot;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">first_cluster_x</span><span class="p">,</span> <span class="n">first_cluster_y</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">second_cluster_x</span><span class="p">,</span> <span class="n">second_cluster_y</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">third_cluster_x</span><span class="p">,</span> <span class="n">third_cluster_y</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Cluster 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Cluster 2&quot;</span><span class="p">,</span> <span class="s2">&quot;Cluster 3&quot;</span><span class="p">]);</span>
 </pre></div>
 
     </div>
@@ -190,19 +191,6 @@
 <div class="output_wrapper">
 <div class="output">
 
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[130]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.legend.Legend at 0x7f1c30e00550&gt;</pre>
-</div>
-
-</div>
 
 <div class="output_area">
 
@@ -235,7 +223,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The goal being to group these data points together, we will choose the number of clusters K that we want the algorithm to form. We will see later how we can choose the best value of K.</p>
+<p>The goal being to group these data points together, we will choose the number of clusters $K$ that we want the algorithm to form. We will see later how we can choose the best value of $K$.</p>
 
 </div>
 </div>
@@ -243,7 +231,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For now, let's say we use K = 3 because we believe that there are 3 natural clusters in the way your data is distributed.</p>
+<p>For now, let's say we use $K$ = 3 because we believe that there are 3 natural clusters in the way your data is distributed.</p>
 
 </div>
 </div>
@@ -251,7 +239,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The algorithm will optimize the placement of the cluster's centers (also called centroids) so that each of the N data points is closest to a cluster center.</p>
+<p>The algorithm will optimize the placement of the cluster's centers (also called centroids) so that each of the $N$ data points is closest to a cluster center.</p>
 
 </div>
 </div>
@@ -259,7 +247,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now imagine you are evoling not in a two dimensional space, but in in M dimensional space, M being the number of features in your data set. While it might be relatively easy for you to eye ball the centroids in the plot above, it would be much harder to do it when M &gt; 2.</p>
+<p>Now imagine you are evoling not in a two dimensional space, but in in $M$ dimensional space, $M$ being the number of features in your data set. While it might be relatively easy for you to eye ball the centroids in the plot above, it would be much harder to do it when $M$ &gt; 2.</p>
 
 </div>
 </div>
@@ -283,35 +271,21 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Once that is done, the algorithm will randomly choose two centroids</p>
+<p>Once that is done, the algorithm will randomly choose two centroids, depicted in red in the graph below.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[131]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">centroid_x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">11</span><span class="p">]</span>
-<span class="n">centroid_y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">11</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[132]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">first_cluster_x</span><span class="p">,</span> <span class="n">first_cluster_y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">second_cluster_x</span><span class="p">,</span> <span class="n">second_cluster_y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">third_cluster_x</span><span class="p">,</span> <span class="n">third_cluster_y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">centroid_x</span><span class="p">,</span> <span class="n">centroid_y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\clubsuit$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Cluster 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Cluster 2&quot;</span><span class="p">,</span> <span class="s2">&quot;Centroids&quot;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">first_cluster_x</span><span class="p">,</span> <span class="n">first_cluster_y</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">second_cluster_x</span><span class="p">,</span> <span class="n">second_cluster_y</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">third_cluster_x</span><span class="p">,</span> <span class="n">third_cluster_y</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">centroid_x</span><span class="p">,</span> <span class="n">centroid_y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\clubsuit$&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Cluster 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Cluster 2&quot;</span><span class="p">,</span> <span class="s2">&quot;Centroids&quot;</span><span class="p">]);</span>
 </pre></div>
 
     </div>
@@ -321,19 +295,6 @@
 <div class="output_wrapper">
 <div class="output">
 
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[132]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.legend.Legend at 0x7f1c30d42ad0&gt;</pre>
-</div>
-
-</div>
 
 <div class="output_area">
 
@@ -428,29 +389,12 @@ As a reminder, here are the different equations for the most typical distance fu
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Summing up all the squared distances to the nearest cluster provides a measure of error.</p>
-<p>For K = 1, the error will be at the highest point, since there will be one unique center from which distances will be measured.</p>
-<p>Error will decrease for increasing value of K, and reaches a value = 0 when K = N data points, since you would have one cluster per data point.</p>
-<p>The <code>cree plot</code> will display the error plotted against the number of clusters K.</p>
+<p>For $K$ = 1, the error will be at the highest point, since there will be one unique center from which distances will be measured.</p>
+<p>Error will decrease for increasing value of $K$, and reaches a value = 0 when $K$ = N data points, since you would have one cluster per data point.</p>
+<p>The <code>cree plot</code> will display the error plotted against the number of clusters $K$.</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x_value_elbow</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
-<span class="n">y_value_elbow</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mf">1.5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.4</span><span class="p">]</span>
-
-<span class="n">x_value_gradual</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
-<span class="n">y_value_gradual</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -495,8 +439,8 @@ As a reminder, here are the different equations for the most typical distance fu
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As can be seen in the plot above, you can have different versions of the scree plot.</p>
-<p>In the elbow example, you see that the error decreases sharply with increasing K, but the slope attenuates after K = 3. In such cases, you observe a so-called <code>elbow</code> (this approach is sometimes referred to as the elbow method) and the optimal number of clusters here should be K = 3.</p>
+<p>As can be seen in the plot above, you can have different versions of the cree plot.</p>
+<p>In the elbow example, you see that the error decreases sharply with increasing $K$, but the slope attenuates after $K$ = 3. In such cases, you observe a so-called <code>elbow</code> (this approach is sometimes referred to as the elbow method) and the optimal number of clusters here should be $K$ = 3.</p>
 <p>In the gradual example, the error steadily decreases, since you increase the number of clusters, but there is no clear breaking point. Hence, it will be more difficult to find an optimal number of clusters. In those cases, I recommend to use common sense (but also in the other example :D) and visualize your data thoroughly. Often, that will already give you a good idea of the possible clusters.</p>
 <p>There are other method that could help you determine the optimal cluster number, one of which I will be exploring below.</p>
 
@@ -791,16 +735,7 @@ You can find the dataset in my <a href="https://github.com/juls-dotcom/juls-dotc
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's assume I am not sure what the feature mean because the specialist about the topic is gone.
-We see that some features are correlated with one another, with suggest mixed information brought by each feature. We should consider scaling them up, and eventually running a dimensionality reduction approach.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Before we do so, let's estimate the optimal number of clusters</p>
+<p>Let's estimate the optimal number of clusters</p>
 
 </div>
 </div>
@@ -881,7 +816,7 @@ We see that some features are correlated with one another, with suggest mixed in
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Here is a case where the elbow is not very salient, and it is a bit more complicated to detect the optimal number of clusters. Nonetheless, I would eye ball the optimal number of clusters to K = 4.</p>
+<p>Here is a case where the elbow is not very salient, and it is a bit more complicated to detect the optimal number of clusters. Nonetheless, I would eye ball the optimal number of clusters to $K$ = 4.</p>
 <p>Note that there are other ways one could use to select the optimal number of clusters. For example, a silhouette analysis can be used to measure the separation (using a distance function) between the number of clusters K chosen.</p>
 <p>This measure has a range of [-1, 1].</p>
 <p>Silhouette coefficients neighboring +1 represent data that is far away from the neighboring clusters.</p>
