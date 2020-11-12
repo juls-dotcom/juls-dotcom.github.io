@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7932ba2c-96d1-41e1-8cf2-ec3b3a0f2f4e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/2020_11_support_vector_machine.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_11_support_vector_machine.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/pages/publications.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/pages/publications.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/neuro.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/neuro.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets" beforeDir="false" afterPath="$PROJECT_DIR$/datasets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/.Rapp.history" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/.Rapp.history" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/.Rhistory" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/.Rhistory" afterDir="false" />
@@ -125,19 +124,15 @@
       <change beforePath="$PROJECT_DIR$/output/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/archives.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/author/julien-hernandez-lallement.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/author/julien-hernandez-lallement.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/author/julien-hernandez-lallement2.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/author/julien-hernandez-lallement2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/author/julien-hernandez-lallement3.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/author/julien-hernandez-lallement3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/authors.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/authors.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/category/course.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/category/course.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/category/tutorial.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/category/tutorial.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/category/neuro.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/category/neuro.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/index2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/pages/publications.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/pages/publications.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/support vector machine.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/support vector machine.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/tag/academia.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/academia.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tag/machine-learning.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/machine-learning.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tag/data-science.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/data-science.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/tag/neuroscience.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/neuroscience.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tag/python.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/python.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tag/python2.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/python2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tag/opinion.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/opinion.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/tags.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tags.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/ipynb/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipynb/core.py" afterDir="false" />
@@ -208,9 +203,9 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="681" y="355" width="615" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605201003863">
+    <state x="681" y="355" width="615" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605209990892">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="681" y="355" width="615" height="403" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1605201003863" />
+    <state x="681" y="355" width="615" height="403" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1605209990892" />
   </component>
 </project>
