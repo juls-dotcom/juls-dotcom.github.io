@@ -1,11 +1,11 @@
-title: neuro: Towards a unified theory of emotional contagion in rodents—A meta-analysis
+title: neuro: Towards a unified theory of emotional contagion in — A meta-analysis
 date: 2020-09-30 10:20
 modified: 2020-09-30 10:20
 category: Neuro
 tags: academia, research, neuro
 slug: neuro
 authors: Julien Hernandez Lallement, Paula Gomez Sotres, Maria Carrillo
-summary: Towards a unified theory of emotional contagion in rodents—A meta-analysis
+summary: Towards a unified theory of emotional contagion — A meta-analysis
 illustration: 2020_04_meta_analysis_header.jpg
 
 <object data="meta_analysis.pdf" type="application/pdf" width="100%" height="800px">

@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7932ba2c-96d1-41e1-8cf2-ec3b3a0f2f4e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/content/curr_biol.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/meta_analysis.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/content/neuro.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/neuro.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/research_paper/meta_analysis.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/content/research_paper/meta_analysis.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets" beforeDir="false" afterPath="$PROJECT_DIR$/datasets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/.Rapp.history" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/.Rapp.history" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/.Rhistory" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/.Rhistory" afterDir="false" />
@@ -130,10 +131,11 @@
       <change beforePath="$PROJECT_DIR$/output/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/categories.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/category/neuro.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/category/neuro.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/neuro.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/neuro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/index2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/index3.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/index3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/tag/academia.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/academia.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tag/data-science.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/data-science.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tag/opinion.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/opinion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tag/neuro.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/neuro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tag/research.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/research.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/tags.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tags.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/ipynb/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipynb/core.py" afterDir="false" />
