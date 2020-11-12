@@ -10,6 +10,10 @@ Summary: List of scientific publications
 Check this out
 Go to [Google Scholar](https://scholar.google.com/citations?user=ppDsLgIAAAAJ&hl=en&oi=ao) <br>
 
+Hernandez-Lallement J, Gomez-Sotres P, Carrillo M. 2020 <br>
+**Neurosciences & BioBehav. Reviews.**
+[DOI](https://doi.org/10.1016/j.neubiorev.2020.09.010)
+
 Hernandez-Lallement J, Attah AT, Soyman S, Pinhal CM, Gazzola V, Keysers C. 2020.<br>
 **Current Biology** - 
 [DOI](https://doi.org/10.1016/j.cub.2020.01.017)

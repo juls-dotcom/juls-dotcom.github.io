@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7932ba2c-96d1-41e1-8cf2-ec3b3a0f2f4e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/2020_11_support_vector_machine.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_11_support_vector_machine.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/pages/publications.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/pages/publications.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets" beforeDir="false" afterPath="$PROJECT_DIR$/datasets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/.Rapp.history" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/.Rapp.history" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/.Rhistory" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/.Rhistory" afterDir="false" />
@@ -120,8 +122,23 @@
       <change beforePath="$PROJECT_DIR$/datasets/yoga.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/yoga_raw.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga_raw.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/yoga_wiki.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga_wiki.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/pages/CV.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/pages/CV.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/pages/whois.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/pages/whois.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/archives.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/author/julien-hernandez-lallement.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/author/julien-hernandez-lallement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/author/julien-hernandez-lallement2.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/author/julien-hernandez-lallement2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/authors.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/authors.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/categories.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/category/course.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/category/course.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/category/tutorial.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/category/tutorial.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/index2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/pages/publications.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/pages/publications.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/support vector machine.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/support vector machine.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tag/academia.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/academia.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tag/machine-learning.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/machine-learning.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tag/neuroscience.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/neuroscience.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tag/python.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/python.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tag/python2.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/python2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tags.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tags.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/ipynb/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipynb/core.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/ipythonnb" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipythonnb" afterDir="false" />
@@ -169,11 +186,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/honorary_gui/src/honorary_gui" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PycharmProjects/honorary_gui/src/honorary_gui" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$USER_HOME$/PycharmProjects/honorary_gui/src/honorary_gui" />
+      <recent name="$PROJECT_DIR$/../PycharmProjects/honorary_gui/src/honorary_gui" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -191,14 +208,9 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="863" y="422" width="470" height="452" key="#Notifications" timestamp="1594411091275">
+    <state x="681" y="355" width="615" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605201003863">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="863" y="422" width="470" height="452" key="#Notifications/67.27.1853.1053@67.27.1853.1053" timestamp="1594411091275" />
-    <state x="776" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1595778393298">
-      <screen x="67" y="27" width="1853" height="1053" />
-    </state>
-    <state x="776" y="311" width="424" height="491" key="FileChooserDialogImpl/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1588458910254" />
-    <state x="776" y="311" width="424" height="491" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1595778393298" />
+    <state x="681" y="355" width="615" height="403" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1605201003863" />
   </component>
 </project>
