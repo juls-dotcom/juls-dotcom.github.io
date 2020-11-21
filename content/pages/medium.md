@@ -6,15 +6,18 @@ Slug: medium
 Authors: Julien Hernandez Lallement
 Summary: List of medium publications
 
-**Medium Publications** <br><br>
-From Groups to Individuals: Permutation Testing
-[Link](https://medium.com/swlh/from-groups-to-individuals-perm-8967a2a04a9e) <br>
+**Towards Data Science** Publications <br><br>
 
 Meta-Analysis: Background and Python Pipeline
-[Link](hhttps://medium.com/@julien.her/meta-analysis-background-and-python-pipeline-bccaf4fde362) <br>
+Aug. 2020 - [Link](https://towardsdatascience.com/meta-analysis-background-and-python-pipeline-bccaf4fde362) <br>
 
 Statistics — Part I: How Bayesian Can Complement Frequentist.
-[Link](https://towardsdatascience.com/statistics-how-bayesian-can-complement-frequentist-9ff171bb6396) <br>
+Sept. 2020 - [Link](https://towardsdatascience.com/statistics-how-bayesian-can-complement-frequentist-9ff171bb6396) <br>
 
 Statistics Part II: Bayesian To The Rescue
-[Link](https://medium.com/@julien.her/statistics-part-ii-bayesian-to-the-rescue-877cc18c8bfd) <br>
+Sept 2020 - [Link](https://towardsdatascience.com/statistics-part-ii-bayesian-to-the-rescue-877cc18c8bfd) <br>
+
+**Medium** Publications <br><br>
+
+From Groups to Individuals: Permutation Testing
+Aug. 2020 - [Link](https://medium.com/swlh/from-groups-to-individuals-perm-8967a2a04a9e) <br>

@@ -25,7 +25,8 @@ AUTHOR_FEED_RSS = None
 
 # Blogroll
 LINKS = (('GitHub', 'https://github.com/juls-dotcom'),
-         ('Google Scholar', 'https://scholar.google.com/citations?user=ppDsLgIAAAAJ&hl=en&oi=ao')
+         ('Google Scholar', 'https://scholar.google.com/citations?user=ppDsLgIAAAAJ&hl=en&oi=ao',
+          'Contact', 'julien.hernandez.lallement@posteo.net',)
          )
 
 # Social widget
@@ -76,7 +77,7 @@ NEST_COPYRIGHT = u'&copy; juls-dotcom 2019'
 # index.html
 NEST_INDEX_HEAD_TITLE = u'Homepage'
 NEST_INDEX_HEADER_TITLE = u'A Tale of Two...or more..Stories'
-NEST_INDEX_HEADER_SUBTITLE = u'A blog about data science, neuroscience, and probably some random stuff AAA.'
+NEST_INDEX_HEADER_SUBTITLE = u'A blog about data science, neuroscience, and probably some random stuff.'
 NEST_INDEX_CONTENT_TITLE = u'Last Posts'
 # archives.html
 NEST_ARCHIVES_HEAD_TITLE = u'Archives'
