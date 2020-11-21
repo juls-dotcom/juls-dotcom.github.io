@@ -60,7 +60,7 @@ NEST_REL_CANONICAL_LINK = True
 # Add items to top menu before pages
 MENUITEMS = [('Home', '/'),('Categories','/categories.html')]
 # Add header background image from content/images : 'background.jpg'
-NEST_HEADER_IMAGES = 'Logo_website_green.jpg'
+NEST_HEADER_IMAGES = 'backgrnd-LINKEDIN.jpg'
 # Add logo in the root of the output folder
 NEST_HEADER_LOGO = ''
 # Footer
@@ -70,13 +70,13 @@ NEST_SITEMAP_ATOM_LINK = u'Atom Feed'
 NEST_SITEMAP_RSS_LINK = u'RSS Feed'
 NEST_SOCIAL_COLUMN_TITLE = u'Social'
 NEST_LINKS_COLUMN_TITLE = u'Links'
-NEST_COPYRIGHT = u'&copy; juls-dotcom 2020'
+NEST_COPYRIGHT = u'&copy; juls-dotcom 2019'
 # Footer optional
 #NEST_FOOTER_HTML = ''
 # index.html
 NEST_INDEX_HEAD_TITLE = u'Homepage'
 NEST_INDEX_HEADER_TITLE = u'A Tale of Two...or more..Stories'
-NEST_INDEX_HEADER_SUBTITLE = u'A blog about data science, neuroscience, and probably some random stuff.'
+NEST_INDEX_HEADER_SUBTITLE = u'A blog about data science, neuroscience, and probably some random stuff AAA.'
 NEST_INDEX_CONTENT_TITLE = u'Last Posts'
 # archives.html
 NEST_ARCHIVES_HEAD_TITLE = u'Archives'
@@ -137,3 +137,6 @@ EXTRA_PATH_METADATA = {
     'extra/favicon.ico': {'path': 'favicon.ico'},
     'extra/logo.png': {'path': 'logo.png'}
 }
+
+#SITEURL = 'https://juls-dotcom.github.io'
+#DISQUS_SITENAME = "juls_website"

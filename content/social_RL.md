@@ -1,11 +1,11 @@
-title: neuro: A Social Reinforcement LearningHypothesis
+title: neuro: A Social Reinforcement Learning Hypothesis
 date: 2021-01-03 10:20
 modified: 2021-01-03 10:20
 category: Neuro
 tags: academia, research, neuro
 slug: social_RL
 authors: Julien Hernandez Lallement, Marijn van Wingerden, Sandra Schäbleand Tobias Kalenscher
-summary: A Social Reinforcement LearningHypothesis
+summary: A Social Reinforcement Learning Hypothesis
 illustration: social_RL.png
 
 <object data="social_RL.pdf" type="application/pdf" width="100%" height="800px">

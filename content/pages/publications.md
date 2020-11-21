@@ -12,28 +12,28 @@ Go to [Google Scholar](https://scholar.google.com/citations?user=ppDsLgIAAAAJ&hl
 
 Hernandez-Lallement J, Gomez-Sotres P, Carrillo M. 2020 <br>
 **Neurosciences & BioBehav. Reviews.**
-[DOI](https://doi.org/10.1016/j.neubiorev.2020.09.010)
+[Link](https://doi.org/10.1016/j.neubiorev.2020.09.010)
 
 Hernandez-Lallement J, Attah AT, Soyman S, Pinhal CM, Gazzola V, Keysers C. 2020.<br>
 **Current Biology** - 
-[DOI](https://doi.org/10.1016/j.cub.2020.01.017)
+[Link](https://doi.org/10.1016/j.cub.2020.01.017)
 
 Hernandez-Lallement J, van Wingerden M, Kalenscher T. 2016. <br>
 **Neurosciences & BioBehav. Reviews.** - 
-[DOI](https://doi.org/10.1016/j.neubiorev.2016.12.029)
+[Link](https://doi.org/10.1016/j.neubiorev.2016.12.029)
 
 Hernandez-Lallement J, van Wingerden M, Kalenscher T. 2016. <br>
 **Curr Top Behav Neurosci.** - 
-[DOI](https://doi.org/10.1007/7854_2016_436)
+[Link](https://doi.org/10.1007/7854_2016_436)
 
 Hernandez-Lallement J, van Wingerden M, Schäble S, Kalenscher K. 2016. <br>
 **Neurobiol Learn Mem** - 
-[DOI](https://doi.org/10.1016/j.nlm.2015.11.004)
+[Link](https://doi.org/10.1016/j.nlm.2015.11.004)
 
 Hernandez-Lallement J, van Wingerden M, Marx C, Kalenscher K. 2015. <br>
 **Front Neurosci** - 
-[DOI](https://doi.org/10.3389/fnins.2014.00443)
+[Link](https://doi.org/10.3389/fnins.2014.00443)
 
 Hernandez-Lallement J, Kuss K, Trautner P, Weber B, Falk A, Fliessbach K. 2014. <br>
 **Soc Cogn Affect Neurosci** - 
-[DOI](https://doi.org/10.1093/scan/nss147)
+[Link](https://doi.org/10.1093/scan/nss147)
