@@ -26,7 +26,7 @@ AUTHOR_FEED_RSS = None
 # Blogroll
 LINKS = (('GitHub', 'https://github.com/juls-dotcom'),
          ('Google Scholar', 'https://scholar.google.com/citations?user=ppDsLgIAAAAJ&hl=en&oi=ao',
-          'Contact', 'julien.hernandez.lallement@posteo.net',)
+          )
          )
 
 # Social widget
@@ -61,7 +61,7 @@ NEST_REL_CANONICAL_LINK = True
 # Add items to top menu before pages
 MENUITEMS = [('Home', '/'),('Categories','/categories.html')]
 # Add header background image from content/images : 'background.jpg'
-NEST_HEADER_IMAGES = 'backgrnd-LINKEDIN.jpg'
+NEST_HEADER_IMAGES = 'backgrnd-website.jpg'
 # Add logo in the root of the output folder
 NEST_HEADER_LOGO = ''
 # Footer
