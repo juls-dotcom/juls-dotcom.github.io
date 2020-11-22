@@ -6,4 +6,10 @@ Slug: CV
 Authors: Julien Hernandez Lallement
 Summary: CV
 
-You can find a full version of my CV [here](https://drive.google.com/file/d/1B8QWG6KYznowh3Vho1rSp2X0hj_5ktYP/view?usp=sharing)
+Download pdf version: <a href="CV_2021.pdf">Click here!
+  
+<object data="CV_2021.pdf" type="application/pdf" width="100%" height="800px">
+ <p>It appears you don't have a PDF plugin for this browser.
+ No biggie... you can <a href="CV_2021.pdf">click here to
+  download the PDF file.</a></p>
+</object>
