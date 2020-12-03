@@ -4,7 +4,6 @@
     <list default="true" id="7932ba2c-96d1-41e1-8cf2-ec3b3a0f2f4e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/pages/publications.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/pages/publications.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/pages/talks.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/pages/talks.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets" beforeDir="false" afterPath="$PROJECT_DIR$/datasets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/.Rapp.history" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/.Rapp.history" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/.Rhistory" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/.Rhistory" afterDir="false" />
@@ -122,7 +121,6 @@
       <change beforePath="$PROJECT_DIR$/datasets/yoga.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/yoga_raw.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga_raw.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/yoga_wiki.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga_wiki.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/meta_analysis.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/output/meta_analysis.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/pages/publications.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/pages/publications.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/pages/talks.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/pages/talks.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipynb" afterDir="false" />
