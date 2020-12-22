@@ -1,6 +1,6 @@
 title: neuro: Harm to Others Acts as a Negative Reinforcer
-date: 2020-12-01 10:20
-modified: 2020-12-01 10:20
+date: 2020-12-15 10:20
+modified: 2020-12-15 10:20
 category: Neuro
 tags: academia, research, neuro
 slug: curr_biol

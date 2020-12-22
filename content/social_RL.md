@@ -1,6 +1,6 @@
 title: neuro: A Social Reinforcement Learning Hypothesis
-date: 2021-01-03 10:20
-modified: 2021-01-03 10:20
+date: 2021-01-14 10:20
+modified: 2021-01-14 10:20
 category: Neuro
 tags: academia, research, neuro
 slug: social_RL
