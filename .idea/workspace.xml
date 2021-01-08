@@ -120,7 +120,6 @@
       <change beforePath="$PROJECT_DIR$/datasets/yoga.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/yoga_raw.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga_raw.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/yoga_wiki.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga_wiki.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/src/world-states-provinces.svg" beforeDir="false" afterPath="$PROJECT_DIR$/output/src/world-states-provinces.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/ipynb/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipynb/core.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/ipythonnb" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipythonnb" afterDir="false" />
