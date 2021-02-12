@@ -8,6 +8,9 @@ Summary: List of medium publications
 
 **Towards Data Science** Publications <br><br>
 
+Feb. 2021 - Exporting data from/to Google Cloud Platform. <br>
+[Link](https://towardsdatascience.com/exporting-data-from-google-cloud-platform-72cbe69de695) <br>
+
 Jan. 2021 - Deploying Simple Code on Google Cloud Platform. <br>
 [Link](https://towardsdatascience.com/deploying-simple-code-on-google-cloud-2cb3d50f7d33) <br>
 
