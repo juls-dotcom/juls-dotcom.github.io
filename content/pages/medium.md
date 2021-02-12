@@ -14,7 +14,7 @@ Jan. 2021 - Deploying Simple Code on Google Cloud Platform. <br>
 Aug. 2020 - Meta-Analysis: Background and Python Pipeline. <br>
 [Link](https://towardsdatascience.com/meta-analysis-background-and-python-pipeline-bccaf4fde362) <br>
 
-Sep. 2020 - Statistics — Part I: How Bayesian Can Complement Frequentist. <br>
+Sep. 2020 - Statistics Part I: How Bayesian Can Complement Frequentist. <br>
 [Link](https://towardsdatascience.com/statistics-how-bayesian-can-complement-frequentist-9ff171bb6396) <br>
 
 Sep. 2020 - Statistics Part II: Bayesian To The Rescue. <br>
