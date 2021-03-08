@@ -6,7 +6,7 @@ tags: opinion, society
 slug: meat consumption
 authors: Julien Hernandez Lallement
 summary: Quick research-based report on meat consumption
-illustration: 2020_06_header.jpg
+illustration: 2021_03_meat.jpg
 
 In August 2020, the most important event of my life so far happened: I got my first baby :) Matteo was born on August 23rd
 and it has been a blessing (95%) and a sleep disruptor (5%) since then. OK, more like 90/10 ;)
