@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7932ba2c-96d1-41e1-8cf2-ec3b3a0f2f4e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/content/meat_consumption.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/2020_05_Introduction to Machine Learning I.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_05_Introduction to Machine Learning I.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/2020_05_Introduction to Machine Learning II.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_05_Introduction to Machine Learning II.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/meat_consumption.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/meat_consumption.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets" beforeDir="false" afterPath="$PROJECT_DIR$/datasets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/.Rapp.history" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/.Rapp.history" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/.Rhistory" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/.Rhistory" afterDir="false" />
@@ -123,18 +121,7 @@
       <change beforePath="$PROJECT_DIR$/datasets/yoga.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/yoga_raw.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga_raw.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/yoga_wiki.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/yoga_wiki.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/archives.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/author/julien-hernandez-lallement.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/author/julien-hernandez-lallement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/author/julien-hernandez-lallement2.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/author/julien-hernandez-lallement2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/author/julien-hernandez-lallement3.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/author/julien-hernandez-lallement3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/authors.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/authors.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/category/opinion.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/category/opinion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/index2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/index3.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/index3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tag/opinion.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/opinion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tags.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tags.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/meat consumption.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/meat consumption.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/ipynb/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipynb/core.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/ipythonnb" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipythonnb" afterDir="false" />

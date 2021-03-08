@@ -22,7 +22,13 @@ After some weeks of procrastination, the time has come for little Matteo to eat 
 and sweet potatoes are being smashed in the kitchen, I sat at the computer doing some research. I thought I would write about 
 this as a source to give people that question my dietary decision, which I knew, and now can prove, makes sense (sort of).
 
-This article is strongly based on [this](https://science.sciencemag.org/content/361/6399/eaam5324) and [this](https://europepmc.org/article/med/20374748)
+A few points before I start:<br>
+* This article focuses on the benefits of eating or not eating meet from an **individual** perspective. I won't discuss
+here the problems raised by vegetarians that eat kilograms of rice from far away lands & tons of soja that required
+  much water to be harvested; same goes for meat eaters that import Kobe beef or Argentinan rumsteak that came not only at
+  great expense to produce the meat, but to move it across lands. These concerns are perfectly valid, but outside the scope of this opinion piece.
+   
+* This article is strongly based on [this](https://science.sciencemag.org/content/361/6399/eaam5324) and [this](https://europepmc.org/article/med/20374748)
 article, which I found great in reviewing the current state of the art.
 
 Let's start with some general numbers. See [here](https://science.sciencemag.org/content/361/6399/eaam5324) for reference.
