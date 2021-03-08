@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7932ba2c-96d1-41e1-8cf2-ec3b3a0f2f4e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/content/meat_consumption.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/2020_05_Introduction to Machine Learning I.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_05_Introduction to Machine Learning I.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/2020_05_Introduction to Machine Learning II.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/content/2020_05_Introduction to Machine Learning II.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets" beforeDir="false" afterPath="$PROJECT_DIR$/datasets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/.Rapp.history" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/.Rapp.history" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/.Rhistory" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/.Rhistory" afterDir="false" />
@@ -126,16 +129,12 @@
       <change beforePath="$PROJECT_DIR$/output/author/julien-hernandez-lallement3.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/author/julien-hernandez-lallement3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/authors.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/authors.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/category/course.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/category/course.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/category/course2.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/category/course2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/category/opinion.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/category/opinion.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/machine_learn_intro_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/machine_learn_intro_3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/pages/medium.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/pages/medium.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tag/course.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/course.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tag/machine-learning.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/machine-learning.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tag/python.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/python.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tag/python2.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/python2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/tag/python3.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/python3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/index2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/index3.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/index3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tag/opinion.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tag/opinion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/tags.html" beforeDir="false" afterPath="$PROJECT_DIR$/output/tags.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/ipynb/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipynb/core.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/ipythonnb" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/ipythonnb" afterDir="false" />
@@ -172,6 +171,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1aP7ClVJGHA5sE4e6NwzqhiHbef" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -183,12 +190,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/honorary_gui/src/honorary_gui" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PycharmProjects/honorary_gui/src/honorary_gui" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$USER_HOME$/PycharmProjects/honorary_gui/src/honorary_gui" />
+      <recent name="$PROJECT_DIR$/../PycharmProjects/honorary_gui/src/honorary_gui" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -204,19 +211,5 @@
       <updated>1586625249818</updated>
     </task>
     <servers />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="715" y="378" width="547" height="357" key="#Notifications" timestamp="1606845042110">
-      <screen x="67" y="27" width="1853" height="1053" />
-    </state>
-    <state x="715" y="378" width="547" height="357" key="#Notifications/67.27.1853.1053@67.27.1853.1053" timestamp="1606845042110" />
-    <state x="681" y="355" width="615" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606412359813">
-      <screen x="67" y="27" width="1853" height="1053" />
-    </state>
-    <state x="681" y="355" width="615" height="403" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1606412359813" />
-    <state x="482" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1606845373585">
-      <screen x="67" y="27" width="1853" height="1053" />
-    </state>
-    <state x="482" y="188" width="1022" height="737" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1606845373585" />
   </component>
 </project>
