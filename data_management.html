@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+ <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Data Project Management¶ The topic on how to manage data project is quite tricky and I can imagine that many of you will comment or disagree on the proceedings described in this post. I want to...">
+        <meta name="keywords" content="atlassian, course, data management">
+        <link rel="icon" href="/extra/favicon.ico">
+        <!-- Canonical -->
+        <link rel="canonical" href="/data_management.html">
+        <!-- /Canonical -->
+
+        <title>course: Few Ideas on Managing a Data Project - Juls-dotcom</title>
+
+        <!-- Stylesheets -->
+        <link href="/theme/css/all.min.css" rel="stylesheet">
+        <!-- /Stylesheets -->
+
+        <!-- RSS Feeds -->
+        <!-- /RSS Feeds -->
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+    </head>
+
+    <body>
+
+        <!-- Header -->
+    <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/2021_05_data_management.jpg'); background-position: center; background-size: cover;">
+
+            <!-- Static navbar -->
+            <div class="container">
+                <div class="header-nav">
+                    <div class="header-logo">
+                      <!--  <a class="pull-left" href="/"><img class="mr20" src="/logo.jpg" alt="logo">Juls-dotcom</a> -->
+                        <a class="pull-left" href="/"><img class="mr20" src="">Juls-dotcom</a>
+                    </div>
+                    <div class="nav pull-right">
+                                <a href="/">Home</a>
+                                <a href="/categories.html">Categories</a>
+                            <a  href="/pages/CV.html">CV</a>
+                            <a  href="/pages/medium.html">@Medium</a>
+                            <a  href="/pages/PhD.html">PhD</a>
+                            <a  href="/pages/publications.html">Publications</a>
+                            <a  href="/pages/talks.html">Talks</a>
+                            <a  href="/pages/travel (beta).html">Travel (Beta)</a>
+                            <a  href="/pages/whois.html">Whois</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /Static navbar -->
+
+            <!-- Header -->
+    <!-- Header -->
+    <div class="container header-wrapper">
+        <div class="row">
+              <div class="col-lg-12">
+                  <div class="header-content">
+                      <h1 class="header-title">course: Few Ideas on Managing a Data Project</h1>
+                      <p class="header-date">By <a href="/author/julien-hernandez-lallement.html">Julien Hernandez Lallement</a>, 2021-05-02, in category <a href="/category/opinion.html">Opinion</a></p>
+                      <div class="header-underline"></div>
+                      <div class="clearfix"></div>
+                      <p class="pull-right header-tags">
+                          <span class="glyphicon glyphicon-tags mr5" aria-hidden="true"></span>
+<a href="/tag/atlassian.html">atlassian</a>, <a href="/tag/course.html">course</a>, <a href="/tag/data-management.html">data management</a>                      </p>
+                  </div>
+              </div>
+        </div>
+    </div>
+    <!-- /Header -->
+            <!-- /Header -->
+
+        </div>
+        <!-- /Header -->
+
+
+        <!-- Content -->
+    <div class="container content">
+        <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Data-Project-Management">Data Project Management<a class="anchor-link" href="#Data-Project-Management">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The topic on how to manage data project is quite tricky and I can imagine that many of you will comment or disagree on the proceedings described in this post. 
+I want to emphasize that while a general tool &amp; guideline is an important aspect of managing (data) projects, each project has its specificities that require some tweeking around.</p>
+<p>What is written here is a result of me learning to track, document and disseminate the status of different data projects. As every method, it is evolving with time and can be improved in several aspects.</p>
+<p>Still, some of you in need of guidance might find this post useful ;)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>With that out of the way, let's start.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Data-Projects">Data Projects<a class="anchor-link" href="#Data-Projects">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A data project, from my perspective, is a project that uses data as its main substrate or result. In other words, any project that require data to output a product (for example, a dashboard) or produces data itself (example: an ML pipeline that rates customers based on predictions and selects promising ones).</p>
+<p>Data projects are not new, but the last decades have seen an important surge in their complexity and requirements, due mainly to the formidable increase in data availability and production.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Managing-(data)-projects">Managing (data) projects<a class="anchor-link" href="#Managing-(data)-projects">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Managing project in general is not an easy task. Many framework (PMP, PRINCE2) are proposed and maintained by major institutions, and provide managers with tools to guide, track, and document the project, and of course, close the project successfully.</p>
+<p>Because data often mean code (not always though), data projects are typically managed (from what I could experience at least) in an agile mode. SCRUM or KANBAN are different ways to approach data projects. The problem here is that these methods are well suited for software development, but not always to data projects.</p>
+<p>Coming back to what I wrote earlier, I therefore decided to combine methodolodies from both waterfall (PMP) and Agile (SCRUM) to manage my data projects.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="JIRA-(Agile)">JIRA (Agile)<a class="anchor-link" href="#JIRA-(Agile)">&#182;</a></h4><p><img src="images/2021_05_data_manage/JIRA_logo.JPG" style="display: block;margin-left: auto;margin-right: auto;"/></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>JIRA</strong> is a tool that allow users to interact in the tasks required fora given project.</p>
+<p>When a project is created, separater users can be invited to work in that space. JIRA is ticket-based; in other words, users create ticket (in JIRA terms, <em>issues</em>), assigned to themselves or others, that are described a task, question or list of tasks required to accomplish the project.</p>
+<p>Below, a screenshot of the task creation details:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/2021_05_data_manage/JIRA1.JPG" style="display: block;margin-left: auto;margin-right: auto;"/>
+<img src="images/2021_05_data_manage/JIRA2.JPG" style="display: block;margin-left: auto;margin-right: auto;"/>
+<img src="images/2021_05_data_manage/JIRA3.JPG" style="display: block;margin-left: auto;margin-right: auto;"/></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>All tasks are automatically put in a backlog (SCRUM terminology) which represent all the tasks needed to be performed still by the team. The team can decide to organize its work on a weekly basis, where tasks can already be attributed to a given week. Alternatively, tasks can stay in the backlog, and be place in weeks as time goes by.
+<br> The backlog if therefore a list of tasks to be done, and allow for tracking of current progress. See picture below:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/2021_05_data_manage/JIRA4.JPG" style="display: block;margin-left: auto;margin-right: auto;"/></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Importantly, a user can create different categories of tickets, based on the current need. The ones that I find most useful are 1) Question, 2) Task, 3) Bug and 4) Story.</p>
+<ul>
+<li><p><strong>1) Questions</strong> allow users to ask question to someone in particular. Importantly, the question and answer can be documented thanks to the use of JIRA, which will reduce the recurrent questions, in particular when new team members join the team. In addition, the question can be documented using Confluence (see below)</p>
+</li>
+<li><p><strong>2) Task</strong> describe a task that needs to be done in order for the project to move forward. Tasks can be described, and depicted as currenly blocked by, or linked to, other tickets.</p>
+</li>
+<li><p><strong>3) Bugs</strong> describe a bug encountered in a system (dashboard not showing correct data, broken ML pipe)</p>
+</li>
+<li><p><strong>4) Stories</strong> allow user to put several sub tasks together required to achieve a higher level goal. I use that for sub-project deliverables that require parallel or serial tasks to be accomplished.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/2021_05_data_manage/JIRA5.JPG" style="display: block;margin-left: auto;margin-right: auto;"/></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="CONFLUENCE-(Documentation)">CONFLUENCE (Documentation)<a class="anchor-link" href="#CONFLUENCE-(Documentation)">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/2021_05_data_manage/CONFLUENCE_logo.JPG" style="display: block;margin-left: auto;margin-right: auto;"/></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Confluence</strong> is a tool that allows clear and structured documentation. Maybe the best aspect of this tool is its direct link to JIRA, which allow users to extensively document tikects that required particular proceedings.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I won't discuss Confluence here since its use is quite self explanatory. It goes hand in hand with JIRA and allows documentation to be linked to current work.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="LESSSONS-LEARNED-(Waterfall)">LESSSONS LEARNED (Waterfall)<a class="anchor-link" href="#LESSSONS-LEARNED-(Waterfall)">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the PMP framework, an important step in every process of a given project area is the so-called <strong>lessons learned</strong> documentation. I found that step to be often overlooked in waterfall-like projects because documenting is often regarded as secondary, if not tertiary. However, "Documentation is a Love Letter That You Write to Your Future Self" as famoulsy stated by Damian Conway.</p>
+<p>While <strong>Confluence</strong> is a very nice tool to document extensively how particular tickets were solved, and <strong>JIRA</strong> is important in monitoring projects, your particular organisation might not have access to these tools, which are not fot free unfortunately.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Before we started using the Atlassian packages, we took the iniative of managing my projects using good old spreadsheet management techniques, which I share here below. As a matter of fact, I kept on using these sheets in some cases, because <strong>it allows, within one screenshow, to inform upper management on the project status</strong>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The idea is simple: in a spreadsheet (Excel or Google sheet), create two categories:</p>
+<ul>
+<li><p><strong>1) Project Charter</strong>: describe the project in a few lines. Provide overall deadline, and stakeholder's list. The list should be updated whenever new stakeholders (primary or secondary) join the project. Stakehodlers are any individual that are affected by the outcome of the project or perceive themselves as affected by it.</p>
+</li>
+<li><p><strong>2) Kanban Board</strong>: The Kanban board shows the overall subtasks required to finish the project.</p>
+</li>
+</ul>
+<p>The format was taken from a KANBAN board downloaded somewhere on the web. I honestly forgot where I got the initial board, and since it was modified since then, I will simply provide the view as an inspiration. Below, a screenshot of a kanban board from a project aiming at creating a dashboard showing digital communication KPIs.</p>
+<p><img src="images/2021_05_data_manage/KANBAN.JPG" style="display: block;margin-left: auto;margin-right: auto;"/></p>
+<p>The KANBAN shows:</p>
+<ul>
+<li>A series of <strong>Deliverables</strong> (Milestone column. left)</li>
+<li>The <strong>type</strong> of deliverable which are here coloured coded) Each user can define different types depending on the project type. </li>
+<li>A <strong>Short description</strong> in a few words of each deliverable</li>
+<li>A list of <strong>Main Stakeholders</strong></li>
+<li>The <strong>Priority</strong></li>
+<li><strong>Expected Deadline</strong></li>
+<li><strong>Actual Finish Data</strong></li>
+<li><strong>Status</strong> (Planned, In Progress, Delivered, Incremental)</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When that is done, a sheet is created for each deliverable, which show</p>
+<ul>
+<li>A series of <strong>Tasks</strong> (Task column. left)</li>
+<li>The <strong>type</strong> of task which are here coloured coded) Each user can define different types depending on the project type. </li>
+<li>A <strong>Short description</strong> in a few words of each deliverable</li>
+<li>A list of <strong>Main Stakeholders</strong></li>
+<li><strong>Actual Finish Data</strong></li>
+<li><strong>Status</strong> (Planned, In Progress, Delivered, Incremental)</li>
+</ul>
+<p><img src="images/2021_05_data_manage/deliverables.JPG" style="display: block;margin-left: auto;margin-right: auto;"/></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Importantly, when tasks are done, the lower section <strong>MUST</strong> be filled with information regarding the completion proceedings of the given task. 
+This includes:</p>
+<ul>
+<li>How was the task performed (technical perspective)? </li>
+<li>Who helped me perform the task? </li>
+<li>What problems did I encounter that others might encounter?</li>
+<li>Who did I solve these problems?</li>
+<li>Additional information that will be of use as documentation</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Before the use of Atlassian packages, I typically provided this document (as a Google Sheet accessible by the whole team) to any new comer as well as primary stakeholders of the project. That allowe users to monitor the project and to get up to speed the current status.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Final-words">Final words<a class="anchor-link" href="#Final-words">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is, in a nutsehll, how I manage and document data projects. I have a very similar approach when the project is about developing a ML approach to answer a question. In such cases, the code can be hosted on the third Atlassian package, BitBucket, which is a private version of GitHub. I won't be discussing this feature here.</p>
+
+</div>
+</div>
+</div>
+ 
+
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+
+
+        
+    </div>
+        <!-- /Content --> 
+
+        <!-- Footer -->
+        <div class="footer gradient-2">
+            <div class="container footer-container ">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title">Shortcuts</div>
+                        <ul class="list-unstyled">
+                            <li><a href="/archives.html">Archives</a></li>
+                            <li><a href="/tags.html">Tags</a></li>
+                            <li><a href="/authors.html">Authors</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title">Social</div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://www.linkedin.com/in/julien-hernandez-lallement-b47347b7/" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://www.xing.com/profile/Julien_HernandezLallement/cv" target="_blank">Xing</a></li>
+                            <li><a href="https://www.researchgate.net/profile/Julen_Hernandez_Lallement" target="_blank">ResearchGate</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title">Links</div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://github.com/juls-dotcom" target="_blank">GitHub</a></li>
+                            <li><a href="https://scholar.google.com/citations?user=ppDsLgIAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a></li>
+                        </ul>
+                    </div> 
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <p class="pull-right text-right">
+                            <small><em>Proudly powered by <a href="http://docs.getpelican.com/" target="_blank">pelican</a></em></small><br/>
+                            <small><em>Theme and code by <a href="https://github.com/molivier" target="_blank">molivier</a></em></small><br/>
+                            <small>&copy; juls-dotcom 2019</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Footer -->
+    </body>
+</html>
